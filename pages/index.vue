@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<HeaderTopNavbar />
-		<HeaderMainNavbar />
-		<slot />
+		<HeroBanner />
 	</div>
 </template>
 <script setup></script>
+
+<style scoped></style>
