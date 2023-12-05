@@ -69,6 +69,9 @@ export default defineNuxtConfig({
       ]
     }
   },
+	plugins:[
+		'~/plugins/nuxtcarousel.js',
+	],
 	vite: {
     css: {
       preprocessorOptions: {
