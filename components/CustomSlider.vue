@@ -134,7 +134,7 @@
 	}
 }
 
-::v-deep .VueCarousel-slide {
+:deep(.VueCarousel-slide) {
 	margin: 10px;
 }
 </style>
