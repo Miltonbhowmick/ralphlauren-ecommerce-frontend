@@ -1,10 +1,14 @@
 <template>
 	<div class="video-banner-box">
-		<video autoplay muted loop id="bg-video" class="video">
-			<source src="/videos/video_banner.mp4" type="video/mp4" />
+		<video autoplay muted loop id="bg-group-video" class="video">
+			<source src="/videos/video-banner-group.mp4" type="video/mp4" />
 		</video>
 		<div class="content">
-			<h2 class="title">Personalized Gifts</h2>
+			<h2 class="title">POLO</h2>
+			<div class="company-logo">
+				<img src="/images/company-logo.png" alt="company-logo" />
+			</div>
+			<h3 class="subtitle">Holiday Dressing</h3>
 			<ul>
 				<li><a>men</a></li>
 				<li><a>women</a></li>
@@ -27,9 +31,9 @@ var videoPlaying = ref(true);
 const toggleVideoPlay = () => {
 	videoPlaying.value = !videoPlaying.value;
 	if (videoPlaying.value === true) {
-		document.getElementById("bg-video").play();
+		document.getElementById("bg-group-video").play();
 	} else {
-		document.getElementById("bg-video").pause();
+		document.getElementById("bg-group-video").pause();
 	}
 };
 </script>
@@ -42,18 +46,31 @@ const toggleVideoPlay = () => {
 	}
 	.content {
 		position: absolute;
-		z-index: 999;
 		bottom: 30px;
-		width: 100%;
+		left: 50%;
+		transform: translateX(-50%);
 		display: flex;
 		flex-direction: column;
-		gap: 30px;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
 		.title {
-			font-family: "Northwell Alt", cursive;
+			font-family: LeJeuneDeck-Regular, "Times New Roman", Times, serif;
 			margin: 0;
-			font-size: 50px;
+			font-size: 100px;
 			color: #ffffff;
 			text-align: center;
+		}
+		.subtitle {
+			font-family: LeJeuneDeck-Regular, "Times New Roman", Times, serif;
+			margin: 0;
+			font-size: 50px;
+			font-weight: 300;
+			color: #ffffff;
+			text-align: center;
+		}
+		.company-logo {
+			width: 200px;
 		}
 		ul {
 			margin: 0;
