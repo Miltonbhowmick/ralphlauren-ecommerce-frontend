@@ -9,6 +9,7 @@
 		<VideoBannerPolo class="mt-60" />
 		<SinglePack class="mt-60" />
 		<ExplorePack class="mt-60" />
+		<FooterMainFooter class="mt-60" />
 	</div>
 </template>
 <script setup></script>
