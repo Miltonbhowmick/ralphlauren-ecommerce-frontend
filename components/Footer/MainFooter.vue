@@ -48,19 +48,70 @@
 				</p>
 			</div>
 		</footer>
+		<div class="social-box">
+			<ul class="social-icon-list">
+				<li>
+					<a @mouseover="handleSocialLink('twitter')" class="item"
+						><i class="fa fa-twitter" aria-hidden="true"></i>
+					</a>
+				</li>
+				<li>
+					<a @mouseover="handleSocialLink('facebook')" class="item">
+						<i class="fa fa-facebook" aria-hidden="true"></i>
+					</a>
+				</li>
+				<li>
+					<a @mouseover="handleSocialLink('instagram')" class="item">
+						<i class="fa fa-instagram" aria-hidden="true"></i>
+					</a>
+				</li>
+			</ul>
+			<ul v-if="currentSocialLink" class="social-link-list">
+				<li v-for="(obj, idx) in currentSocialLink" :key="idx">
+					<a :href="obj.link">{{ obj.title }} </a>
+					<i class="fa fa-caret-right"></i>
+				</li>
+			</ul>
+		</div>
+		<div class="copyright-box">
+			<p>© COPYRIGHT 2023 RALPH LAUREN MEDIA LLC</p>
+		</div>
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+var currentSocialLink = ref(null);
+
+var twitterSocialLink = [
+	{ title: "group", link: "https://www.google.com" },
+	{ title: "fb group", link: "https://www.google.com" },
+];
+var facebookSocialLink = [
+	{ title: "group", link: "https://www.google.com" },
+	{ title: "tw group", link: "https://www.google.com" },
+];
+var instagramSocialLink = [
+	{ title: "group", link: "https://www.google.com" },
+	{ title: "ig group", link: "https://www.google.com" },
+];
+
+const handleSocialLink = (type) => {
+	if (type === "facebook") {
+		currentSocialLink.value = facebookSocialLink;
+	} else if (type === "twitter") {
+		currentSocialLink.value = twitterSocialLink;
+	} else if (type === "instagram") {
+		currentSocialLink.value = instagramSocialLink;
+	}
+};
+</script>
 
 <style scoped lang="scss">
 .footer-container {
-	padding: 15px 0px;
 	footer {
 		padding: 35px 0px;
 		padding-right: 25px;
 		border-top: 1px solid #d1d1d1;
-		border-bottom: 1px solid #d1d1d1;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
@@ -125,6 +176,62 @@
 					}
 				}
 			}
+		}
+	}
+	.social-box {
+		border-top: 1px solid #d1d1d1;
+		padding: 30px 0px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 25px;
+		.social-icon-list {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			display: flex;
+			gap: 20px;
+			li {
+				a {
+					padding: 6px;
+					color: #ffffff;
+					background: #4b5e96;
+					&:hover {
+						cursor: pointer;
+						background: #041e3a;
+					}
+				}
+			}
+		}
+		.social-link-list {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			display: flex;
+			gap: 30px;
+			li {
+				a {
+					position: relative;
+					font-size: 11px;
+					text-transform: uppercase;
+					color: #041e3a;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+				i {
+					margin-left: 3px;
+				}
+			}
+		}
+	}
+	.copyright-box {
+		padding: 25px 0px;
+		border-top: 1px solid #d1d1d1;
+		p {
+			margin: 0;
+			text-align: center;
 		}
 	}
 }
