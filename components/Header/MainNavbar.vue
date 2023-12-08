@@ -119,7 +119,7 @@ const handleCurrentMenu = (event) => {
 	position: relative;
 	z-index: 999999;
 	background-color: #ffffff;
-	padding: 0px 25px;
+	padding: 0px 55px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;

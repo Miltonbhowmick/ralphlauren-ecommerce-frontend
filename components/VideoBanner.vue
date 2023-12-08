@@ -1,17 +1,25 @@
 <template>
 	<div class="video-banner-box">
 		<video autoplay muted loop id="bg-video" class="video">
-			<source src="/videos/video_banner.mp4" type="video/mp4" />
+			<source :src="props.videoSrc" type="video/mp4" />
 		</video>
-		<div class="content">
-			<h2 class="title">Personalized Gifts</h2>
+		<div
+			class="content"
+			:class="{
+				'side-bottom': props.bottom,
+				'side-right': props.right,
+				'side-left': props.left,
+			}"
+		>
+			<div v-if="props.textImage" class="text-image">
+				<img :src="props.textImage" alt="text-image" />
+			</div>
+			<h2 v-if="props.title" class="title">{{ props.title }}</h2>
+			<p v-if="props.subTitle" class="subtitle">{{ props.subTitle }}</p>
 			<ul>
-				<li><a>men</a></li>
-				<li><a>women</a></li>
-				<li><a>boys</a></li>
-				<li><a>girls</a></li>
-				<li><a>baby</a></li>
-				<li><a>home</a></li>
+				<li v-for="(item, idx) in props.links" :key="idx">
+					<nuxt-link :to="item.src">{{ item.title }}</nuxt-link>
+				</li>
 			</ul>
 		</div>
 		<div class="video-pause-box" @click="toggleVideoPlay">
@@ -22,6 +30,17 @@
 </template>
 
 <script setup>
+const props = defineProps({
+	videoSrc: null,
+	textImage: null,
+	title: null,
+	subTitle: null,
+	links: null,
+	bottom: false,
+	left: false,
+	right: false,
+});
+
 var videoPlaying = ref(true);
 
 const toggleVideoPlay = () => {
@@ -43,15 +62,40 @@ const toggleVideoPlay = () => {
 	.content {
 		position: absolute;
 		z-index: 999;
-		bottom: 30px;
-		width: 100%;
+		width: 40%;
 		display: flex;
 		flex-direction: column;
-		gap: 30px;
+		align-items: center;
+		gap: 20px;
+		&.side-bottom {
+			bottom: 30px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		&.side-right {
+			top: 50%;
+			right: 60px;
+			transform: translateY(-50%);
+		}
+		&.side-left {
+			top: 50%;
+			left: 60px;
+			transform: translateY(-50%);
+		}
+		.text-image {
+			width: 40%;
+		}
 		.title {
 			font-family: "Northwell Alt", cursive;
 			margin: 0;
 			font-size: 50px;
+			color: #ffffff;
+			text-align: center;
+		}
+		.subtitle {
+			margin: 0;
+			font-family: "LeJeuneDeck-Regular", Times, serif;
+			font-size: 1.225rem;
 			color: #ffffff;
 			text-align: center;
 		}
@@ -65,8 +109,15 @@ const toggleVideoPlay = () => {
 			li {
 				a {
 					color: #ffffff;
-					text-transform: uppercase;
 					font-size: 10px;
+					text-transform: uppercase;
+					text-decoration: underline;
+					text-underline-offset: 9px;
+					text-decoration-color: #ffffff;
+					&:hover {
+						text-underline-offset: 15px;
+						transition: 250ms ease-in-out;
+					}
 				}
 			}
 		}

@@ -1,43 +1,26 @@
 <template>
-	<div
-		class="slider-content"
-		:class="{
-			'h-min-60': props.isBackgroundImage,
-			'h-min-20': !props.isBackgroundImage,
-		}"
-	>
-		<div class="header">
-			<h1
-				v-if="props.title"
-				class="title"
-				:class="{
-					'text-basic': !props.isBackgroundImage,
-					'text-white': props.isBackgroundImage,
-				}"
-			>
-				{{ props.title }}
-			</h1>
-			<p
-				v-if="props.subTitle"
-				class="subtitle"
-				:class="{
-					'text-basic': !props.isBackgroundImage,
-					'text-white': props.isBackgroundImage,
-				}"
-			>
-				{{ props.subTitle }}
-			</p>
-			<a v-if="props.exploreLink" class="explore-link">explore now</a>
-		</div>
-		<div v-if="props.isBackgroundImage" class="banner">
-			<img src="/images/slider-bg.jpg" alt="slider-bg" />
-		</div>
+	<div class="slider-content">
 		<carousel
-			:per-page="3"
+			:per-page="props?.perPage"
 			:mouse-drag="true"
-			:navigationEnabled="true"
 			:paginationEnabled="false"
 		>
+			<slide class="cs-slider"
+				><div class="slider-image">
+					<img src="/images/slider/slider2.jpg" />
+				</div>
+				<div class="content">
+					<h2 class="title">Our Favourites</h2>
+					<ul>
+						<li><a>men</a></li>
+						<li><a>women</a></li>
+						<li><a>boys</a></li>
+						<li><a>girls</a></li>
+						<li><a>baby</a></li>
+						<li><a>home</a></li>
+					</ul>
+				</div></slide
+			>
 			<slide class="cs-slider"
 				><div class="slider-image">
 					<img src="/images/slider/slider1.jpg" />
@@ -72,6 +55,22 @@
 			>
 			<slide class="cs-slider"
 				><div class="slider-image">
+					<img src="/images/slider/slider2.jpg" />
+				</div>
+				<div class="content">
+					<h2 class="title">Our Favourites</h2>
+					<ul>
+						<li><a>men</a></li>
+						<li><a>women</a></li>
+						<li><a>boys</a></li>
+						<li><a>girls</a></li>
+						<li><a>baby</a></li>
+						<li><a>home</a></li>
+					</ul>
+				</div></slide
+			>
+			<slide class="cs-slider"
+				><div class="slider-image">
 					<img src="/images/slider/slider3.jpg" />
 				</div>
 				<div class="content">
@@ -87,10 +86,7 @@
 </template>
 <script setup>
 const props = defineProps({
-	isBackgroundImage: true,
-	title: null,
-	subTitle: null,
-	exploreLink: null,
+	perPage: null,
 });
 </script>
 
@@ -100,20 +96,14 @@ const props = defineProps({
 	position: relative;
 	display: flex;
 	flex-direction: row;
-	align-items: center;
-	&.h-min-60 {
-		min-height: 60em;
-	}
-	&.h-min-20 {
-		min-height: 20em;
-	}
-
+	min-height: 30em;
 	.header {
 		width: 60em;
 		padding: 10px 40px;
 		z-index: 999;
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		gap: 10px;
 		.title {
 			font-family: "Northwell Alt", cursive;
@@ -127,26 +117,11 @@ const props = defineProps({
 			text-align: center;
 			color: #ffffff;
 		}
-		.subtitle {
-			font-family: "LeJeuneDeck-Regular", Times, serif;
-			font-size: 1.425rem;
-			color: #ffffff;
-			text-align: center;
-		}
 		.explore-link {
 			text-transform: uppercase;
 			font-size: 9px;
 			text-align: center;
 			color: #ffffff;
-			text-decoration: underline;
-			text-underline-offset: 9px;
-			text-decoration-color: #ffffff;
-		}
-		.text-white {
-			color: #ffffff;
-		}
-		.text-basic {
-			color: #041e3a;
 		}
 	}
 	.banner {
