@@ -1,15 +1,8 @@
 <template>
 	<div>
 		<div class="slider-box">
-			<h2 class="title">Men: Shop by Category</h2>
+			<h2 class="title">Women: Shop by Category</h2>
 			<CustomSubCategorySlider :perPage="4"></CustomSubCategorySlider>
-		</div>
-		<div class="mt-60">
-			<CustomSlider
-				:isBackgroundImage="true"
-				:title="'Gifts for Him'"
-				:subTitle="'Surprise him with presents he’ll cherish'"
-			/>
 		</div>
 		<VideoBanner
 			:videoSrc="'/videos/video-banner-walk.mp4'"
@@ -19,12 +12,30 @@
 			:right="true"
 			class="mt-60"
 		/>
-		<ClassicStyle class="mt-60" />
 		<div class="mt-60">
 			<CustomSlider
-				:isBackgroundImage="false"
-				:title="'More to Explore'"
-				:subTitle="'Discover our curated edits and seasonal collections'"
+				:backgroundImage="'/images/slider-bg-blur.jpg'"
+				:isBackgroundImage="true"
+				:title="'Gifts for Him'"
+				:subTitle="'Surprise him with presents he’ll cherish'"
+			/>
+		</div>
+		<div class="mt-60">
+			<HalfBackgroundCustomSlider
+				:headerLogo="'/images/rl_collection_white_logo.svg'"
+				:backgroundImage="'/images/half-bg.jpg'"
+				:isBackgroundImage="true"
+				:title="'Gifts for Him'"
+				:subTitle="'Surprise him with presents he’ll cherish'"
+			/>
+		</div>
+		<div class="mt-60">
+			<HalfBackgroundCustomSlider
+				:headerLogo="'/images/lauren_ralph_lauren_logo_white.svg'"
+				:backgroundImage="'/images/half-bg-1.jpg'"
+				:isBackgroundImage="true"
+				:title="'Gifts for Him'"
+				:subTitle="'Surprise him with presents he’ll cherish'"
 			/>
 		</div>
 	</div>

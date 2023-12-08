@@ -1,7 +1,11 @@
 <template>
 	<div>
 		<HeroBanner />
-		<CustomSlider :title="'asdasd'" :exploreLink="true" />
+		<CustomSlider
+			:backgroundImage="'/images/slider-bg.jpg'"
+			:title="'asdasd'"
+			:exploreLink="true"
+		/>
 		<VideoBanner
 			:videoSrc="'/videos/video_banner.mp4'"
 			:title="'Personalised Gifts'"
@@ -19,7 +23,6 @@
 		<VideoBannerPolo class="mt-60" />
 		<SinglePack class="mt-60" />
 		<ExplorePack class="mt-60" />
-		<FooterMainFooter class="mt-60" />
 	</div>
 </template>
 
