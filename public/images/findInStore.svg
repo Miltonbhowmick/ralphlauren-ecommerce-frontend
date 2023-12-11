@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="12px" viewBox="0 0 9 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/Pin</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.0-M_Quick-Shop" transform="translate(-196.000000, -792.000000)">
+            <g id="Details" transform="translate(0.000000, 569.000000)">
+                <g id="Links" transform="translate(68.000000, 220.000000)">
+                    <g id="Find-in-store" transform="translate(129.000000, 2.000000)">
+                        <g id="Icons/Pin" transform="translate(0.000000, 2.000000)">
+                            <g id="Group">
+                                <g id="Group-2">
+                                    <path d="M7.25887954,3.62943977 C7.25887954,1.62495553 5.633924,6.08224544e-14 3.62943977,6.08224544e-14 C1.62495553,6.08224544e-14 1.21644909e-13,1.62495553 1.21644909e-13,3.62943977" id="Oval-Copy" stroke="#979797" stroke-width="0.8" fill="#979797"></path>
+                                    <path d="M1.21644909e-13,3.62943977 C1.21644909e-13,5.44415965 1.20981326,7.4853377 3.62943977,9.75297389 C6.04906628,7.4853377 7.25887954,5.44415965 7.25887954,3.62943977" id="Path-2" stroke="#979797" stroke-width="0.8" fill="#979797"></path>
+                                    <circle id="Oval" fill="#FFFFFF" cx="3.62943977" cy="3.62943977" r="1.81471988"></circle>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

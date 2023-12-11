@@ -146,7 +146,7 @@ const toggleVideoPlay = () => {
 		align-items: center;
 		gap: 15px;
 		.slider-image {
-			width: 70%;
+			width: 50%;
 			display: flex;
 			justify-content: center;
 		}

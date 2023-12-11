@@ -14,6 +14,7 @@
 		/>
 		<div class="mt-60">
 			<CustomSlider
+				:headlineBlack="true"
 				:backgroundImage="'/images/slider-bg-blur.jpg'"
 				:isBackgroundImage="true"
 				:title="'Gifts for Him'"
@@ -36,6 +37,15 @@
 				:isBackgroundImage="true"
 				:title="'Gifts for Him'"
 				:subTitle="'Surprise him with presents he’ll cherish'"
+			/>
+		</div>
+		<div class="mt-60">
+			<CustomSlider
+				:headlineBlack="true"
+				:backgroundImage="'/images/bg-light.jpg'"
+				:isBackgroundImage="true"
+				:title="'More to Explore'"
+				:subTitle="'Discover our curated edits and seasonal collections'"
 			/>
 		</div>
 	</div>

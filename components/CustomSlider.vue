@@ -11,8 +11,8 @@
 				v-if="props.title"
 				class="title"
 				:class="{
-					'text-basic': !props.isBackgroundImage,
-					'text-white': props.isBackgroundImage,
+					'text-basic': props.headlineBlack,
+					'text-white': !props.headlineBlack,
 				}"
 			>
 				{{ props.title }}
@@ -21,8 +21,8 @@
 				v-if="props.subTitle"
 				class="subtitle"
 				:class="{
-					'text-basic': !props.isBackgroundImage,
-					'text-white': props.isBackgroundImage,
+					'text-basic': props.headlineBlack,
+					'text-white': !props.headlineBlack,
 				}"
 			>
 				{{ props.subTitle }}
@@ -87,6 +87,7 @@
 </template>
 <script setup>
 const props = defineProps({
+	headlineBlack: true,
 	isBackgroundImage: true,
 	backgroundImage: null,
 	title: null,

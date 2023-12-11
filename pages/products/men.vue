@@ -22,6 +22,7 @@
 		<ClassicStyle class="mt-60" />
 		<div class="mt-60">
 			<CustomSlider
+				:headlineBlack="true"
 				:isBackgroundImage="false"
 				:title="'More to Explore'"
 				:subTitle="'Discover our curated edits and seasonal collections'"
