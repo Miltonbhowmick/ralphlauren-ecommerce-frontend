@@ -43,6 +43,7 @@
 		:title="'Seasonal Polo Bears'"
 		class="mt-60"
 	/>
+	<VideeBubbleImageSlider class="mt-60" />
 
 	<SidebarProductDetail
 		v-if="showSidebarDetail"

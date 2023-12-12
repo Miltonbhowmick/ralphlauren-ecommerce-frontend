@@ -53,6 +53,9 @@ const toggleVideoPlay = () => {
 		align-items: center;
 		.video-box {
 			position: relative;
+			.video {
+				width: 80%;
+			}
 			.video-pause-box {
 				position: absolute;
 				left: 30px;
@@ -91,7 +94,7 @@ const toggleVideoPlay = () => {
 		.slider-box {
 			width: 45%;
 			.slide {
-				width: 468px;
+				width: 80%;
 			}
 		}
 	}

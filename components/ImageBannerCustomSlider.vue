@@ -160,16 +160,14 @@ const props = defineProps({
 		}
 	}
 	.cs-slider {
-		position: relative;
-		height: 430px;
 		width: 300px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
 		.slider-image {
 			margin: 5px;
 		}
 		.content {
-			position: absolute;
-			bottom: 25px;
-			width: 100%;
 			display: flex;
 			flex-direction: column;
 			gap: 10px;
