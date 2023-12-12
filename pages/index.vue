@@ -2,6 +2,7 @@
 	<div>
 		<HeroBanner />
 		<CustomSlider
+			:headlineBlack="true"
 			:backgroundImage="'/images/slider-bg.jpg'"
 			:title="'asdasd'"
 			:exploreLink="true"
@@ -17,8 +18,8 @@
 			:bottom="true"
 			class="mt-60"
 		/>
-		<GiftPack class="mt-60" />
-		<HolidayPack class="mt-60" />
+		<VideeBubbleImageSlider class="mt-60" />
+		<HolidayPack :backgroundImage="bgGroup" class="mt-60" />
 		<HallFamePack class="mt-60" />
 		<VideoBannerPolo class="mt-60" />
 		<SinglePack class="mt-60" />
@@ -26,7 +27,9 @@
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+import bgGroup from "~/assets/images/bg-group.jpg";
+</script>
 
 <style scoped lang="scss">
 .mt-60 {

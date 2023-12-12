@@ -33,6 +33,16 @@
 	<div class="mt-60">
 		<ProductGellary @openProductSidebar="openSidebarDetail" />
 	</div>
+	<VideeBubbleImageSlider class="mt-60" />
+	<HolidayPack :backgroundImage="holidayPackBgImage" class="mt-60" />
+
+	<ImageBannerCustomSlider
+		:headlineBlack="false"
+		:backgroundImage="'/images/image-slider-bg.jpg'"
+		:isBackgroundImage="true"
+		:title="'Seasonal Polo Bears'"
+		class="mt-60"
+	/>
 
 	<SidebarProductDetail
 		v-if="showSidebarDetail"
@@ -41,7 +51,9 @@
 </template>
 
 <script setup>
-const showSidebarDetail = ref(true);
+import holidayPackBgImage from "~/assets/images/bg-group1.jpg";
+
+const showSidebarDetail = ref(false);
 
 const openSidebarDetail = () => {
 	showSidebarDetail.value = true;

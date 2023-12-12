@@ -14,7 +14,7 @@
 		/>
 		<div class="mt-60">
 			<CustomSlider
-				:headlineBlack="true"
+				:headlineBlack="false"
 				:backgroundImage="'/images/slider-bg-blur.jpg'"
 				:isBackgroundImage="true"
 				:title="'Gifts for Him'"

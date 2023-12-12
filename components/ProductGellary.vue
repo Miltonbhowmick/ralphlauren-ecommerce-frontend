@@ -50,6 +50,7 @@ const openSidebarModal = () => {
 .product-gellary {
 	background-size: cover;
 	background-repeat: no-repeat;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;

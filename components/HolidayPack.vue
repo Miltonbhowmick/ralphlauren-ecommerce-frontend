@@ -2,7 +2,7 @@
 	<div
 		class="holiday-pack-box"
 		:style="{
-			backgroundImage: `url(${bgGroup})`,
+			backgroundImage: `url(${props?.backgroundImage})`,
 		}"
 	>
 		<div class="content">
@@ -24,7 +24,11 @@
 </template>
 
 <script setup>
-import bgGroup from "~/assets/images/bg-group.jpg";
+// import bgGroup from "~/assets/images/bg-group.jpg";
+
+const props = defineProps({
+	backgroundImage: null,
+});
 </script>
 
 <style scoped lang="scss">

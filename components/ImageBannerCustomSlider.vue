@@ -32,6 +32,10 @@
 		<div v-if="props.isBackgroundImage" class="banner">
 			<img :src="props.backgroundImage" alt="slider-bg" />
 		</div>
+		<div class="mini-hero-banner">
+			<div class="image"><img src="/images/kids-smile.jpg" /></div>
+		</div>
+
 		<carousel
 			:per-page="3"
 			:mouse-drag="true"
@@ -40,45 +44,34 @@
 		>
 			<slide class="cs-slider"
 				><div class="slider-image">
-					<img src="/images/slider/slider1.jpg" />
+					<img src="/images/person-hat.jpg" />
 				</div>
 				<div class="content">
-					<h2 class="title">Polo Bear Shop</h2>
+					<h2 class="title">Polo Bear Wool-Blend Jumper</h2>
 					<ul>
-						<li><a>men</a></li>
-						<li><a>women</a></li>
-						<li><a>boys</a></li>
-						<li><a>girls</a></li>
-						<li><a>baby</a></li>
-						<li><a>home</a></li>
+						<li><a>shop now</a></li>
 					</ul>
 				</div>
 			</slide>
 			<slide class="cs-slider"
 				><div class="slider-image">
-					<img src="/images/slider/slider2.jpg" />
+					<img src="/images/kids-hat.jpg" />
 				</div>
 				<div class="content">
-					<h2 class="title">Our Favourites</h2>
+					<h2 class="title">Polo Bear Wool-Blend Jumper</h2>
 					<ul>
-						<li><a>men</a></li>
-						<li><a>women</a></li>
-						<li><a>boys</a></li>
-						<li><a>girls</a></li>
-						<li><a>baby</a></li>
-						<li><a>home</a></li>
+						<li><a>shop now</a></li>
 					</ul>
 				</div></slide
 			>
 			<slide class="cs-slider"
 				><div class="slider-image">
-					<img src="/images/slider/slider3.jpg" />
+					<img src="/images/kids-cute.jpg" />
 				</div>
 				<div class="content">
-					<h2 class="title">For the Host</h2>
+					<h2 class="title">Polo Bear Wool-Blend Jumper</h2>
 					<ul>
-						<li><a>shop</a></li>
-						<li><a>now</a></li>
+						<li><a>shop now</a></li>
 					</ul>
 				</div>
 			</slide>
@@ -99,10 +92,12 @@ const props = defineProps({
 <style scoped lang="scss">
 .slider-content {
 	margin-top: -4px;
+	padding: 30px 0;
 	position: relative;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
+	gap: 40px;
 	&.h-min-60 {
 		min-height: 60em;
 	}
@@ -118,14 +113,11 @@ const props = defineProps({
 		flex-direction: column;
 		gap: 10px;
 		.title {
-			font-family: "Northwell Alt", cursive;
+			font-family: "LeJeuneDeck-Regular", Times, serif;
 			font-weight: 100;
-			font-size: 6em;
-			line-height: 1.1em;
-			display: block;
-			letter-spacing: 0em;
-			text-transform: none;
-			margin: 0 auto;
+			font-size: 2.75em;
+			line-height: 1.052em;
+			letter-spacing: 0;
 			text-align: center;
 			color: #ffffff;
 		}
@@ -159,20 +151,34 @@ const props = defineProps({
 		height: 45rem;
 		width: 100%;
 	}
+	.mini-hero-banner {
+		z-index: 999;
+		display: flex;
+		justify-content: center;
+		.image {
+			width: 70%;
+		}
+	}
 	.cs-slider {
 		position: relative;
+		height: 430px;
+		width: 300px;
+		.slider-image {
+			margin: 5px;
+		}
 		.content {
 			position: absolute;
-			bottom: 50px;
+			bottom: 25px;
 			width: 100%;
 			display: flex;
 			flex-direction: column;
 			gap: 10px;
 			.title {
-				font-family: LeJeuneDeck-Regular, "Times New Roman", Times, serif;
+				font-family: "LeJeuneDeck-Regular";
 				margin: 0;
-				font-size: 30px;
-				color: #ffffff;
+				font-size: 15px;
+				font-weight: 400;
+				color: #041e3a;
 				text-align: center;
 			}
 			ul {
@@ -184,9 +190,12 @@ const props = defineProps({
 				gap: 20px;
 				li {
 					a {
-						color: #ffffff;
+						color: #041e3a;
 						text-transform: uppercase;
 						font-size: 9px;
+						text-decoration: underline;
+						text-underline-offset: 15px;
+						text-decoration-color: #041e3a;
 					}
 				}
 			}
@@ -195,6 +204,9 @@ const props = defineProps({
 }
 
 :deep(.VueCarousel-slide) {
-	margin: 10px;
+	// margin: 10px;
+}
+:deep(.VueCarousel) {
+	width: 77%;
 }
 </style>
