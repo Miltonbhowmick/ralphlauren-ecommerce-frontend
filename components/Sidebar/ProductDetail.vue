@@ -118,20 +118,26 @@ onBeforeUnmount(() => {
 		height: 100vh;
 		overflow-y: scroll;
 		background: #ffffff;
-		width: 50%;
+		width: 60%;
 		float: right;
 		.content {
 			position: relative;
 			display: flex;
 			gap: 10px;
 			.image-list {
+				display: flex;
+				flex-direction: column;
+				gap: 0;
+				.image {
+					flex-basis: 50%;
+				}
 			}
 			.info {
 				position: sticky;
 				top: 0;
 				align-self: flex-start;
-				margin-top: 40px;
-				padding: 0px 20px;
+				width: 480px;
+				padding: 60px 20px;
 				display: flex;
 				flex-direction: column;
 				justify-content: flex-start;
