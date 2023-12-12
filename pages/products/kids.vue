@@ -31,20 +31,23 @@
 		/>
 	</div>
 	<div class="mt-60">
-		<ProductGellary />
+		<ProductGellary @openProductSidebar="openSidebarDetail" />
 	</div>
 
 	<SidebarProductDetail
-		v-if="sidebarDetailOpen"
+		v-if="showSidebarDetail"
 		@hideModal="hideSidebarDetail"
 	/>
 </template>
 
 <script setup>
-const sidebarDetailOpen = ref(true);
+const showSidebarDetail = ref(true);
 
+const openSidebarDetail = () => {
+	showSidebarDetail.value = true;
+};
 const hideSidebarDetail = () => {
-	sidebarDetailOpen.value = false;
+	showSidebarDetail.value = false;
 };
 </script>
 
