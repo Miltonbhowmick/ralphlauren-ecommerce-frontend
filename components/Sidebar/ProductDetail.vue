@@ -1,6 +1,7 @@
 <template>
 	<div class="modal-overlay">
 		<div class="product-detail-sidebar">
+			<a class="close" @click="close">x</a>
 			<div class="content">
 				<div class="image-list">
 					<div class="image">
@@ -96,6 +97,12 @@
 </template>
 
 <script setup>
+const emit = defineEmits();
+
+const close = () => {
+	emit("hideModal");
+};
+
 onMounted(() => {
 	document.body.style.overflowY = "hidden";
 });
@@ -115,11 +122,24 @@ onBeforeUnmount(() => {
 	width: 100%;
 	background-color: rgba(0, 0, 0, 0.5);
 	.product-detail-sidebar {
+		position: relative;
 		height: 100vh;
 		overflow-y: scroll;
 		background: #ffffff;
 		width: 60%;
 		float: right;
+		.close {
+			position: absolute;
+			top: 12px;
+			right: 25px;
+			width: 10px;
+			height: 10px;
+			z-index: 99;
+			color: rgb(50, 50, 50);
+			font-size: 24px;
+			font-weight: 300;
+			cursor: pointer;
+		}
 		.content {
 			position: relative;
 			display: flex;

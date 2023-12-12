@@ -34,11 +34,18 @@
 		<ProductGellary />
 	</div>
 
-	<SidebarProductDetail v-if="sidebarDetailOpen" />
+	<SidebarProductDetail
+		v-if="sidebarDetailOpen"
+		@hideModal="hideSidebarDetail"
+	/>
 </template>
 
 <script setup>
 const sidebarDetailOpen = ref(true);
+
+const hideSidebarDetail = () => {
+	sidebarDetailOpen.value = false;
+};
 </script>
 
 <style scoped lang="scss">
