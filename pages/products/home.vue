@@ -7,29 +7,44 @@
 		:subTitle="'Signature collections and seasonal edits'"
 	/>
 	<SubCategoryBanner />
+	<VideoBanner :videoSrc="'/videos/home-video.mp4'" />
+	<HolidayPack
+		:backgroundImage="bgGroupImage"
+		:up="true"
+		:subTitle="'For the Holidays'"
+		:description="'Iconic dining collections for elegant entertaining and perfect gifts to celebrate the season'"
+	/>
+	<BundleCustomSlider
+		:backgroundImage="bgGroupImage2"
+		:left="true"
+		:subTitle="'Set the Table'"
+		:description="'Holiday heritage motifs and striking accents for seasonal celebrations'"
+	/>
+	<VideoBannerPolo
+		:videoSrc="'/videos/MartiniGlass-DSK.mp4'"
+		:subTitle="'The Langley Martini Glass'"
+		:description="'Crystal delicately cut with coin-edge detailing inspired by a classic Ralph Lauren watch'"
+		:right="true"
+	/>
+	<BundleCustomSlider
+		:backgroundImage="bgGroupImage2"
+		:left="true"
+		:subTitle="'For the Host'"
+		:description="'Elegant home gifts to make a thoughtful gesture'"
+	/>
 	<div class="mt-60">
-		<ProductGellary @openProductSidebar="openSidebarDetail" />
+		<CustomSlider
+			:headlineBlack="true"
+			:isBackgroundImage="false"
+			:title="'More to Explore'"
+			:subTitle="'Discover our curated edits and seasonal collections'"
+		/>
 	</div>
-	<VideeBubbleImageSlider class="mt-60" />
-	<HolidayPack :backgroundImage="holidayPackBgImage" class="mt-60" />
-
-	<ImageBannerCustomSlider
-		:headlineBlack="false"
-		:backgroundImage="'/images/image-slider-bg.jpg'"
-		:isBackgroundImage="true"
-		:title="'Seasonal Polo Bears'"
-		class="mt-60"
-	/>
-	<VideeBubbleImageSlider class="mt-60" />
-
-	<SidebarProductDetail
-		v-if="showSidebarDetail"
-		@hideModal="hideSidebarDetail"
-	/>
 </template>
 
 <script setup>
-import holidayPackBgImage from "~/assets/images/bg-group1.jpg";
+import bgGroupImage from "~/assets/images/bg-group2.jpg";
+import bgGroupImage2 from "~/assets/images/bg-group3.jpg";
 
 const showSidebarDetail = ref(false);
 

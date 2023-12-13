@@ -1,18 +1,12 @@
 <template>
 	<div
-		class="holiday-pack-box"
+		class="bundle-slider-box"
 		:style="{
 			backgroundImage: `url(${props?.backgroundImage})`,
 		}"
+		:class="{ 'flex-row': props.left, 'flex-row-reverse': props.right }"
 	>
-		<div
-			class="content"
-			:class="{
-				'side-left': props.left,
-				'side-right': props.right,
-				'side-up': props.up,
-			}"
-		>
+		<div class="header">
 			<h2 v-if="props.title" class="title">{{ props.title }}</h2>
 			<div v-if="props.companyLogo" class="company-logo">
 				<img :src="props.companyLogo" alt="company-logo" />
@@ -30,12 +24,15 @@
 				<li><a>home</a></li>
 			</ul>
 		</div>
+		<div class="slider-box">
+			<div class="slide">
+				<img src="/images/pack-slider/slider1.jpg" alt="slider-1" />
+			</div>
+		</div>
 	</div>
 </template>
 
 <script setup>
-// import bgGroup from "~/assets/images/bg-group.jpg";
-
 const props = defineProps({
 	title: null,
 	subTitle: null,
@@ -45,42 +42,33 @@ const props = defineProps({
 	companyLogo: null,
 	left: true,
 	right: false,
-	down: false,
-	up: false,
 });
 </script>
 
 <style scoped lang="scss">
-.holiday-pack-box {
+.bundle-slider-box {
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	width: 100%;
-	height: 800px;
 	position: relative;
-	.content {
-		position: absolute;
-		transform: translateY(-50%);
-		// padding: 100px 100px;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	padding: 50px 0;
+	&.flex-row {
+		flex-direction: row;
+	}
+	&.flex-row-reverse {
+		flex-direction: row-reverse;
+	}
+	.header {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		gap: 20px;
-		&.side-left {
-			top: 50%;
-			left: 90px;
-		}
-		&.side-right {
-			top: 50%;
-			right: 90px;
-		}
-		&.side-up {
-			top: 10px;
-			left: 50%;
-			transform: translateX(-50%);
-		}
-
+		width: 40%;
 		.title {
 			font-family: LeJeuneDeck-Regular, "Times New Roman", Times, serif;
 			margin: 0;
@@ -122,6 +110,16 @@ const props = defineProps({
 					font-size: 10px;
 				}
 			}
+		}
+	}
+	.slider-box {
+		width: 60%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.slide {
+			width: 400px;
+			height: 500px;
 		}
 	}
 }

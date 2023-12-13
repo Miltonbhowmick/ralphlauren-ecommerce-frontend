@@ -1,14 +1,25 @@
 <template>
 	<div class="video-banner-box">
 		<video autoplay muted loop id="bg-group-video" class="video">
-			<source src="/videos/video-banner-group.mp4" type="video/mp4" />
+			<source :src="props.videoSrc" type="video/mp4" />
 		</video>
-		<div class="content">
-			<h2 class="title">POLO</h2>
-			<div class="company-logo">
-				<img src="/images/company-logo.png" alt="company-logo" />
+		<div
+			class="content"
+			:class="{
+				'side-left': props?.left,
+				'side-right': props?.right,
+				'side-up': props?.up,
+				'side-down': props?.down,
+			}"
+		>
+			<h2 v-if="props.title" class="title">{{ props.title }}</h2>
+			<div v-if="props.companyLogo" class="company-logo">
+				<img :src="props.companyLogo" alt="company-logo" />
 			</div>
-			<h3 class="subtitle">Holiday Dressing</h3>
+			<h3 v-if="props.subTitle" class="subtitle">{{ props.subTitle }}</h3>
+			<p v-if="props.description" class="description">
+				{{ props.description }}
+			</p>
 			<ul>
 				<li><a>men</a></li>
 				<li><a>women</a></li>
@@ -26,6 +37,19 @@
 </template>
 
 <script setup>
+const props = defineProps({
+	title: null,
+	subTitle: null,
+	description: null,
+	linkList: null,
+	videoSrc: null,
+	companyLogo: null,
+	left: true,
+	right: false,
+	down: false,
+	up: false,
+});
+
 var videoPlaying = ref(true);
 
 const toggleVideoPlay = () => {
@@ -46,14 +70,32 @@ const toggleVideoPlay = () => {
 	}
 	.content {
 		position: absolute;
-		bottom: 30px;
-		left: 50%;
-		transform: translateX(-50%);
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		gap: 20px;
+		width: 45%;
+		&.side-left {
+			top: 50%;
+			transform: translateY(-50%);
+			left: 20px;
+		}
+		&.side-right {
+			top: 50%;
+			transform: translateY(-50%);
+			right: 10px;
+		}
+		&.side-up {
+			top: 10px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		&.side-down {
+			bottom: 30px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
 		.title {
 			font-family: LeJeuneDeck-Regular, "Times New Roman", Times, serif;
 			margin: 0;
@@ -65,6 +107,16 @@ const toggleVideoPlay = () => {
 			font-family: LeJeuneDeck-Regular, "Times New Roman", Times, serif;
 			margin: 0;
 			font-size: 50px;
+			font-weight: 300;
+			color: #ffffff;
+			text-align: center;
+			width: 70%;
+		}
+		.description {
+			width: 70%;
+			font-family: LeJeuneDeck-Regular, "Times New Roman", Times, serif;
+			margin: 0;
+			font-size: 20px;
 			font-weight: 300;
 			color: #ffffff;
 			text-align: center;

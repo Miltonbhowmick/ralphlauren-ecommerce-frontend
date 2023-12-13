@@ -18,10 +18,24 @@
 			:bottom="true"
 			class="mt-60"
 		/>
-		<VideeBubbleImageSlider class="mt-60" />
-		<HolidayPack :backgroundImage="bgGroup" class="mt-60" />
+		<VideoBubbleImageSlider class="mt-60" />
+		<HolidayPack
+			:backgroundImage="bgGroup"
+			:left="true"
+			:title="'POLO'"
+			:subTitle="'Holiday Dressing'"
+			:companyLogo="'/images/company-logo.png'"
+			class="mt-60"
+		/>
 		<HallFamePack class="mt-60" />
-		<VideoBannerPolo class="mt-60" />
+		<VideoBannerPolo
+			:title="'POLO'"
+			:subTitle="'Holiday Dressing'"
+			:videoSrc="'/videos/video-banner-group.mp4'"
+			:companyLogo="'/images/company-logo.png'"
+			:down="true"
+			class="mt-60"
+		/>
 		<SinglePack class="mt-60" />
 		<ExplorePack class="mt-60" />
 	</div>

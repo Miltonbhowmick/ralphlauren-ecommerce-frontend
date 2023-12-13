@@ -33,7 +33,7 @@
 	<div class="mt-60">
 		<ProductGellary @openProductSidebar="openSidebarDetail" />
 	</div>
-	<VideeBubbleImageSlider class="mt-60" />
+	<VideoBubbleImageSlider class="mt-60" />
 	<HolidayPack :backgroundImage="holidayPackBgImage" class="mt-60" />
 
 	<ImageBannerCustomSlider
@@ -43,7 +43,7 @@
 		:title="'Seasonal Polo Bears'"
 		class="mt-60"
 	/>
-	<VideeBubbleImageSlider class="mt-60" />
+	<VideoBubbleImageSlider class="mt-60" />
 
 	<SidebarProductDetail
 		v-if="showSidebarDetail"
