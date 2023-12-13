@@ -44,7 +44,7 @@
 				</div>
 				<div class="content">
 					<h2 class="title">Polo Bear Shop</h2>
-					<ul>
+					<ul class="link-list">
 						<li><a>men</a></li>
 						<li><a>women</a></li>
 						<li><a>boys</a></li>
@@ -60,7 +60,7 @@
 				</div>
 				<div class="content">
 					<h2 class="title">Our Favourites</h2>
-					<ul>
+					<ul class="link-list">
 						<li><a>men</a></li>
 						<li><a>women</a></li>
 						<li><a>boys</a></li>
@@ -76,7 +76,7 @@
 				</div>
 				<div class="content">
 					<h2 class="title">For the Host</h2>
-					<ul>
+					<ul class="link-list">
 						<li><a>shop</a></li>
 						<li><a>now</a></li>
 					</ul>
