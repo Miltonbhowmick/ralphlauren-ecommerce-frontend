@@ -11,6 +11,8 @@
 				'side-left': props.left,
 				'side-right': props.right,
 				'side-up': props.up,
+				'side-down': props.down,
+				'side-middle': props.middle,
 			}"
 		>
 			<h2 v-if="props.title" class="title">{{ props.title }}</h2>
@@ -47,6 +49,7 @@ const props = defineProps({
 	right: false,
 	down: false,
 	up: false,
+	middle: false,
 });
 </script>
 
@@ -69,7 +72,7 @@ const props = defineProps({
 		gap: 20px;
 		&.side-left {
 			top: 50%;
-			left: 90px;
+			left: 60px;
 		}
 		&.side-right {
 			top: 50%;
@@ -79,6 +82,16 @@ const props = defineProps({
 			top: 10px;
 			left: 50%;
 			transform: translateX(-50%);
+		}
+		&.side-down {
+			bottom: 30px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		&.side-middle {
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
 		}
 
 		.title {
@@ -120,6 +133,9 @@ const props = defineProps({
 					color: #ffffff;
 					text-transform: uppercase;
 					font-size: 10px;
+					text-decoration: underline;
+					text-underline-offset: 9px;
+					text-decoration-color: #ffffff;
 				}
 			}
 		}

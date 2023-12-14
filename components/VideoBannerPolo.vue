@@ -136,6 +136,9 @@ const toggleVideoPlay = () => {
 					color: #ffffff;
 					text-transform: uppercase;
 					font-size: 10px;
+					text-decoration: underline;
+					text-underline-offset: 9px;
+					text-decoration-color: #ffffff;
 				}
 			}
 		}
