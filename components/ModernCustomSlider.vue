@@ -152,6 +152,7 @@ const props = defineProps({
 	smallBigTitle: null,
 	description: null,
 	exploreLink: null,
+	sliderList: null,
 });
 </script>
 
@@ -224,12 +225,12 @@ const props = defineProps({
 			line-height: 1.556em;
 		}
 		.explore-link {
+			margin-top: 20px;
 			text-transform: uppercase;
 			font-size: 9px;
-			text-align: center;
 			color: #ffffff;
 			text-decoration: underline;
-			text-underline-offset: 9px;
+			text-underline-offset: 15px;
 			text-decoration-color: #ffffff;
 		}
 		.text-white {
@@ -317,6 +318,9 @@ const props = defineProps({
 }
 
 :deep(.VueCarousel-slide) {
-	margin: 10px;
+	margin: 8px;
+}
+:deep(.VueCarousel-wrapper) {
+	width: 85%;
 }
 </style>
