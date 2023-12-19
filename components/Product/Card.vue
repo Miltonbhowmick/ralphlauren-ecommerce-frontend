@@ -4,7 +4,7 @@
 			<carousel
 				:per-page="1"
 				:mouse-drag="true"
-				:navigationEnabled="true"
+				:navigationEnabled="false"
 				:paginationEnabled="false"
 			>
 				<slide class="cs-slider"
@@ -87,10 +87,9 @@ const getColor = (value) => {
 
 <style scoped lang="scss">
 .product-card {
-	width: 400px;
+	width: 415px;
 	height: 680px;
-	padding: 10px;
-	border: 1px solid black;
+	// padding: 5px;
 	.slider-box {
 		position: relative;
 
