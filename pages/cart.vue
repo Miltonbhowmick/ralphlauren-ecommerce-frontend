@@ -9,6 +9,17 @@
 			<a class="has-bg">continue shopping</a>
 		</div>
 	</div>
+	<div class="non-authenticate">
+		<div class="content">
+			<h2 class="title">Create An Account</h2>
+			<p class="caption">
+				Signing up for an account is quick and gives you access to exclusive
+				offers, news, order history and faster checkout.
+				<a>Create an Account</a> or
+				<a>Sign In</a>
+			</p>
+		</div>
+	</div>
 </template>
 
 <script setup></script>
@@ -58,6 +69,32 @@
 			&.has-bg {
 				background-color: #041e3a;
 				color: #fff;
+			}
+		}
+	}
+}
+.non-authenticate {
+	margin-top: 60px;
+	display: flex;
+	justify-content: center;
+	.content {
+		width: 60%;
+		background-color: #f2f3f5;
+		padding: 35px 30px;
+		.title {
+			margin: 0;
+			color: #996e40;
+			font-size: 1.25rem;
+			font-weight: 400;
+			font-family: "LeJeuneDeck-Regular", Times, serif;
+		}
+		.caption {
+			color: #041e3a;
+			font-family: "Founders Grotesk text Regular", Helvetica, Arial, sans-serif;
+			font-size: 0.7125rem;
+			letter-spacing: 0.03562rem;
+			a {
+				text-decoration: underline;
 			}
 		}
 	}
