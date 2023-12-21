@@ -103,6 +103,16 @@
 				</div>
 			</div>
 		</div>
+		<div class="like-products">
+			<div class="title">You May Also Like</div>
+			<LadderLookCustomSlider :itemList="ladderSliderProducts" />
+		</div>
+		<ModernCustomSlider
+			:headlineBlack="true"
+			:isBackgroundImage="true"
+			:smallBigTitle="{ small: 'discover', big: 'Women’s Brands' }"
+			:exploreLink="true"
+		/>
 	</div>
 </template>
 <script setup>
@@ -130,6 +140,81 @@ var productSizes = [
 	{
 		name: "XXL",
 		active: true,
+	},
+];
+
+var ladderSliderProducts = [
+	{
+		imageSrc: "/images/full-jacket.jpg",
+		brandName: "Polo Ralph Lauren",
+		productTitle: "The Colden Packable Jacket",
+		price: {
+			low: "€ 299,95",
+			high: "€ 349,00",
+		},
+	},
+	{
+		imageSrc: "/images/full-jacket.jpg",
+		brandName: "Polo Ralph Lauren",
+		productTitle: "The Colden Packable Jacket",
+		price: {
+			low: "€ 299,95",
+			high: "€ 349,00",
+		},
+	},
+	{
+		imageSrc: "/images/full-jacket.jpg",
+		brandName: "Polo Ralph Lauren",
+		productTitle: "The Colden Packable Jacket",
+		price: {
+			low: "€ 299,95",
+			high: "€ 349,00",
+		},
+	},
+	{
+		imageSrc: "/images/full-jacket.jpg",
+		brandName: "Polo Ralph Lauren",
+		productTitle: "The Colden Packable Jacket",
+		price: {
+			low: "€ 299,95",
+			high: "€ 349,00",
+		},
+	},
+	{
+		imageSrc: "/images/full-jacket.jpg",
+		brandName: "Polo Ralph Lauren",
+		productTitle: "The Colden Packable Jacket",
+		price: {
+			low: "€ 299,95",
+			high: "€ 349,00",
+		},
+	},
+	{
+		imageSrc: "/images/full-jacket.jpg",
+		brandName: "Polo Ralph Lauren",
+		productTitle: "The Colden Packable Jacket",
+		price: {
+			low: "€ 299,95",
+			high: "€ 349,00",
+		},
+	},
+	{
+		imageSrc: "/images/full-jacket.jpg",
+		brandName: "Polo Ralph Lauren",
+		productTitle: "The Colden Packable Jacket",
+		price: {
+			low: "€ 299,95",
+			high: "€ 349,00",
+		},
+	},
+	{
+		imageSrc: "/images/full-jacket.jpg",
+		brandName: "Polo Ralph Lauren",
+		productTitle: "The Colden Packable Jacket",
+		price: {
+			low: "€ 299,95",
+			high: "€ 349,00",
+		},
 	},
 ];
 </script>
@@ -321,6 +406,22 @@ var productSizes = [
 					text-align: center;
 				}
 			}
+		}
+	}
+	.like-products {
+		margin-top: 60px;
+		padding: 0 50px;
+		.title {
+			width: 100%;
+			font-family: RL_DroidKufi, LeJeuneDeck-Regular, Times New Roman, Times,
+				serif;
+			font-weight: 400;
+			font-style: normal;
+			color: #041e3a;
+			font-size: 1.5rem;
+			letter-spacing: 0.05rem;
+			margin-bottom: 30px;
+			text-align: center;
 		}
 	}
 }
