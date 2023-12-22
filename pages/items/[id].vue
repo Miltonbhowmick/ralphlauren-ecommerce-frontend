@@ -110,7 +110,7 @@
 		<ModernCustomSlider
 			:headlineBlack="true"
 			:isBackgroundImage="true"
-			:smallBigTitle="{ small: 'discover', big: 'Women’s Brands' }"
+			:smallBigTitle="{ small: 'Recently', big: 'Viewed' }"
 			:exploreLink="true"
 		/>
 	</div>
