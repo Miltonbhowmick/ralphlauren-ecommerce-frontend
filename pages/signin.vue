@@ -31,7 +31,15 @@
 		</div>
 		<div class="form-box">
 			<div class="account-content">
-				<div class="toggle-buttons"><a>Sign In</a><a>Create Account</a></div>
+				<div class="toggle-buttons">
+					<a @click="toggleAuthType = true" :class="{ active: toggleAuthType }"
+						>Sign In</a
+					><a
+						@click="toggleAuthType = false"
+						:class="{ active: !toggleAuthType }"
+						>Create Account</a
+					>
+				</div>
 				<div class="info">
 					<div class="social-links">
 						<a>
@@ -60,7 +68,7 @@
 								experience</label
 							>
 						</div>
-						<div class="checkbox-group">
+						<div v-if="toggleAuthType == false" class="checkbox-group">
 							<input type="checkbox" />
 							<label class="label"
 								>Tick here if you would like to receive e-mails about latest
@@ -72,29 +80,29 @@
 						<div class="input-group">
 							<input type="email" placeholder="email address*" />
 						</div>
-						<div class="input-group">
+						<div v-if="toggleAuthType == false" class="input-group">
 							<input type="email" placeholder="confirm email address" />
 						</div>
 						<div class="input-group">
 							<input type="password" placeholder="password*" />
 						</div>
-						<div class="input-group">
+						<div v-if="toggleAuthType == false" class="input-group">
 							<input type="password" placeholder="re-enter password*" />
 						</div>
-						<div class="input-group">
+						<div v-if="toggleAuthType == false" class="input-group">
 							<input type="text" placeholder="name" />
 						</div>
-						<div class="input-group">
+						<div v-if="toggleAuthType == false" class="input-group">
 							<input type="text" placeholder="surname" />
 						</div>
-						<button>sign in</button>
-						<button>create account</button>
+						<button v-if="toggleAuthType == true">sign in</button>
+						<button v-if="toggleAuthType == false">create account</button>
 					</form>
 				</div>
 			</div>
 		</div>
 		<div class="order-box">
-			<div class="order-track">
+			<div v-if="toggleAuthType == true" class="order-track">
 				<h3>Check Order</h3>
 				<div class="login-box-content">
 					<p>
@@ -115,7 +123,7 @@
 					</form>
 				</div>
 			</div>
-			<div class="benefits">
+			<div v-else-if="toggleAuthType == false" class="benefits">
 				<div class="content-assets">
 					<h3>Benefits of Creating an Account</h3>
 					<h4>News and Exclusive Offers!</h4>
@@ -140,7 +148,11 @@
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+// toggleAuthType is true - active signin button
+// toggleAuthType is false - active create signup button
+var toggleAuthType = ref(true);
+</script>
 
 <style scoped lang="scss">
 .login-content {
@@ -235,7 +247,12 @@
 					font-family: RL_DroidKufi, LeJeuneDeck-Regular, Times New Roman, Times,
 						serif;
 					color: #041e3a;
-					font-size: 1rem;
+					font-size: 1.4rem;
+					cursor: pointer;
+					&.active {
+						background-color: #fff;
+						box-shadow: none;
+					}
 				}
 			}
 			.or-bar {
@@ -278,6 +295,7 @@
 							Lucida Console, Arial, Helvetica, sans-serif;
 						font-style: Normal;
 						font-weight: 300;
+						line-height: 16px;
 					}
 				}
 				.input-group {
