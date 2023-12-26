@@ -10,9 +10,9 @@
 			<img :src="props.backgroundImage" alt="slider-bg" />
 		</div>
 		<carousel
-			:per-page="3"
+			:per-page="perSlider"
 			:mouse-drag="true"
-			:navigationEnabled="true"
+			:navigationEnabled="false"
 			:paginationEnabled="false"
 			:autoplay="true"
 			:loop="true"
@@ -70,6 +70,7 @@
 </template>
 <script setup>
 const props = defineProps({
+	perSlider: 3,
 	headlineBlack: true,
 	isBackgroundImage: true,
 	backgroundImage: null,

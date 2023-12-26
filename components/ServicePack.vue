@@ -7,27 +7,19 @@
 	>
 		<h3 class="title">Gift Services</h3>
 		<div class="service-list">
-			<div class="item">
-				<h5 class="name">Gift Boxing</h5>
-				<p class="description">
-					For a festive finishing touch, select our signature gift boxing at
-					checkout
-				</p>
-			</div>
-			<div class="item">
-				<h5 class="name">E-Gift Cards</h5>
-				<p class="description">
-					It’s a gift that always fits: buy now and schedule delivery for your
-					preferred date
-				</p>
+			<div
+				v-for="(obj, idx) in serviceList"
+				:key="'service_' + idx"
+				class="item"
+			>
+				<h5 class="name">{{ obj.name }}</h5>
+				<p class="description">{{ obj.description }}</p>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script setup>
-// import bgGroup from "~/assets/images/bg-group.jpg";
-
 const props = defineProps({
 	title: null,
 	subTitle: null,

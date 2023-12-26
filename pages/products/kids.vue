@@ -34,7 +34,16 @@
 		<ProductGellary @openProductSidebar="openSidebarDetail" />
 	</div>
 	<VideoBubbleImageSlider class="mt-60" />
-	<HolidayPack :backgroundImage="holidayPackBgImage" class="mt-60" />
+	<HolidayPack
+		:backgroundImage="holidayPackBgImage"
+		class="mt-60"
+		:linkList="[
+			{ name: 'men' },
+			{ name: 'women' },
+			{ name: 'boys' },
+			{ name: 'girls' },
+		]"
+	/>
 
 	<ImageBannerCustomSlider
 		:headlineBlack="false"

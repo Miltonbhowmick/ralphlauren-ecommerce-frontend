@@ -13,6 +13,12 @@
 		:up="true"
 		:subTitle="'For the Holidays'"
 		:description="'Iconic dining collections for elegant entertaining and perfect gifts to celebrate the season'"
+		:linkList="[
+			{ name: 'men' },
+			{ name: 'women' },
+			{ name: 'boys' },
+			{ name: 'girls' },
+		]"
 	/>
 	<BundleCustomSlider
 		:backgroundImage="bgGroupImage2"
@@ -23,6 +29,7 @@
 	<VideoBannerPolo
 		:videoSrc="'/videos/MartiniGlass-DSK.mp4'"
 		:subTitle="'The Langley Martini Glass'"
+		:linkList="[{ name: 'men' }, { name: 'women' }, { name: 'baby' }]"
 		:description="'Crystal delicately cut with coin-edge detailing inspired by a classic Ralph Lauren watch'"
 		:right="true"
 	/>

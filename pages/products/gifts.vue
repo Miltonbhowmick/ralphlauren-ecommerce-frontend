@@ -18,6 +18,12 @@
 		:right="true"
 		:subTitle="'Polo Bear Shop'"
 		:description="'Gifts featuring Ralph Lauren’s favourite style icon'"
+		:linkList="[
+			{ name: 'men' },
+			{ name: 'women' },
+			{ name: 'boys' },
+			{ name: 'girls' },
+		]"
 	/>
 	<RowCustomSlider />
 	<HolidayPack
@@ -25,12 +31,24 @@
 		:left="true"
 		:subTitle="'For Vacation'"
 		:description="'Travel classics for a holiday filled with unforgettable moments'"
+		:linkList="[
+			{ name: 'men' },
+			{ name: 'women' },
+			{ name: 'boys' },
+			{ name: 'girls' },
+		]"
 	/>
 	<HolidayPack
 		:backgroundImage="bgImage6"
 		:left="true"
 		:subTitle="'Baby’s First Holiday'"
 		:description="'Gifts to celebrate your new addition'"
+		:linkList="[
+			{ name: 'men' },
+			{ name: 'women' },
+			{ name: 'boys' },
+			{ name: 'girls' },
+		]"
 	/>
 	<SingleImageBannerCustomSlider
 		:headlineBlack="false"
@@ -44,6 +62,12 @@
 		:middle="true"
 		:companyLogo="'/images/lauren_ralph_lauren_logo_white.svg'"
 		:description="'Gifts of style to bring her holiday joy'"
+		:linkList="[
+			{ name: 'men' },
+			{ name: 'women' },
+			{ name: 'boys' },
+			{ name: 'girls' },
+		]"
 	/>
 	<CustomSlider
 		:headlineBlack="false"
@@ -56,11 +80,29 @@
 		:backgroundImage="bgImage9"
 		:down="true"
 		:companyLogo="'/images/rrl_logo_white.svg'"
+		:linkList="[
+			{ name: 'men' },
+			{ name: 'women' },
+			{ name: 'boys' },
+			{ name: 'girls' },
+		]"
 	/>
 	<ServicePack
 		:backgroundImage="bgImage10"
 		:down="true"
 		:subTitle="'Gift Services'"
+		:serviceList="[
+			{
+				name: 'Gift Boxing',
+				description:
+					'For a festive finishing touch, select our signature gift boxing at checkout',
+			},
+			{
+				name: 'E-Gift Cards',
+				description:
+					'It’s a gift that always fits: buy now and schedule delivery for your preferred date',
+			},
+		]"
 	/>
 </template>
 

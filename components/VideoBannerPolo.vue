@@ -16,17 +16,20 @@
 			<div v-if="props.companyLogo" class="company-logo">
 				<img :src="props.companyLogo" alt="company-logo" />
 			</div>
+			<h5 v-if="props.spaceTitle" class="space-title">
+				{{ props.spaceTitle }}
+			</h5>
 			<h3 v-if="props.subTitle" class="subtitle">{{ props.subTitle }}</h3>
 			<p v-if="props.description" class="description">
 				{{ props.description }}
 			</p>
-			<ul>
-				<li><a>men</a></li>
-				<li><a>women</a></li>
-				<li><a>boys</a></li>
-				<li><a>girls</a></li>
-				<li><a>baby</a></li>
-				<li><a>home</a></li>
+			<p v-if="props.miniDescription" class="description-mini">
+				{{ props.miniDescription }}
+			</p>
+			<ul v-if="props.linkList">
+				<li v-for="(obj, idx) in props.linkList" :key="idx">
+					<a>{{ obj.name }}</a>
+				</li>
 			</ul>
 		</div>
 		<div class="video-pause-box" @click="toggleVideoPlay">
@@ -40,7 +43,9 @@
 const props = defineProps({
 	title: null,
 	subTitle: null,
+	spaceTitle: null,
 	description: null,
+	miniDescription: null,
 	linkList: null,
 	videoSrc: null,
 	companyLogo: null,
@@ -103,6 +108,15 @@ const toggleVideoPlay = () => {
 			color: #ffffff;
 			text-align: center;
 		}
+		.space-title {
+			margin: 0;
+			font-family: "SackersGothicW01-Heavy", Arial, Helvetica, sans-serif;
+			font-size: 1.125em;
+			line-height: 1.944em;
+			letter-spacing: 0.417em;
+			text-transform: uppercase;
+			color: #ffffff;
+		}
 		.subtitle {
 			font-family: LeJeuneDeck-Regular, "Times New Roman", Times, serif;
 			margin: 0;
@@ -120,6 +134,11 @@ const toggleVideoPlay = () => {
 			font-weight: 300;
 			color: #ffffff;
 			text-align: center;
+			&-mini {
+				@extend .description;
+				line-height: 20px;
+				font-size: 12px;
+			}
 		}
 		.company-logo {
 			width: 200px;
