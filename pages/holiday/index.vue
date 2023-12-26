@@ -138,7 +138,6 @@
 			:videoSrc="'/videos/GiftGuide_Video.mp4'"
 			:linkList="[{ name: 'explore now' }]"
 			:down="true"
-			class="mt-60"
 		/>
 
 		<ServicePack
