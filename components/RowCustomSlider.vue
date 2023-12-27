@@ -88,7 +88,7 @@ const props = defineProps({
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	background: black;
+	// background: black;
 	&.h-min-60 {
 		min-height: 60em;
 	}

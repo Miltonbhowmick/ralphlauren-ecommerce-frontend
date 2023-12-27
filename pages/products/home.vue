@@ -25,6 +25,12 @@
 		:left="true"
 		:subTitle="'Set the Table'"
 		:description="'Holiday heritage motifs and striking accents for seasonal celebrations'"
+		:linkList="[
+			{ name: 'men' },
+			{ name: 'women' },
+			{ name: 'boys' },
+			{ name: 'girls' },
+		]"
 	/>
 	<VideoBannerPolo
 		:videoSrc="'/videos/MartiniGlass-DSK.mp4'"
@@ -38,6 +44,12 @@
 		:left="true"
 		:subTitle="'For the Host'"
 		:description="'Elegant home gifts to make a thoughtful gesture'"
+		:linkList="[
+			{ name: 'men' },
+			{ name: 'women' },
+			{ name: 'boys' },
+			{ name: 'girls' },
+		]"
 	/>
 	<div class="mt-60">
 		<CustomSlider

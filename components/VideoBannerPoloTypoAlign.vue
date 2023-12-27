@@ -1,48 +1,60 @@
 <template>
-	<div
-		class="holiday-pack-box"
-		:style="{
-			backgroundImage: `url(${props?.backgroundImage})`,
-		}"
-	>
+	<div class="video-banner-box">
+		<video autoplay muted loop id="bg-group-video" class="video">
+			<source :src="props.videoSrc" type="video/mp4" />
+		</video>
 		<div
 			class="content"
 			:class="{
-				'side-left': props.left,
-				'side-right': props.right,
-				'side-up': props.up,
-				'side-down': props.down,
-				'side-middle': props.middle,
+				'side-left': props?.left,
+				'side-right': props?.right,
+				'side-up': props?.up,
+				'side-down': props?.down,
+				down: props?.down,
+				up: props?.up,
+				'items-start': props?.left,
+				'items-end': props?.right,
 			}"
 		>
 			<h2 v-if="props.title" class="title">{{ props.title }}</h2>
-			<h2 v-if="props.mediumTitle" class="title-md">{{ props.mediumTitle }}</h2>
-
+			<h2
+				v-if="props.mediumTitle"
+				class="title-md"
+				:class="{ 'align-right': props?.right, 'align-left': props?.left }"
+			>
+				{{ props.mediumTitle }}
+			</h2>
 			<div v-if="props.companyLogo" class="company-logo">
 				<img :src="props.companyLogo" alt="company-logo" />
 			</div>
-			<h3 v-if="props.subTitle" class="subtitle">{{ props.subTitle }}</h3>
 			<h5 v-if="props.spaceTitle" class="space-title">
 				{{ props.spaceTitle }}
 			</h5>
+			<h3 v-if="props.subTitle" class="subtitle">{{ props.subTitle }}</h3>
 			<p v-if="props.description" class="description">
 				{{ props.description }}
 			</p>
-			<p v-if="props.miniDescription" class="description-mini">
+			<p
+				v-if="props.miniDescription"
+				class="description-mini"
+				:class="{ 'align-right': props?.right, 'align-left': props?.left }"
+			>
 				{{ props.miniDescription }}
 			</p>
-			<ul>
+			<ul v-if="props.linkList">
 				<li v-for="(obj, idx) in props.linkList" :key="idx">
 					<a>{{ obj.name }}</a>
 				</li>
 			</ul>
 		</div>
+		<div class="video-pause-box" @click="toggleVideoPlay">
+			<button v-if="videoPlaying" class="playing"></button>
+			<button v-else class="pause"></button>
+		</div>
 	</div>
 </template>
 
 <script setup>
-// import bgGroup from "~/assets/images/bg-group.jpg";
-
 const props = defineProps({
 	title: null,
 	mediumTitle: null,
@@ -51,68 +63,73 @@ const props = defineProps({
 	description: null,
 	miniDescription: null,
 	linkList: null,
-	backgroundImage: null,
+	videoSrc: null,
 	companyLogo: null,
 	left: true,
 	right: false,
 	down: false,
 	up: false,
-	middle: false,
 });
+
+var videoPlaying = ref(true);
+
+const toggleVideoPlay = () => {
+	videoPlaying.value = !videoPlaying.value;
+	if (videoPlaying.value === true) {
+		document.getElementById("bg-group-video").play();
+	} else {
+		document.getElementById("bg-group-video").pause();
+	}
+};
 </script>
 
 <style scoped lang="scss">
-.holiday-pack-box {
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	width: 100%;
-	height: 800px;
+.video-banner-box {
 	position: relative;
+	.video {
+		width: 100%;
+	}
 	.content {
 		position: absolute;
-		transform: translateY(-50%);
-		// padding: 100px 100px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		gap: 20px;
+		width: 30%;
 		&.side-left {
-			top: 50%;
-			left: 60px;
+			left: 40px;
 		}
 		&.side-right {
-			top: 50%;
-			right: 90px;
+			right: 40px;
 		}
 		&.side-up {
-			top: 10px;
-			left: 50%;
-			transform: translateX(-50%);
+			top: 40px;
 		}
 		&.side-down {
-			bottom: 30px;
-			left: 50%;
-			transform: translateX(-50%);
+			bottom: 40px;
 		}
-		&.side-middle {
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
+		&.down {
+			align-self: flex-end;
 		}
-
+		&.items-end {
+			align-items: flex-end;
+		}
+		&.up {
+			align-self: flex-start;
+		}
+		&.items-start {
+			align-items: flex-start;
+		}
 		.title {
 			font-family: LeJeuneDeck-Regular, "Times New Roman", Times, serif;
 			margin: 0;
 			font-size: 100px;
 			color: #ffffff;
-			text-align: center;
 			&-md {
 				@extend .title;
-				font-family: "LeJeuneDeck-Regular";
-				font-size: 28px;
-				font-weight: 400;
+				font-size: 30px;
+				font-weight: 300;
 			}
 		}
 		.space-title {
@@ -131,15 +148,15 @@ const props = defineProps({
 			font-weight: 300;
 			color: #ffffff;
 			text-align: center;
+			width: 70%;
 		}
 		.description {
-			width: 80%;
+			width: 70%;
 			font-family: LeJeuneDeck-Regular, "Times New Roman", Times, serif;
 			margin: 0;
 			font-size: 20px;
 			font-weight: 300;
 			color: #ffffff;
-			text-align: center;
 			&-mini {
 				@extend .description;
 				line-height: 20px;
@@ -160,12 +177,46 @@ const props = defineProps({
 				a {
 					color: #ffffff;
 					text-transform: uppercase;
-					font-size: 8px;
+					font-size: 10px;
 					text-decoration: underline;
 					text-underline-offset: 9px;
 					text-decoration-color: #ffffff;
 				}
 			}
+		}
+	}
+	.video-pause-box {
+		position: absolute;
+		left: 40px;
+		bottom: 20px;
+		width: 30px;
+		height: 30px;
+		border-radius: 100%;
+		border: 2px solid #ffffff;
+		.playing {
+			padding: 0;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			width: 10px;
+			height: 10px;
+			background: none;
+			border-right: 2px solid #ffffff;
+			border-left: 2px solid #ffffff;
+			border-top: 0;
+			border-bottom: 0;
+		}
+		.pause {
+			padding: 0;
+			position: absolute;
+			top: 10px;
+			left: 12px;
+			background: none;
+			width: 0;
+			height: 0;
+			border-top: 6px solid transparent;
+			border-bottom: 6px solid transparent;
+			border-left: 11px solid #ffffff;
 		}
 	}
 }

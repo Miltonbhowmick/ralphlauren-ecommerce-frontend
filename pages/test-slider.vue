@@ -11,6 +11,24 @@
 		:left="true"
 		:subTitle="'Set the Table'"
 		:description="'Holiday heritage motifs and striking accents for seasonal celebrations'"
+		:linkList="[
+			{ name: 'men' },
+			{ name: 'women' },
+			{ name: 'boys' },
+			{ name: 'girls' },
+		]"
+	/>
+	<BundleCustomSliderTypo
+		:backgroundImage="'/images/bg-ring.jpg'"
+		:left="true"
+		:subTitle="'Set the Table'"
+		:description="'Holiday heritage motifs and striking accents for seasonal celebrations'"
+		:linkList="[
+			{ name: 'men' },
+			{ name: 'women' },
+			{ name: 'boys' },
+			{ name: 'girls' },
+		]"
 	/>
 	<SingleImageBannerCustomSlider
 		:headlineBlack="false"

@@ -5,7 +5,6 @@
 			'h-min-60': props.isBackgroundImage,
 			'h-min-20': !props.isBackgroundImage,
 		}"
-		:style="{ backgroundColor: `${props.backgroundColor}` }"
 	>
 		<div class="header">
 			<h1
@@ -18,6 +17,16 @@
 			>
 				{{ props.title }}
 			</h1>
+			<h1
+				v-if="props.mediumTitle"
+				class="title-md"
+				:class="{
+					'text-basic': props.headlineBlack,
+					'text-white': !props.headlineBlack,
+				}"
+			>
+				{{ props.mediumTitle }}
+			</h1>
 			<p
 				v-if="props.subTitle"
 				class="subtitle"
@@ -28,59 +37,30 @@
 			>
 				{{ props.subTitle }}
 			</p>
-			<a v-if="props.exploreLink" class="explore-link">explore now</a>
+			<ul>
+				<li v-for="(obj, idx) in props.linkList" :key="idx">
+					<a
+						:class="{
+							'text-basic underline-black': props.headlineBlack,
+							'text-white underline-black': !props.headlineBlack,
+						}"
+						>{{ obj.name }}</a
+					>
+				</li>
+			</ul>
 		</div>
 		<div v-if="props.isBackgroundImage" class="banner">
 			<img :src="props.backgroundImage" alt="slider-bg" />
 		</div>
 		<carousel
-			:per-page="3"
+			:per-page="1"
 			:mouse-drag="true"
-			:navigationEnabled="true"
+			:navigationEnabled="false"
 			:paginationEnabled="false"
 		>
-			<slide class="cs-slider"
+			<slide v-for="(obj, idx) in props.sliderList" :key="idx" class="cs-slider"
 				><div class="slider-image">
-					<img src="/images/slider/slider1.jpg" />
-				</div>
-				<div class="content">
-					<h2 class="title">Polo Bear Shop</h2>
-					<ul class="link-list">
-						<li><a>men</a></li>
-						<li><a>women</a></li>
-						<li><a>boys</a></li>
-						<li><a>girls</a></li>
-						<li><a>baby</a></li>
-						<li><a>home</a></li>
-					</ul>
-				</div>
-			</slide>
-			<slide class="cs-slider"
-				><div class="slider-image">
-					<img src="/images/slider/slider2.jpg" />
-				</div>
-				<div class="content">
-					<h2 class="title">Our Favourites</h2>
-					<ul class="link-list">
-						<li><a>men</a></li>
-						<li><a>women</a></li>
-						<li><a>boys</a></li>
-						<li><a>girls</a></li>
-						<li><a>baby</a></li>
-						<li><a>home</a></li>
-					</ul>
-				</div></slide
-			>
-			<slide class="cs-slider"
-				><div class="slider-image">
-					<img src="/images/slider/slider3.jpg" />
-				</div>
-				<div class="content">
-					<h2 class="title">For the Host</h2>
-					<ul class="link-list">
-						<li><a>shop</a></li>
-						<li><a>now</a></li>
-					</ul>
+					<img :src="obj.imageSrc" />
 				</div>
 			</slide>
 		</carousel>
@@ -90,11 +70,13 @@
 const props = defineProps({
 	headlineBlack: true,
 	isBackgroundImage: true,
-	backgroundColor: null,
+	linkList: null,
 	backgroundImage: null,
 	title: null,
+	mediumTitle: null,
 	subTitle: null,
 	exploreLink: null,
+	sliderList: null,
 });
 </script>
 
@@ -103,17 +85,17 @@ const props = defineProps({
 	margin-top: -4px;
 	position: relative;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
 	&.h-min-60 {
 		min-height: 60em;
 	}
 	&.h-min-20 {
 		min-height: 20em;
-		padding: 20px 0;
 	}
 
 	.header {
+		margin-top: 30px;
 		width: 60em;
 		padding: 10px 40px;
 		z-index: 999;
@@ -121,6 +103,7 @@ const props = defineProps({
 		flex-direction: column;
 		gap: 10px;
 		.title {
+			margin: 0;
 			font-family: "Northwell Alt", cursive;
 			font-weight: 100;
 			font-size: 6em;
@@ -131,6 +114,14 @@ const props = defineProps({
 			margin: 0 auto;
 			text-align: center;
 			color: #ffffff;
+			&-md {
+				@extend .title;
+				font-family: "LeJeuneDeck-Regular";
+				font-size: 2.425em;
+				font-weight: 500;
+				line-height: 1.4117647059;
+				letter-spacing: 0;
+			}
 		}
 		.subtitle {
 			font-family: "LeJeuneDeck-Regular", Times, serif;
@@ -153,6 +144,30 @@ const props = defineProps({
 		.text-basic {
 			color: #041e3a;
 		}
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			display: flex;
+			justify-content: center;
+			gap: 20px;
+			li {
+				a {
+					color: #ffffff;
+					text-transform: uppercase;
+					font-size: 8px;
+					letter-spacing: 1.25px;
+					text-decoration: underline;
+					text-underline-offset: 9px;
+					&.underline-black {
+						text-decoration-color: #000;
+					}
+					&.underline-white {
+						text-decoration-color: #fff;
+					}
+				}
+			}
+		}
 	}
 	.banner {
 		position: absolute;
@@ -164,6 +179,13 @@ const props = defineProps({
 	}
 	.cs-slider {
 		position: relative;
+		margin-top: 60px;
+		display: flex;
+		justify-content: center;
+
+		.slider-image {
+			width: 50%;
+		}
 		.content {
 			position: absolute;
 			bottom: 50px;
@@ -195,9 +217,5 @@ const props = defineProps({
 			}
 		}
 	}
-}
-
-:deep(.VueCarousel-slide) {
-	margin: 10px;
 }
 </style>
