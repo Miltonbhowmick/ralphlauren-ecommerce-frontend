@@ -66,6 +66,7 @@ const props = defineProps({
 	right: false,
 	up: false,
 	down: false,
+	textColor: null,
 });
 </script>
 
