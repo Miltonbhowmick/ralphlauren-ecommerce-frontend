@@ -87,7 +87,46 @@
 					family members, we are focused on tailoring your career path to your
 					unique talents, skills and dreams.
 				</p>
-				<RowCustomSlider :perSlider="6" />
+				<RowCustomSlider
+					:perSlider="6"
+					:itemList="[
+						{
+							videoSrc: null,
+							imageSrc: '/images/slider/slider1.jpg',
+							content: {
+								name: 'men',
+							},
+						},
+						{
+							videoSrc: null,
+							imageSrc: '/images/slider/slider2.jpg',
+							content: {
+								name: 'women',
+							},
+						},
+						{
+							videoSrc: null,
+							imageSrc: '/images/slider/slider3.jpg',
+							content: {
+								name: 'girls',
+							},
+						},
+						{
+							videoSrc: null,
+							imageSrc: '/images/slider/slider4.jpg',
+							content: {
+								name: 'boys',
+							},
+						},
+						{
+							videoSrc: null,
+							imageSrc: '/images/slider/slider5.jpg',
+							content: {
+								name: 'baby',
+							},
+						},
+					]"
+				/>
 				<h4 class="mini-local-title">SO MUCH MORE THAN A JOB</h4>
 				<p class="localTitle">
 					Ralph Lauren offers a variety of ways to help you build a better life

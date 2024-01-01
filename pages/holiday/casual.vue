@@ -215,7 +215,48 @@
 					<div class="image"><img src="/images/jeans-pocket-old.jpg" /></div>
 				</div>
 			</div>
-			<div><RowCustomSlider :perSlider="3" /></div>
+			<div>
+				<RowCustomSlider
+					:perSlider="3"
+					:itemList="[
+						{
+							videoSrc: null,
+							imageSrc: '/images/slider/slider1.jpg',
+							content: {
+								name: 'men',
+							},
+						},
+						{
+							videoSrc: null,
+							imageSrc: '/images/slider/slider2.jpg',
+							content: {
+								name: 'women',
+							},
+						},
+						{
+							videoSrc: null,
+							imageSrc: '/images/slider/slider3.jpg',
+							content: {
+								name: 'girls',
+							},
+						},
+						{
+							videoSrc: null,
+							imageSrc: '/images/slider/slider4.jpg',
+							content: {
+								name: 'boys',
+							},
+						},
+						{
+							videoSrc: null,
+							imageSrc: '/images/slider/slider5.jpg',
+							content: {
+								name: 'baby',
+							},
+						},
+					]"
+				/>
+			</div>
 		</div>
 		<HalfFrameCustomSlider
 			:headlineBlack="true"

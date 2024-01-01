@@ -127,7 +127,7 @@ const props = defineProps({
 			line-height: 1.1em;
 			display: block;
 			letter-spacing: 0em;
-			text-transform: none;
+			text-transform: capitalize;
 			margin: 0 auto;
 			text-align: center;
 			color: #ffffff;

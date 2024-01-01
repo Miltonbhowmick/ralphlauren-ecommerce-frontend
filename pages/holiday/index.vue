@@ -40,7 +40,46 @@
 			]"
 			:down="true"
 		/>
-		<RowCustomSlider :perSlider="5" />
+		<RowCustomSlider
+			:perSlider="5"
+			:itemList="[
+				{
+					videoSrc: null,
+					imageSrc: '/images/slider/slider1.jpg',
+					content: {
+						name: 'men',
+					},
+				},
+				{
+					videoSrc: null,
+					imageSrc: '/images/slider/slider2.jpg',
+					content: {
+						name: 'women',
+					},
+				},
+				{
+					videoSrc: null,
+					imageSrc: '/images/slider/slider3.jpg',
+					content: {
+						name: 'girls',
+					},
+				},
+				{
+					videoSrc: null,
+					imageSrc: '/images/slider/slider4.jpg',
+					content: {
+						name: 'boys',
+					},
+				},
+				{
+					videoSrc: null,
+					imageSrc: '/images/slider/slider5.jpg',
+					content: {
+						name: 'baby',
+					},
+				},
+			]"
+		/>
 		<HolidayPack
 			:backgroundImage="bgImage14"
 			:right="true"
@@ -57,19 +96,23 @@
 			:itemList="[
 				{
 					imageSrc: '/images/sit-girls.jpg',
-					linkList: [
-						{
-							name: 'COLLECTION',
-						},
-					],
+					content: {
+						linkList: [
+							{
+								name: 'COLLECTION',
+							},
+						],
+					},
 				},
 				{
 					imageSrc: '/images/1102_holiday_seasonal_lp_c06b_img.jpg',
-					linkList: [
-						{
-							name: 'PURPLE LABEL',
-						},
-					],
+					content: {
+						linkList: [
+							{
+								name: 'PURPLE LABEL',
+							},
+						],
+					},
 				},
 			]"
 		/>
@@ -87,7 +130,46 @@
 			class="mt-60"
 		/>
 
-		<RowCustomSlider :perSlider="5" />
+		<RowCustomSlider
+			:perSlider="5"
+			:itemList="[
+				{
+					videoSrc: null,
+					imageSrc: '/images/slider/slider1.jpg',
+					content: {
+						name: 'men',
+					},
+				},
+				{
+					videoSrc: null,
+					imageSrc: '/images/slider/slider2.jpg',
+					content: {
+						name: 'women',
+					},
+				},
+				{
+					videoSrc: null,
+					imageSrc: '/images/slider/slider3.jpg',
+					content: {
+						name: 'girls',
+					},
+				},
+				{
+					videoSrc: null,
+					imageSrc: '/images/slider/slider4.jpg',
+					content: {
+						name: 'boys',
+					},
+				},
+				{
+					videoSrc: null,
+					imageSrc: '/images/slider/slider5.jpg',
+					content: {
+						name: 'baby',
+					},
+				},
+			]"
+		/>
 
 		<HolidayPack
 			:backgroundImage="bgImage15"
@@ -120,14 +202,16 @@
 				},
 				{
 					imageSrc: '/images/1102_holiday_seasonal_lp_c11b_img.jpg',
-					linkList: [
-						{
-							name: 'men',
-						},
-						{
-							name: 'women',
-						},
-					],
+					content: {
+						linkList: [
+							{
+								name: 'men',
+							},
+							{
+								name: 'women',
+							},
+						],
+					},
 				},
 			]"
 		/>

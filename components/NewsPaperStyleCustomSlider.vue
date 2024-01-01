@@ -45,6 +45,15 @@
 						'items-end': props?.content?.right,
 					}"
 				>
+					<div v-if="item?.content?.issueNo" class="issue-box">
+						<div class="bg-image">
+							<img
+								src="/images/issue_number_frame_only_icon_dsk.png"
+								alt="issue_number_frame_only_icon_dsk"
+							/>
+							<span class="value">Issue No.{{ item?.content?.issueNo }}</span>
+						</div>
+					</div>
 					<h2 v-if="item?.content?.title" class="title">
 						{{ item?.content.title }}
 					</h2>
@@ -67,9 +76,7 @@
 					<h3 v-if="item?.content?.subTitle" class="subtitle">
 						{{ item?.content?.subTitle }}
 					</h3>
-					<p v-if="item?.content?.description" class="description">
-						{{ item?.content?.description }}
-					</p>
+					<p v-html="item?.content?.description" class="description"></p>
 					<p
 						v-if="item?.content?.miniDescription"
 						class="description-mini"
@@ -137,15 +144,15 @@ const props = defineProps({
 		}
 		.content {
 			position: absolute;
-			bottom: 50px;
-			left: 50%;
-			transform: translateX(-50%);
-			width: 30%;
+			right: 50px;
+			top: 50%;
+			transform: translateY(-50%);
 			display: flex;
 			flex-direction: column;
+			justify-content: center;
 			align-items: center;
 			gap: 10px;
-			// width: 30%;
+			width: 50%;
 			&.side-left {
 				left: 40px;
 				top: 50%;
@@ -178,18 +185,35 @@ const props = defineProps({
 			&.items-start {
 				align-items: flex-start;
 			}
+			.issue-box {
+				margin-bottom: 50px;
+				position: relative;
+				.bg-image {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					width: 15vw;
+				}
+				.value {
+					position: absolute;
+					top: 48%;
+					left: 50%;
+					transform: translate(-50%, -52%);
+				}
+			}
 			.normal-name {
 				font-family: LeJeuneDeck-Regular, "Times New Roman", Times, serif;
 				margin: 0;
 				font-size: 30px;
-				color: #ffffff;
+				color: #000;
 				text-align: center;
 			}
 			.title {
 				font-family: LeJeuneDeck-Regular, "Times New Roman", Times, serif;
 				margin: 0;
 				font-size: 100px;
-				color: #ffffff;
+				color: #000;
 				&-md {
 					@extend .title;
 					font-size: 30px;
@@ -203,14 +227,14 @@ const props = defineProps({
 				line-height: 1.944em;
 				letter-spacing: 0.417em;
 				text-transform: uppercase;
-				color: #ffffff;
+				color: #000;
 			}
 			.subtitle {
 				font-family: LeJeuneDeck-Regular, "Times New Roman", Times, serif;
 				margin: 0;
 				font-size: 50px;
 				font-weight: 300;
-				color: #ffffff;
+				color: #000;
 				text-align: center;
 				text-transform: capitalize;
 				width: 70%;
@@ -219,9 +243,10 @@ const props = defineProps({
 				width: 70%;
 				font-family: LeJeuneDeck-Regular, "Times New Roman", Times, serif;
 				margin: 0;
-				font-size: 20px;
+				font-size: 1.4em;
 				font-weight: 300;
-				color: #ffffff;
+				color: #000;
+				text-align: justify;
 				&-mini {
 					@extend .description;
 					line-height: 20px;
@@ -240,12 +265,12 @@ const props = defineProps({
 				gap: 20px;
 				li {
 					a {
-						color: #ffffff;
+						color: #000;
 						text-transform: uppercase;
-						font-size: 10px;
+						font-size: 8px;
 						text-decoration: underline;
 						text-underline-offset: 9px;
-						text-decoration-color: #ffffff;
+						text-decoration-color: #000;
 					}
 				}
 			}

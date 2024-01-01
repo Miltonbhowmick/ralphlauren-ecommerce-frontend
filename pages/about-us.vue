@@ -72,7 +72,46 @@
 		</div>
 		<div class="brand-slider">
 			<h6>shop by brand</h6>
-			<RowCustomSlider :perSlider="4" />
+			<RowCustomSlider
+				:perSlider="4"
+				:itemList="[
+					{
+						videoSrc: null,
+						imageSrc: '/images/slider/slider1.jpg',
+						content: {
+							name: 'men',
+						},
+					},
+					{
+						videoSrc: null,
+						imageSrc: '/images/slider/slider2.jpg',
+						content: {
+							name: 'women',
+						},
+					},
+					{
+						videoSrc: null,
+						imageSrc: '/images/slider/slider3.jpg',
+						content: {
+							name: 'girls',
+						},
+					},
+					{
+						videoSrc: null,
+						imageSrc: '/images/slider/slider4.jpg',
+						content: {
+							name: 'boys',
+						},
+					},
+					{
+						videoSrc: null,
+						imageSrc: '/images/slider/slider5.jpg',
+						content: {
+							name: 'baby',
+						},
+					},
+				]"
+			/>
 		</div>
 	</section>
 </template>

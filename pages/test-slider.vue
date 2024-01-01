@@ -37,7 +37,45 @@
 		:title="'Seasonal Polo Bears'"
 		class="mt-60"
 	/>
-	<RowCustomSlider />
+	<RowCustomSlider
+		:itemList="[
+			{
+				videoSrc: null,
+				imageSrc: '/images/slider/slider1.jpg',
+				content: {
+					name: 'men',
+				},
+			},
+			{
+				videoSrc: null,
+				imageSrc: '/images/slider/slider2.jpg',
+				content: {
+					name: 'women',
+				},
+			},
+			{
+				videoSrc: null,
+				imageSrc: '/images/slider/slider3.jpg',
+				content: {
+					name: 'girls',
+				},
+			},
+			{
+				videoSrc: null,
+				imageSrc: '/images/slider/slider4.jpg',
+				content: {
+					name: 'boys',
+				},
+			},
+			{
+				videoSrc: null,
+				imageSrc: '/images/slider/slider5.jpg',
+				content: {
+					name: 'baby',
+				},
+			},
+		]"
+	/>
 	<ModernCustomSlider
 		:headlineBlack="false"
 		:backgroundImage="'/images/bg-ring.jpg'"
@@ -64,6 +102,31 @@
 		:subTitle="'Surprise him with presents he’ll cherish'"
 	/>
 	<CustomSubCategorySlider :perPage="4"></CustomSubCategorySlider>
+	<TwoImage
+		:backgroundImage="bgImage16"
+		:itemList="[
+			{
+				imageSrc: '/images/sit-girls.jpg',
+				content: {
+					linkList: [
+						{
+							name: 'COLLECTION',
+						},
+					],
+				},
+			},
+			{
+				imageSrc: '/images/1102_holiday_seasonal_lp_c06b_img.jpg',
+				content: {
+					linkList: [
+						{
+							name: 'PURPLE LABEL',
+						},
+					],
+				},
+			},
+		]"
+	/>
 </template>
 
 <script setup>

@@ -1,19 +1,19 @@
 <template>
 	<div
 		class="two-image-box"
-		:style="{ backgroundImage: `url(${props.backgroundImage})` }"
+		:style="{ backgroundImage: `url(${props?.backgroundImage})` }"
 	>
 		<div class="content">
 			<div
-				v-for="(obj, idx) in itemList"
+				v-for="(obj, idx) in props?.itemList"
 				:key="'two_image_box_' + idx"
 				class="box"
 			>
 				<div class="image">
-					<img :src="obj.imageSrc" alt="holiday_seasonal_lp_c11a_img" />
-					<ul v-if="obj.linkList" class="link-list">
+					<img :src="obj?.imageSrc" alt="holiday_seasonal_lp_c11a_img" />
+					<ul v-if="obj?.content?.linkList" class="link-list">
 						<li
-							v-for="(element, indx) in obj.linkList"
+							v-for="(element, indx) in obj?.content?.linkList"
 							:key="'two_image_box_' + indx"
 						>
 							<a>{{ element.name }}</a>
