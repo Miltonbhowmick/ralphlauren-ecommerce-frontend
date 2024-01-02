@@ -474,6 +474,89 @@
 			</div>
 		</div>
 	</section>
+	<div class="outerwear-shop-box">
+		<div class="outerwear-header">
+			<h4 class="title">Outerwear Shop</h4>
+			<p class="description">
+				Lightweight, versatile and exceptionally warm, our down-filled coats and
+				puffer jackets arrive in time for myriad seasonal uses – all imbued with
+				lasting, timeless style
+			</p>
+			<ul class="link-list">
+				<li><a>shop all</a></li>
+			</ul>
+		</div>
+		<div class="outwear-slider">
+			<RowCustomSlider
+				:perSlider="1"
+				:itemList="[
+					{
+						videoSrc:
+							'/videos/RL_Polo_MensOuterwear_Down_D_06s_1224x612_DSK.mp4',
+						imageSrc: null,
+						content: {
+							companyLogo: '/images/2018_polo_white_logo.svg',
+							subTitle: 'Create your own',
+							linkList: [
+								{ name: 'shop now', src: '' },
+								{ name: 'explore now', src: '' },
+							],
+							left: true,
+							down: true,
+						},
+						zeroMargin: true,
+					},
+				]"
+			/>
+		</div>
+		<div
+			class="products-slider"
+			:style="{ backgroundImage: `url(${bgGroup38})` }"
+		>
+			<div>
+				<RowCustomSlider
+					:perSlider="4"
+					:itemList="[
+						{
+							imageSrc: '/images/1228_m_polo_hub_c07a_img.jpg',
+							videoSrc: null,
+							content: {
+								name: 'polo',
+							},
+						},
+						{
+							imageSrc: '/images/1228_m_polo_hub_c07b_img.jpg',
+							videoSrc: null,
+							content: {
+								name: 'polo',
+							},
+						},
+						{
+							imageSrc: '/images/1228_m_polo_hub_c07c_img.jpg',
+							videoSrc: null,
+							content: {
+								name: 'polo',
+							},
+						},
+						{
+							imageSrc: '/images/1228_m_polo_hub_c07c_img.jpg',
+							videoSrc: null,
+							content: {
+								name: 'polo',
+							},
+						},
+						{
+							imageSrc: '/images/1228_m_polo_hub_c07c_img.jpg',
+							videoSrc: null,
+							content: {
+								name: 'polo',
+							},
+						},
+					]"
+				/>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script setup>
@@ -481,6 +564,7 @@ import bgGroup33 from "~/assets/images/bg-group33.jpg";
 import bgGroup34 from "~/assets/images/bg-group34.jpg";
 import bgGroup35 from "~/assets/images/bg-group35.jpg";
 import bgGroup36 from "~/assets/images/bg-group36.jpg";
+import bgGroup38 from "~/assets/images/bg-group38.jpg";
 </script>
 
 <style scoped lang="scss">
@@ -515,7 +599,7 @@ section.men-brands {
 		}
 	}
 	.active-club-box {
-		padding: 70px 0;
+		padding: 70px 0 0 0;
 		background-color: #041e3a;
 		.header {
 			display: flex;
@@ -750,6 +834,58 @@ section.men-brands {
 				}
 			}
 		}
+	}
+}
+.outerwear-shop-box {
+	padding: 50px 0;
+	background-color: #1d2333;
+	.outerwear-header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+		.title {
+			margin: 0;
+			font-family: "LeJeuneDeck-Regular";
+			text-transform: capitalize;
+			font-size: 3em;
+			color: #fff;
+		}
+		.description {
+			margin: 0;
+			font-family: "LeJeuneDeck-Regular";
+			font-size: 1.125em;
+			letter-spacing: 1px;
+			width: 56em;
+			line-height: 25px;
+			color: #fff;
+			text-align: center;
+		}
+		.link-list {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			li {
+				a {
+					color: #fff;
+					text-transform: uppercase;
+					font-size: 8px;
+					text-decoration: underline 1.5px;
+					text-underline-offset: 9px;
+					text-decoration-color: #fff;
+				}
+			}
+		}
+	}
+	.outwear-slider {
+		display: flex;
+		justify-content: center;
+	}
+	.products-slider {
+		background-repeat: no-repeat;
+		background-size: 100%;
+		padding: 24rem 0;
+		margin-top: -20rem;
 	}
 }
 
