@@ -1,6 +1,15 @@
 <template>
 	<div>
-		<HeroBanner />
+		<HeroBanner
+			:title="'Best of Polo'"
+			:linkList="[
+				{ name: 'men', src: '' },
+				{ name: 'women', src: '' },
+				{ name: 'boys', src: '' },
+				{ name: 'girls', src: '' },
+			]"
+			:backgroundImage="'/images/hero-banner.jpg'"
+		/>
 		<CustomSlider
 			:headlineBlack="true"
 			:backgroundImage="'/images/slider-bg.jpg'"
