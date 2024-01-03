@@ -55,6 +55,7 @@ section.video-grid-slider {
 	background-repeat: no-repeat;
 	padding: 40px 0;
 	.photo-gellary {
+		padding: 0 4rem;
 		.images-list {
 			display: flex;
 			justify-content: space-between;
