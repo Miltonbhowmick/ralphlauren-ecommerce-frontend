@@ -10,12 +10,26 @@
 				'side-right': props?.right,
 				'side-up': props?.up,
 				'side-down': props?.down,
+				'side-middle': props?.middle,
+				'side-left-down': props?.leftDown,
+				'items-start': props?.itemsStart,
 			}"
 		>
 			<h2 class="title" :style="{ color: props?.textColor }">
 				{{ props?.title }}
 			</h2>
-			<p class="description" :style="{ color: props?.textColor }">
+			<h2 class="title-normal" :style="{ color: props?.textColor }">
+				{{ props?.normalTitle }}
+			</h2>
+			<p
+				class="description"
+				:style="[
+					{ color: props?.textColor },
+					props?.itemsStart === true
+						? { 'text-align': 'left' }
+						: { 'text-align': '' },
+				]"
+			>
 				{{ props?.description }}
 			</p>
 			<ul v-if="props?.linkList" class="category-list">
@@ -39,11 +53,15 @@ const props = defineProps({
 	right: false,
 	up: false,
 	down: false,
+	middle: false,
+	leftDown: false,
+	itemsStart: false,
 	isBackgroundImage: null,
 	backgroundColor: null,
 	textColor: "#fff",
 	backgroundImage: null,
 	title: null,
+	normalTitle: null,
 	description: null,
 	linkList: null,
 });
@@ -56,9 +74,9 @@ const props = defineProps({
 	}
 	.best-products {
 		position: absolute;
-		top: 40%;
-		left: 0;
-		transform: translateY(-60%);
+		// top: 40%;
+		// left: 0;
+		// transform: translateY(-60%);
 		width: 500px;
 		padding: 40px 10px;
 		display: flex;
@@ -71,6 +89,10 @@ const props = defineProps({
 			left: 40px;
 			top: 50%;
 			transform: translateY(-50%);
+		}
+		&.side-left-down {
+			left: 5rem;
+			bottom: 2rem;
 		}
 		&.side-right {
 			right: 40px;
@@ -86,6 +108,11 @@ const props = defineProps({
 			bottom: 20px;
 			left: 50%;
 			transform: translateX(-50%);
+		}
+		&.side-middle {
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
 		}
 		&.down {
 			align-self: flex-end;
@@ -107,10 +134,18 @@ const props = defineProps({
 			color: #ffffff;
 			font-family: LeJeuneDeck-Regular, "Times New Roman", Times, serif;
 			text-transform: capitalize;
+			&-normal {
+				@extend .title;
+				font-family: monospace;
+				font-size: 30px;
+				font-weight: 300;
+				text-transform: capitalize;
+			}
 		}
 		.description {
 			font-family: "LeJeuneDeck-Regular";
 			font-size: 1.125em;
+			line-height: 20px;
 			width: 26em;
 			text-align: center;
 		}

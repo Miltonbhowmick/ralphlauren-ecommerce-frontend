@@ -30,12 +30,24 @@
 			{ name: 'girls' },
 		]"
 	/>
+	<h1>Single Image Banner Custom Slider</h1>
 	<SingleImageBannerCustomSlider
 		:headlineBlack="false"
 		:backgroundImage="'/images/bg-ring.jpg'"
 		:isBackgroundImage="true"
 		:title="'Seasonal Polo Bears'"
 		class="mt-60"
+	/>
+	<RowImageHolidayPack
+		:mediumTitle="'The Fleece-Lined Denim Western Overshirt'"
+		:down="true"
+		:rowImageList="[
+			{ imageSrc: '/images/stand-sit-eye-catching.jpg' },
+			{ imageSrc: '/images/jeans-pocket.jpg' },
+			{ imageSrc: '/images/jeans-jacket-boy.jpg' },
+		]"
+		:miniDescription="'A celebration of bold individuality, exquisite craftsmanship and exceptional personal style'"
+		:linkList="[{ name: 'SHOP now', src: '' }]"
 	/>
 	<RowCustomSlider
 		:itemList="[
@@ -84,6 +96,26 @@
 		:description="'From the iconic men’s Ralph Lauren Polo shirt to the artful craftsmanship of Purple Label, rugged luxury of Double RL and peak RLX performance, the World of Ralph Lauren men is rooted in timeless design'"
 		:exploreLink="true"
 	/>
+	<VideoBanner
+		:videoSrc="'/videos/video_banner.mp4'"
+		:title="'Personalised Gifts'"
+		:links="[
+			{ title: 'men', src: '/' },
+			{ title: 'women', src: '/' },
+			{ title: 'boys', src: '/' },
+		]"
+		:bottom="true"
+		class="mt-60"
+	/>
+	<VideoBannerPolo
+		:title="'POLO'"
+		:subTitle="'Holiday Dressing'"
+		:videoSrc="'/videos/video-banner-group.mp4'"
+		:companyLogo="'/images/company-logo.png'"
+		:linkList="[{ name: 'men' }, { name: 'women' }, { name: 'baby' }]"
+		:down="true"
+		class="mt-60"
+	/>
 	<VideoBubbleImageSlider class="mt-60" />
 	<SingleLookCustomSlider />
 	<LadderLookCustomSlider :itemList="ladderSliderProducts" />
@@ -94,6 +126,44 @@
 		:title="'Seasonal Polo Bears'"
 		class="mt-60"
 	/>
+	<HeroBanner
+		:down="true"
+		:backgroundImage="'/images/1120_m_polo_hub_c04_img.jpg'"
+		:textColor="'#fff'"
+		:title="'best of polo'"
+		:description="'Discover a timely selection of jumpers, sleepwear, outerwear and more, all in time for the holidays'"
+		:linkList="[
+			{
+				name: 'shop now',
+				src: '',
+			},
+		]"
+	/>
+	<HalfBackgroundCustomSlider
+		:headerLogo="'/images/rl_collection_white_logo.svg'"
+		:backgroundImage="'/images/half-bg.jpg'"
+		:isBackgroundImage="true"
+		:title="'Gifts for Him'"
+		:subTitle="'Surprise him with presents he’ll cherish'"
+	/>
+	<HalfFrameCustomSlider
+		:headlineBlack="true"
+		:backgroundImage="'/images/bg-group19.jpg'"
+		:isBackgroundImage="true"
+		:mediumTitle="'Layered for Warmth'"
+		:linkList="[{ name: 'shop shirt jacket & layers', src: '' }]"
+		:sliderList="[
+			{
+				imageSrc: '/images/huti-group.jpg',
+			},
+			{
+				imageSrc: '/images/warm-shirts-full.jpg',
+			},
+			{
+				imageSrc: '/images/warm-shirts-long.jpg',
+			},
+		]"
+	/>
 	<HalfBackgroundCustomSlider
 		:headerLogo="'/images/lauren_ralph_lauren_logo_white.svg'"
 		:backgroundImage="'/images/half-bg-1.jpg'"
@@ -101,6 +171,23 @@
 		:title="'Gifts for Him'"
 		:subTitle="'Surprise him with presents he’ll cherish'"
 	/>
+	<HolidayPack
+		:backgroundImage="bgGroup"
+		:left="true"
+		:title="'POLO'"
+		:subTitle="'Holiday Dressing'"
+		:companyLogo="'/images/company-logo.png'"
+		:linkList="[
+			{ name: 'men' },
+			{ name: 'women' },
+			{ name: 'boys' },
+			{ name: 'girls' },
+		]"
+		class="mt-60"
+	/>
+	<SubCategoryBanner />
+	<SinglePack class="mt-60" />
+	<ExplorePack class="mt-60" />
 	<CustomSubCategorySlider :perPage="4"></CustomSubCategorySlider>
 	<TwoImage
 		:backgroundImage="bgImage16"
@@ -124,6 +211,33 @@
 						},
 					],
 				},
+			},
+		]"
+	/>
+	<NewsPaperStyleCustomSlider
+		:perSlider="1"
+		:itemList="[
+			{
+				imageSrc: '/images/news-paper-style-slide.jpg',
+				content: {
+					issueNo: '03',
+					subTitle: 'Boss Tweed Ties? Yes, Ties! And more ...',
+					description:
+						'Somehow, it just wouldn’t feel like fall here at Polo without having a little <i>big</i> tweed in your wardrobe – crunchy wools in checks of cognac and camel or charcoal and grey that have been exploded this season in size to become statement pieces. In addition to a mix of notes on other matters of style, we’ve also put together a special package of stories on the meaning of the necktie. – The Editors',
+					linkList: [{ name: 'shop now', src: '' }],
+				},
+				zeroMargin: true,
+			},
+			{
+				imageSrc: '/images/news-paper-style-slide-2.jpg',
+				content: {
+					issueNo: '03',
+					subTitle: 'Boss Tweed Ties? Yes, Ties! And more ...',
+					description:
+						'Somehow, it just wouldn’t feel like fall here at Polo without having a little <i>big</i> tweed in your wardrobe – crunchy wools in checks of cognac and camel or charcoal and grey that have been exploded this season in size to become statement pieces. In addition to a mix of notes on other matters of style, we’ve also put together a special package of stories on the meaning of the necktie. – The Editors',
+					linkList: [{ name: 'shop now', src: '' }],
+				},
+				zeroMargin: true,
 			},
 		]"
 	/>

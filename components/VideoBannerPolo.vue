@@ -7,12 +7,17 @@
 			class="content"
 			:class="{
 				'side-left': props?.left,
+				'side-left-down': props?.leftDown,
 				'side-right': props?.right,
 				'side-up': props?.up,
 				'side-down': props?.down,
+				'items-start': props?.itemsStart,
 			}"
 		>
 			<h2 v-if="props.title" class="title">{{ props.title }}</h2>
+			<h2 v-if="props.normalTitle" class="title-normal">
+				{{ props.normalTitle }}
+			</h2>
 			<div v-if="props.companyLogo" class="company-logo">
 				<img :src="props.companyLogo" alt="company-logo" />
 			</div>
@@ -23,7 +28,15 @@
 			<p v-if="props.description" class="description">
 				{{ props.description }}
 			</p>
-			<p v-if="props.miniDescription" class="description-mini">
+			<p
+				v-if="props.miniDescription"
+				class="description-mini"
+				:style="[
+					props?.itemsStart === true
+						? { 'text-align': 'left' }
+						: { 'text-align': '' },
+				]"
+			>
 				{{ props.miniDescription }}
 			</p>
 			<ul v-if="props.linkList">
@@ -42,6 +55,7 @@
 <script setup>
 const props = defineProps({
 	title: null,
+	normalTitle: null,
 	subTitle: null,
 	spaceTitle: null,
 	description: null,
@@ -53,6 +67,8 @@ const props = defineProps({
 	right: false,
 	down: false,
 	up: false,
+	leftDown: false,
+	itemsStart: false,
 });
 
 var videoPlaying = ref(true);
@@ -86,6 +102,10 @@ const toggleVideoPlay = () => {
 			transform: translateY(-50%);
 			left: 20px;
 		}
+		&.side-left-down {
+			left: 5rem;
+			bottom: 6rem;
+		}
 		&.side-right {
 			top: 50%;
 			transform: translateY(-50%);
@@ -101,12 +121,33 @@ const toggleVideoPlay = () => {
 			left: 50%;
 			transform: translateX(-50%);
 		}
+		&.down {
+			align-self: flex-end;
+		}
+		&.items-end {
+			align-items: flex-end;
+		}
+		&.up {
+			align-self: flex-start;
+		}
+		&.items-start {
+			align-items: flex-start;
+		}
 		.title {
 			font-family: LeJeuneDeck-Regular, "Times New Roman", Times, serif;
 			margin: 0;
 			font-size: 100px;
 			color: #ffffff;
 			text-align: center;
+			&-normal {
+				@extend .title;
+				font-family: "Founders Grotesk text Regular", "Times New Roman", Times,
+					serif monospace;
+				font-size: 1.975em;
+				font-weight: 300;
+				letter-spacing: 0.033em;
+				text-transform: uppercase;
+			}
 		}
 		.space-title {
 			margin: 0;
@@ -124,6 +165,7 @@ const toggleVideoPlay = () => {
 			font-weight: 300;
 			color: #ffffff;
 			text-align: center;
+			text-transform: capitalize;
 			width: 70%;
 		}
 		.description {

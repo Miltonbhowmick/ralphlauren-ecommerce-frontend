@@ -36,13 +36,14 @@
 					class="content"
 					:class="{
 						'side-left': item?.content?.left,
+						'side-left-down': item?.content?.leftDown,
 						'side-right': item?.content?.right,
-						'side-up': props?.content?.up,
-						'side-down': props?.content?.down,
-						down: props?.content?.down,
-						up: props?.content?.up,
-						'items-start': props?.content?.left,
-						'items-end': props?.content?.right,
+						'side-up': item?.content?.up,
+						'side-down': item?.content?.down,
+						down: item?.content?.down,
+						up: item?.content?.up,
+						'items-start': item?.content?.itemsLeft,
+						'items-end': item?.content?.itemsRight,
 					}"
 				>
 					<h2 v-if="item?.content?.title" class="title">
@@ -126,7 +127,6 @@ const props = defineProps({
 	}
 	.cs-slider {
 		position: relative;
-
 		.slider-image {
 			width: 100%;
 		}
@@ -150,6 +150,10 @@ const props = defineProps({
 				left: 40px;
 				top: 50%;
 				transform: translateY(-50%);
+			}
+			&.side-left-down {
+				left: 15rem;
+				bottom: 40px;
 			}
 			&.side-right {
 				right: 40px;

@@ -884,7 +884,7 @@ section.men-brands {
 	.products-slider {
 		background-repeat: no-repeat;
 		background-size: 100%;
-		padding: 24rem 0;
+		padding: 24rem 0 2rem 0;
 		margin-top: -20rem;
 	}
 }
