@@ -1,9 +1,9 @@
 <template>
-	<div class="modal-overlay">
+	<div class="modal-overlay" v-if="modalOpen">
 		<div class="modal-box">
 			<div class="content">
 				<div class="close">
-					<a>X</a>
+					<a @click="close">X</a>
 				</div>
 				<div class="header">
 					<h2 class="title">add credit card</h2>
@@ -46,7 +46,17 @@
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+const props = defineProps({
+	modalOpen: false,
+});
+
+const emit = defineEmits();
+
+const close = () => {
+	emit("hideModal");
+};
+</script>
 
 <style scoped lang="scss">
 .modal-overlay {
@@ -74,6 +84,7 @@
 				justify-content: flex-end;
 				a {
 					font-size: 25px;
+					cursor: pointer;
 				}
 			}
 			.header {

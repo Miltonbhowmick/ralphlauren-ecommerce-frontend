@@ -6,30 +6,23 @@
 	<section class="payments">
 		<div class="header">
 			<h2 class="title">PAYMENT SETTINGS</h2>
-			<a class="link">add payment card</a>
+			<a class="link" @click="showPaymentModal = true">add payment card</a>
 		</div>
-		<div class="user-info">
-			<h6>DEFAULT ADDRESS</h6>
-			<div class="info">
-				<h3 class="nickname">mil</h3>
-				<h4 class="name">xyz roy</h4>
-				<div class="mini-address">
-					<address>
-						Hasdau
-						<br />
-						sdasd, 337486<br />
-						Romania
-						<br />Phone: 01238128312
-					</address>
-				</div>
-				<div class="edit-links"><a>Edit</a><span>|</span><a>Delete</a></div>
-			</div>
-		</div>
-		<ModalPaymentMethodModal />
+		<div class="user-info"></div>
+		<ModalPaymentMethodModal
+			:modalOpen="showPaymentModal"
+			@hideModal="hidePaymentModal"
+		/>
 	</section>
 </template>
 
-<script setup></script>
+<script setup>
+var showPaymentModal = ref(false);
+
+const hidePaymentModal = () => {
+	showPaymentModal.value = false;
+};
+</script>
 
 <style scoped lang="scss">
 section.payments {
@@ -57,6 +50,7 @@ section.payments {
 			font-style: Normal;
 			font-weight: 400;
 			text-transform: uppercase;
+			cursor: pointer;
 		}
 	}
 	.user-info {
