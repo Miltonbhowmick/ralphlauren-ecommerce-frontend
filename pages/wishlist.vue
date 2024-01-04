@@ -1,6 +1,10 @@
 <template>
 	<div class="wishlist-box">
-		<div class="banner" :style="{ backgroundImage: `url(${wishlistBg})` }">
+		<div
+			v-if="isAuth === false"
+			class="banner"
+			:style="{ backgroundImage: `url(${wishlistBg})` }"
+		>
 			<div class="content">
 				<h6>MY RL</h6>
 				<h1>Wishlist</h1>
@@ -11,8 +15,13 @@
 				</p>
 			</div>
 		</div>
+		<div v-else-if="isAuth === true">
+			<AccountHeroBanner />
+			<AccountPageNavbar />
+		</div>
 	</div>
-	<div class="shop">
+
+	<div v-if="isAuth === false" class="shop">
 		<div class="account box">
 			<h3 class="title">My RL Account</h3>
 			<p class="details">
@@ -35,10 +44,45 @@
 			</ul>
 		</div>
 	</div>
+	<div v-else-if="isAuth === true">
+		<div class="wishlist-shop">
+			<div class="box info">
+				<i class="fa fa-heart-o" aria-hidden="true"></i>
+				<h4 class="title">Start a Wishlist</h4>
+				<p class="description">
+					Click the heart icon to curate a dream list to share with friends and
+					family
+				</p>
+			</div>
+			<div class="box card">
+				<div class="image">
+					<img src="/images/Mens-New-arrivals.jpg" alt="Mens-New-arrivals" />
+				</div>
+				<div class="name">men's new arrival</div>
+			</div>
+			<div class="box card">
+				<div class="image">
+					<img
+						src="/images/Womens-New-arrivals.jpg"
+						alt="Womens-New-arrivals"
+					/>
+				</div>
+				<div class="name">women's new arrival</div>
+			</div>
+			<div class="box card">
+				<div class="image">
+					<img src="/images/Home.jpg" alt="Home" />
+				</div>
+				<div class="name">home new arrival</div>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script setup>
 import wishlistBg from "~/assets/images/wishlist-banner.png";
+
+const isAuth = ref(true);
 </script>
 
 <style scoped lang="scss">
@@ -127,6 +171,61 @@ import wishlistBg from "~/assets/images/wishlist-banner.png";
 						text-underline-offset: 7px;
 					}
 				}
+			}
+		}
+	}
+}
+.wishlist-shop {
+	margin-top: 50px;
+	padding: 0 8rem;
+	display: flex;
+	gap: 10px;
+	.box {
+		flex-basis: 25%;
+		&.info {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 20px;
+			background-color: #f8f8f8;
+			// padding: 0 20px;
+			i {
+				font-size: 30px;
+			}
+			.title {
+				margin: 0;
+				font-family: RL_DroidKufi, LeJeuneDeck-Regular, Times New Roman, Times,
+					serif;
+				font-size: 28px;
+				font-weight: 400;
+				font-style: normal;
+				line-height: 1.8125rem;
+				letter-spacing: 1.25px;
+				color: #000;
+				text-transform: capitalize;
+			}
+			.description {
+				width: 70%;
+				text-align: center;
+				font-size: 12px;
+				line-height: 1.3125rem;
+				color: #000;
+			}
+		}
+		&.card {
+			.name {
+				// margin-top: 30px;
+				font-family: RL_DroidKufi, Founders Grotesk Mono Regular, Arial,
+					Helvetica, sans-serif;
+				font-style: Normal;
+				font-size: 9px;
+				font-weight: 500;
+				text-align: left;
+				line-height: 1.25rem;
+				letter-spacing: 2.25px;
+				color: #041e3a;
+				text-transform: uppercase;
 			}
 		}
 	}
