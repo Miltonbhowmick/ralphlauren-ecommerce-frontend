@@ -1,5 +1,5 @@
 <template>
-	<div class="menu-box">
+	<div class="menu-box" id="navbarMenuBox">
 		<div class="sidebar">
 			<ul>
 				<li><a>Brands</a></li>
@@ -29,11 +29,12 @@ import bgImage from "~/assets/images/menu/menu-bg.jpg";
 	position: absolute;
 	z-index: 999;
 	left: 0;
-	top: 70px;
+	top: 53px;
 	border-top: 1px solid #d1d1d1;
 	background: #f7f7f7;
 	width: 100%;
 	display: flex;
+	animation: expandHeight 2s forwards;
 
 	.sidebar {
 		width: 20%;
@@ -82,6 +83,15 @@ import bgImage from "~/assets/images/menu/menu-bg.jpg";
 			justify-content: center;
 			gap: 15px;
 		}
+	}
+}
+
+@keyframes expandHeight {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }
 </style>

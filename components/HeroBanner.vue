@@ -18,10 +18,15 @@
 			<h2 class="title" :style="{ color: props?.textColor }">
 				{{ props?.title }}
 			</h2>
-			<h2 class="title-normal" :style="{ color: props?.textColor }">
+			<h2
+				v-if="props?.normalTitle"
+				class="title-normal"
+				:style="{ color: props?.textColor }"
+			>
 				{{ props?.normalTitle }}
 			</h2>
 			<p
+				v-if="props?.description"
 				class="description"
 				:style="[
 					{ color: props?.textColor },

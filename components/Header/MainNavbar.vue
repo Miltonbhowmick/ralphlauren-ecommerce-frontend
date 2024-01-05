@@ -9,70 +9,73 @@
 		</div>
 		<nav class="navbar">
 			<ul>
-				<li
-					@mouseover="currentMenu = men"
-					@mouseleave="handleCurrentMenu($event)"
-				>
+				<li @mouseover="showDropdown('men')" @mouseleave="hideDropdown('men')">
 					<a>men</a>
 					<component
-						v-if="currentMenu"
-						:is="currentMenu"
-						@mouseleave="handleCurrentMenu($event)"
+						v-if="activeDropdown === 'men'"
+						:is="men"
+						@mouseover="showDropdown('men')"
+						@mouseleave="hideDropdown('men')"
 					/>
 				</li>
 				<li
-					@mouseover="currentMenu = women"
-					@mouseleave="handleCurrentMenu($event)"
+					@mouseover="showDropdown('women')"
+					@mouseleave="hideDropdown('women')"
 				>
 					<a>women</a>
 					<component
-						v-if="currentMenu"
-						:is="currentMenu"
-						@mouseleave="handleCurrentMenu($event)"
+						v-if="activeDropdown === 'women'"
+						:is="women"
+						@mouseover="showDropdown('women')"
+						@mouseleave="hideDropdown('women')"
 					/>
 				</li>
 				<li
-					@mouseover="currentMenu = kids"
-					@mouseleave="handleCurrentMenu($event)"
+					@mouseover="showDropdown('kids')"
+					@mouseleave="hideDropdown('kids')"
 				>
 					<a>kids</a>
 					<component
-						v-if="currentMenu"
-						:is="currentMenu"
-						@mouseleave="handleCurrentMenu($event)"
+						v-if="activeDropdown === 'kids'"
+						:is="women"
+						@mouseover="showDropdown('kids')"
+						@mouseleave="hideDropdown('kids')"
 					/>
 				</li>
 				<li
-					@mouseover="currentMenu = home"
-					@mouseleave="handleCurrentMenu($event)"
+					@mouseover="showDropdown('home')"
+					@mouseleave="hideDropdown('home')"
 				>
 					<a>home</a>
 					<component
-						v-if="currentMenu"
-						:is="currentMenu"
-						@mouseleave="handleCurrentMenu($event)"
+						v-if="activeDropdown === 'home'"
+						:is="home"
+						@mouseover="showDropdown('home')"
+						@mouseleave="hideDropdown('home')"
 					/>
 				</li>
 				<li
-					@mouseover="currentMenu = gifts"
-					@mouseleave="handleCurrentMenu($event)"
+					@mouseover="showDropdown('gifts')"
+					@mouseleave="hideDropdown('gifts')"
 				>
 					<a>gift</a>
 					<component
-						v-if="currentMenu"
-						:is="currentMenu"
-						@mouseleave="handleCurrentMenu($event)"
+						v-if="activeDropdown === 'gifts'"
+						:is="gifts"
+						@mouseover="showDropdown('gifts')"
+						@mouseleave="hideDropdown('gifts')"
 					/>
 				</li>
 				<li
-					@mouseover="currentMenu = discover"
-					@mouseleave="handleCurrentMenu($event)"
+					@mouseover="showDropdown('discover')"
+					@mouseleave="hideDropdown('discover')"
 				>
 					<a>discover</a>
 					<component
-						v-if="currentMenu"
-						:is="currentMenu"
-						@mouseleave="handleCurrentMenu($event)"
+						v-if="activeDropdown === 'discover'"
+						:is="discover"
+						@mouseover="showDropdown('discover')"
+						@mouseleave="hideDropdown('discover')"
 					/>
 				</li>
 			</ul>
@@ -107,10 +110,14 @@ const discover = resolveComponent("CategoryMenuDiscover");
 const home = resolveComponent("CategoryMenuHome");
 
 var currentMenu = shallowRef(null);
+var activeDropdown = ref(null);
 var openSigninMenu = ref(false);
 
-const handleCurrentMenu = (event) => {
-	console.log(event.target);
+const showDropdown = (item) => {
+	activeDropdown.value = item;
+};
+const hideDropdown = (item) => {
+	activeDropdown.value = null;
 };
 </script>
 
@@ -134,6 +141,7 @@ const handleCurrentMenu = (event) => {
 		width: 100%;
 		ul {
 			list-style: none;
+			margin: 0;
 			display: flex;
 			gap: 10px;
 			li {

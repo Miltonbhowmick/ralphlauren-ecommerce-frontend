@@ -9,6 +9,8 @@
 				{ name: 'girls', src: '' },
 			]"
 			:backgroundImage="'/images/hero-banner.jpg'"
+			:textColor="'#fff'"
+			:left="true"
 		/>
 		<CustomSlider
 			:headlineBlack="true"
