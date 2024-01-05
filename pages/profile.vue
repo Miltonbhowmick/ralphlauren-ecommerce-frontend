@@ -260,7 +260,6 @@ section.account-profile {
 		.input-wrapper {
 			.label {
 				font-size: 1.1em;
-				margin-bottom: 0.9375rem;
 				color: #474747;
 				text-transform: uppercase;
 				font-family: RL_DroidKufi, Founders Grotesk Mono Light, Lucida Console,
@@ -270,6 +269,7 @@ section.account-profile {
 				letter-spacing: 0.3px;
 			}
 			.field-wrapper {
+				margin-top: 10px;
 				display: flex;
 				gap: 10px;
 				input {
