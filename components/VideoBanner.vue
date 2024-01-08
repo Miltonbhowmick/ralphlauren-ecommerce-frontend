@@ -112,11 +112,11 @@ const toggleVideoPlay = () => {
 					font-size: 10px;
 					text-transform: uppercase;
 					text-decoration: underline;
-					text-underline-offset: 9px;
+					text-underline-offset: 15px;
 					text-decoration-color: #ffffff;
 					&:hover {
-						text-underline-offset: 15px;
-						transition: 250ms ease-in-out;
+						text-underline-offset: 9px;
+						transition: 400ms ease-in-out;
 					}
 				}
 			}

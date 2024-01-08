@@ -169,6 +169,7 @@ const isAuth = ref(true);
 					&:hover {
 						cursor: pointer;
 						text-underline-offset: 7px;
+						transition: 400ms ease-in-out;
 					}
 				}
 			}

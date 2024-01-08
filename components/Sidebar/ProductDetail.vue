@@ -354,6 +354,7 @@ onBeforeUnmount(() => {
 							text-underline-offset: 15px;
 							&:hover {
 								text-underline-offset: 9px;
+								transition: 400ms ease-in-out;
 							}
 						}
 					}

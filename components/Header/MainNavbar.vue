@@ -145,7 +145,7 @@ const hideDropdown = (item) => {
 			display: flex;
 			gap: 10px;
 			li {
-				padding: 20px 0px;
+				padding: 20px 10px;
 				a {
 					font-family: RL_DroidKufi, Founders Grotesk Mono Regular, Arial,
 						Helvetica, sans-serif;
