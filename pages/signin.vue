@@ -206,6 +206,7 @@ var toggleAuthType = ref(true);
 		padding: 15px;
 		width: 45%;
 		.account-content {
+			border: 1px solid #c6c8cc;
 			.info {
 				padding: 20px 30px 30px 30px;
 			}
@@ -234,7 +235,6 @@ var toggleAuthType = ref(true);
 					}
 				}
 			}
-			border: 1px solid #c6c8cc;
 			.toggle-buttons {
 				display: flex;
 				justify-content: center;
