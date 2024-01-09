@@ -1,16 +1,17 @@
 <template>
-	<div>
+	<section class="home">
 		<HeroBanner
-			:title="'Best of Polo'"
+			:title="'WINTER SALE'"
 			:linkList="[
 				{ name: 'men', src: '' },
 				{ name: 'women', src: '' },
 				{ name: 'boys', src: '' },
 				{ name: 'girls', src: '' },
 			]"
-			:backgroundImage="'/images/hero-banner.jpg'"
+			:backgroundImage="'/images/bg-group-winter.jpg'"
 			:textColor="'#fff'"
-			:left="true"
+			:normalTitle="'FURTHER REDUCTIONS'"
+			:middle="true"
 		/>
 		<CustomSlider
 			:headlineBlack="true"
@@ -56,7 +57,7 @@
 		/>
 		<SinglePack class="mt-60" />
 		<ExplorePack class="mt-60" />
-	</div>
+	</section>
 </template>
 
 <script setup>
@@ -64,7 +65,11 @@ import bgGroup from "~/assets/images/bg-group.jpg";
 </script>
 
 <style scoped lang="scss">
-.mt-60 {
-	margin-top: 60px;
+// .mt-60 {
+// 	margin-top: 60px;
+// }
+
+section.home {
+	margin-top: -75px;
 }
 </style>

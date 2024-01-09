@@ -1,5 +1,10 @@
 <template>
-	<div class="main-navigation">
+	<div
+		class="main-navigation"
+		@mouseover="toggleNavbarBackground = true"
+		@mouseleave="toggleNavbarBackground = false"
+		:class="{ 'bg-white': toggleNavbarBackground }"
+	>
 		<div class="primary-logo">
 			<nuxt-link to="/">
 				<div class="logo">
@@ -9,20 +14,19 @@
 		</div>
 		<nav class="navbar">
 			<ul>
-				<li @mouseover="showDropdown('men')" @mouseleave="hideDropdown('men')">
-					<a>men</a>
+				<li @mouseover="showDropdown('men')">
+					<a :class="{ 'text-black': toggleNavbarBackground }">men</a>
 					<component
 						v-if="activeDropdown === 'men'"
 						:is="men"
 						@mouseover="showDropdown('men')"
-						@mouseleave="hideDropdown('men')"
 					/>
 				</li>
 				<li
 					@mouseover="showDropdown('women')"
 					@mouseleave="hideDropdown('women')"
 				>
-					<a>women</a>
+					<a :class="{ 'text-black': toggleNavbarBackground }">women</a>
 					<component
 						v-if="activeDropdown === 'women'"
 						:is="women"
@@ -34,7 +38,7 @@
 					@mouseover="showDropdown('kids')"
 					@mouseleave="hideDropdown('kids')"
 				>
-					<a>kids</a>
+					<a :class="{ 'text-black': toggleNavbarBackground }">kids</a>
 					<component
 						v-if="activeDropdown === 'kids'"
 						:is="women"
@@ -46,7 +50,7 @@
 					@mouseover="showDropdown('home')"
 					@mouseleave="hideDropdown('home')"
 				>
-					<a>home</a>
+					<a :class="{ 'text-black': toggleNavbarBackground }">home</a>
 					<component
 						v-if="activeDropdown === 'home'"
 						:is="home"
@@ -58,7 +62,7 @@
 					@mouseover="showDropdown('gifts')"
 					@mouseleave="hideDropdown('gifts')"
 				>
-					<a>gift</a>
+					<a :class="{ 'text-black': toggleNavbarBackground }">gift</a>
 					<component
 						v-if="activeDropdown === 'gifts'"
 						:is="gifts"
@@ -70,7 +74,7 @@
 					@mouseover="showDropdown('discover')"
 					@mouseleave="hideDropdown('discover')"
 				>
-					<a>discover</a>
+					<a :class="{ 'text-black': toggleNavbarBackground }">discover</a>
 					<component
 						v-if="activeDropdown === 'discover'"
 						:is="discover"
@@ -82,20 +86,44 @@
 		</nav>
 		<ul class="user-links">
 			<li>
-				<a><i class="fa fa-search" aria-hidden="true"></i></a>
+				<a
+					><i
+						class="fa fa-search"
+						:class="{ 'text-black': toggleNavbarBackground }"
+						aria-hidden="true"
+					></i
+				></a>
 			</li>
 			<li
 				@mouseover="openSigninMenu = true"
 				@mouseleave="openSigninMenu = false"
 			>
-				<a><i class="fa fa-user-o" aria-hidden="true"></i></a>
+				<a
+					><i
+						class="fa fa-user-o"
+						:class="{ 'text-black': toggleNavbarBackground }"
+						aria-hidden="true"
+					></i
+				></a>
 				<DropdownSignin v-if="openSigninMenu" />
 			</li>
 			<li>
-				<a><i class="fa fa-heart-o" aria-hidden="true"></i> </a>
+				<a
+					><i
+						class="fa fa-heart-o"
+						:class="{ 'text-black': toggleNavbarBackground }"
+						aria-hidden="true"
+					></i>
+				</a>
 			</li>
 			<li>
-				<a><i class="fa fa-briefcase" aria-hidden="true"></i></a>
+				<a
+					><i
+						class="fa fa-briefcase"
+						:class="{ 'text-black': toggleNavbarBackground }"
+						aria-hidden="true"
+					></i
+				></a>
 			</li>
 		</ul>
 	</div>
@@ -112,6 +140,7 @@ const home = resolveComponent("CategoryMenuHome");
 var currentMenu = shallowRef(null);
 var activeDropdown = ref(null);
 var openSigninMenu = ref(false);
+var toggleNavbarBackground = ref(false);
 
 const showDropdown = (item) => {
 	activeDropdown.value = item;
@@ -119,18 +148,35 @@ const showDropdown = (item) => {
 const hideDropdown = (item) => {
 	activeDropdown.value = null;
 };
+
+const updateScrollPosition = () => {
+	if (window.scrollY > 50) {
+		toggleNavbarBackground.value = true;
+	} else {
+		toggleNavbarBackground.value = false;
+	}
+};
+
+onMounted(() => {
+	window.addEventListener("scroll", updateScrollPosition);
+});
 </script>
 
 <style scoped lang="scss">
 .main-navigation {
-	position: relative;
+	position: sticky;
+	top: 0;
 	z-index: 999999;
-	background-color: #ffffff;
 	padding: 0px 55px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
+	width: 100%;
+	background: none;
+	&.bg-white {
+		background-color: #ffffff;
+	}
 	.primary-logo {
 		// padding: 10px 0px;
 		width: 25rem;
@@ -150,8 +196,13 @@ const hideDropdown = (item) => {
 					font-family: RL_DroidKufi, Founders Grotesk Mono Regular, Arial,
 						Helvetica, sans-serif;
 					text-transform: uppercase;
-					font-size: 11px;
+					font-size: 10px;
 					letter-spacing: 0.095rem;
+					color: #fff;
+
+					.text-black {
+						color: #041e3a;
+					}
 					&:hover {
 						cursor: pointer;
 					}
@@ -168,6 +219,7 @@ const hideDropdown = (item) => {
 		li {
 			cursor: pointer;
 			a {
+				color: #fff;
 				font-size: 16px;
 				font-weight: 500;
 			}
