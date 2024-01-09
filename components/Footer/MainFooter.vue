@@ -22,7 +22,7 @@
 			<div class="item">
 				<h4 class="headline">customer service</h4>
 				<ul class="list">
-					<li><a>Help</a></li>
+					<li><nuxt-link to="/help">Help</nuxt-link></li>
 					<li><a>Shipping</a></li>
 					<li><a>Free Online Returns & Exchanges</a></li>
 					<li><a>Operating Guidelines</a></li>
@@ -170,6 +170,7 @@ const handleSocialLink = (type) => {
 				li {
 					margin-bottom: 0.625rem;
 					a {
+						color: #041e3a;
 						font-size: 12px;
 						font-weight: 300;
 						letter-spacing: 0.00313rem;

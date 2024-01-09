@@ -15,10 +15,27 @@
 					<button v-else class="pause"></button>
 				</div>
 			</div>
-			<div class="slider-box">
-				<div class="slide">
-					<img src="/images/pack-slider/slider1.jpg" alt="slider-1" />
-				</div>
+			<div v-if="props?.sliderList" class="slider-box">
+				<carousel :per-page="1" :mouse-drag="true" :paginationEnabled="false">
+					<slide
+						v-for="(slideItem, slide_id) in props?.sliderList"
+						:key="'slide_' + slide_id"
+						class="cs-slider"
+						><div class="slider-image">
+							<img :src="slideItem?.imageSrc" />
+						</div>
+						<div
+							v-if="slideItem?.content"
+							class="slider-content"
+							:class="{ 'down-left': slideItem?.content?.downLeft }"
+						>
+							<h5 class="mini-title">{{ slideItem?.content?.miniTitle }}</h5>
+						</div>
+						<div class="slide-count">
+							{{ slide_id + 1 }}/{{ props?.sliderList.length }}
+						</div>
+					</slide>
+				</carousel>
 			</div>
 		</div>
 	</div>
@@ -26,7 +43,10 @@
 <script setup>
 import bgImage from "~/assets/images/bg-1.jpg";
 
-// bgImage = bgImage;
+const props = defineProps({
+	sliderList: null,
+});
+
 var videoPlaying = ref(true);
 
 const toggleVideoPlay = () => {
@@ -54,7 +74,7 @@ const toggleVideoPlay = () => {
 		.video-box {
 			position: relative;
 			.video {
-				width: 80%;
+				// width: 80%;
 			}
 			.video-pause-box {
 				position: absolute;
@@ -95,6 +115,44 @@ const toggleVideoPlay = () => {
 			width: 45%;
 			.slide {
 				width: 80%;
+			}
+			.cs-slider {
+				position: relative;
+				.slider-content {
+					position: absolute;
+					&.left {
+						left: 10px;
+					}
+					&.right {
+						right: 10px;
+					}
+					&.down-left {
+						left: 10px;
+						bottom: 10px;
+					}
+
+					.mini-title {
+						margin: 0;
+						font-family: "Founders Grotesk text Regular";
+						font-size: 0.763em;
+						color: #ffffff;
+						letter-spacing: 0.4em;
+						line-height: 2.333em;
+						text-transform: uppercase;
+					}
+				}
+				.slide-count {
+					color: #ffffff;
+					position: absolute;
+					right: 10px;
+					bottom: 10px;
+					font-family: "Founders Grotesk text Regular";
+					font-size: 0.763em;
+					color: #ffffff;
+					letter-spacing: 0.4em;
+					line-height: 2.333em;
+					text-transform: uppercase;
+				}
 			}
 		}
 	}

@@ -13,6 +13,54 @@
 			:normalTitle="'FURTHER REDUCTIONS'"
 			:middle="true"
 		/>
+		<RowCustomSlider
+			:perSlider="1"
+			:itemList="[
+				{
+					videoSrc:
+						'/videos/1228 Mens Polo_ Active Club_23_HP HUB_DSK_1440x720.mp4',
+					imageSrc: null,
+					content: {
+						companyLogo: '/images/2018_polo_white_logo.svg',
+						subTitle: 'active club',
+						linkList: [
+							{ name: 'shop now', src: '' },
+							{ name: 'explore now', src: '' },
+						],
+						left: true,
+					},
+					zeroMargin: true,
+				},
+				{
+					videoSrc: null,
+					imageSrc: '/images/1228_hp_c01b_img.jpg',
+					content: {
+						companyLogo: '/images/2018_polo_white_logo.svg',
+						subTitle: 'winter alpine',
+						linkList: [
+							{ name: 'shop now', src: '' },
+							{ name: 'explore now', src: '' },
+						],
+						left: true,
+					},
+					zeroMargin: true,
+				},
+				{
+					videoSrc: null,
+					imageSrc: '/images/1228_hp_c01c_img.jpg',
+					content: {
+						companyLogo: '/images/2018_polo_white_logo.svg',
+						subTitle: 'winter alpine',
+						linkList: [
+							{ name: 'shop now', src: '' },
+							{ name: 'explore now', src: '' },
+						],
+						middle: true,
+					},
+					zeroMargin: true,
+				},
+			]"
+		/>
 		<CustomSlider
 			:headlineBlack="true"
 			:backgroundImage="'/images/slider-bg.jpg'"
@@ -30,7 +78,39 @@
 			:bottom="true"
 			class="mt-60"
 		/>
-		<VideoBubbleImageSlider class="mt-60" />
+		<VideoBubbleImageSlider
+			class="mt-60"
+			:sliderList="[
+				{
+					content: {
+						downLeft: true,
+						miniTitle: 'leather cafe racer jacket',
+					},
+					imageSrc: '/images/jacket-racer.jpg',
+				},
+				{
+					content: {
+						downLeft: true,
+						miniTitle: 'leather cafe racer jacket',
+					},
+					imageSrc: '/images/colorfull-jacket-racer.jpg',
+				},
+				{
+					content: {
+						downLeft: true,
+						miniTitle: 'leather cafe racer jacket',
+					},
+					imageSrc: '/images/green-jacket-racer.jpg',
+				},
+				{
+					content: {
+						downLeft: true,
+						miniTitle: 'leather cafe racer jacket',
+					},
+					imageSrc: '/images/yellow-pant-racer.jpg',
+				},
+			]"
+		/>
 		<HolidayPack
 			:backgroundImage="bgGroup"
 			:left="true"
@@ -70,6 +150,6 @@ import bgGroup from "~/assets/images/bg-group.jpg";
 // }
 
 section.home {
-	margin-top: -75px;
+	margin-top: -58px;
 }
 </style>

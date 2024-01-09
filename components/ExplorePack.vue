@@ -64,6 +64,7 @@
 				font-size: 10px;
 				text-align: center;
 				text-transform: uppercase;
+				color: #041e3a;
 			}
 		}
 	}

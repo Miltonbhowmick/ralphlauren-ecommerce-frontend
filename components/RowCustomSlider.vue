@@ -40,6 +40,7 @@
 						'side-right': item?.content?.right,
 						'side-up': item?.content?.up,
 						'side-down': item?.content?.down,
+						'side-middle': item?.content?.middle,
 						down: item?.content?.down,
 						up: item?.content?.up,
 						'items-start': item?.content?.itemsLeft,
@@ -169,6 +170,11 @@ const props = defineProps({
 				bottom: 40px;
 				left: 50%;
 				transform: translateX(-50%);
+			}
+			&.side-middle {
+				top: 50%;
+				left: 50%;
+				transform: translateX(-50%, -50%);
 			}
 			&.down {
 				align-self: flex-end;

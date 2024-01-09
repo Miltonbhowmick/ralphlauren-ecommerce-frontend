@@ -7,19 +7,27 @@
 	>
 		<div class="primary-logo">
 			<nuxt-link to="/">
-				<div class="logo">
-					<img src="/images/company-logo.png" alt="company-logo" />
+				<div
+					class="logo"
+					:style="[
+						bgWhite === true
+							? { 'background-color': '#000' }
+							: { 'background-color': '#fff' },
+					]"
+				>
+					<!-- <img src="/images/company-logo.png" alt="company-logo" /> -->
 				</div>
 			</nuxt-link>
 		</div>
-		<nav class="navbar">
+		<nav class="cs-navbar">
 			<ul>
-				<li @mouseover="showDropdown('men')">
+				<li @mouseover="showDropdown('men')" @mouseleave="hideDropdown('men')">
 					<a :class="{ 'text-black': bgWhite }">men</a>
 					<component
 						v-if="activeDropdown === 'men'"
 						:is="men"
 						@mouseover="showDropdown('men')"
+						@mouseleave="hideDropdown('men')"
 					/>
 				</li>
 				<li
@@ -195,8 +203,14 @@ onMounted(() => {
 		// padding: 10px 0px;
 		width: 25rem;
 		flex-grow: 0;
+		.logo {
+			height: 25px;
+			mask-image: url("/images/logo-mask.svg");
+			mask-repeat: no-repeat;
+			mask-position: center;
+		}
 	}
-	.navbar {
+	.cs-navbar {
 		margin: 0;
 		width: 100%;
 		ul {

@@ -186,7 +186,7 @@ const showActiveSidebarContent = (option) => {
 	position: absolute;
 	z-index: 999;
 	left: 0;
-	top: 53px;
+	top: 58px;
 	border-top: 1px solid #d1d1d1;
 	background: #f7f7f7;
 	width: 100%;
