@@ -1,9 +1,9 @@
 <template>
 	<div
 		class="main-navigation"
-		@mouseover="toggleNavbarBackground = true"
-		@mouseleave="toggleNavbarBackground = false"
-		:class="{ 'bg-white': toggleNavbarBackground }"
+		@mouseover="bgWhite = true"
+		@mouseleave="handleNavbarBackground(false)"
+		:class="{ 'bg-white': bgWhite }"
 	>
 		<div class="primary-logo">
 			<nuxt-link to="/">
@@ -15,7 +15,7 @@
 		<nav class="navbar">
 			<ul>
 				<li @mouseover="showDropdown('men')">
-					<a :class="{ 'text-black': toggleNavbarBackground }">men</a>
+					<a :class="{ 'text-black': bgWhite }">men</a>
 					<component
 						v-if="activeDropdown === 'men'"
 						:is="men"
@@ -26,7 +26,7 @@
 					@mouseover="showDropdown('women')"
 					@mouseleave="hideDropdown('women')"
 				>
-					<a :class="{ 'text-black': toggleNavbarBackground }">women</a>
+					<a :class="{ 'text-black': bgWhite }">women</a>
 					<component
 						v-if="activeDropdown === 'women'"
 						:is="women"
@@ -38,7 +38,7 @@
 					@mouseover="showDropdown('kids')"
 					@mouseleave="hideDropdown('kids')"
 				>
-					<a :class="{ 'text-black': toggleNavbarBackground }">kids</a>
+					<a :class="{ 'text-black': bgWhite }">kids</a>
 					<component
 						v-if="activeDropdown === 'kids'"
 						:is="women"
@@ -50,7 +50,7 @@
 					@mouseover="showDropdown('home')"
 					@mouseleave="hideDropdown('home')"
 				>
-					<a :class="{ 'text-black': toggleNavbarBackground }">home</a>
+					<a :class="{ 'text-black': bgWhite }">home</a>
 					<component
 						v-if="activeDropdown === 'home'"
 						:is="home"
@@ -62,7 +62,7 @@
 					@mouseover="showDropdown('gifts')"
 					@mouseleave="hideDropdown('gifts')"
 				>
-					<a :class="{ 'text-black': toggleNavbarBackground }">gift</a>
+					<a :class="{ 'text-black': bgWhite }">gift</a>
 					<component
 						v-if="activeDropdown === 'gifts'"
 						:is="gifts"
@@ -74,7 +74,7 @@
 					@mouseover="showDropdown('discover')"
 					@mouseleave="hideDropdown('discover')"
 				>
-					<a :class="{ 'text-black': toggleNavbarBackground }">discover</a>
+					<a :class="{ 'text-black': bgWhite }">discover</a>
 					<component
 						v-if="activeDropdown === 'discover'"
 						:is="discover"
@@ -89,7 +89,7 @@
 				<a
 					><i
 						class="fa fa-search"
-						:class="{ 'text-black': toggleNavbarBackground }"
+						:class="{ 'text-black': bgWhite }"
 						aria-hidden="true"
 					></i
 				></a>
@@ -101,7 +101,7 @@
 				<a
 					><i
 						class="fa fa-user-o"
-						:class="{ 'text-black': toggleNavbarBackground }"
+						:class="{ 'text-black': bgWhite }"
 						aria-hidden="true"
 					></i
 				></a>
@@ -111,7 +111,7 @@
 				<a
 					><i
 						class="fa fa-heart-o"
-						:class="{ 'text-black': toggleNavbarBackground }"
+						:class="{ 'text-black': bgWhite }"
 						aria-hidden="true"
 					></i>
 				</a>
@@ -120,7 +120,7 @@
 				<a
 					><i
 						class="fa fa-briefcase"
-						:class="{ 'text-black': toggleNavbarBackground }"
+						:class="{ 'text-black': bgWhite }"
 						aria-hidden="true"
 					></i
 				></a>
@@ -141,9 +141,11 @@ var currentMenu = shallowRef(null);
 var activeDropdown = ref(null);
 var openSigninMenu = ref(false);
 var toggleNavbarBackground = ref(false);
+var bgWhite = ref(false);
 
 const showDropdown = (item) => {
 	activeDropdown.value = item;
+	toggleNavbarBackground.value = true;
 };
 const hideDropdown = (item) => {
 	activeDropdown.value = null;
@@ -156,6 +158,16 @@ const updateScrollPosition = () => {
 		toggleNavbarBackground.value = false;
 	}
 };
+
+const handleNavbarBackground = (toggle) => {
+	if (toggleNavbarBackground.value === false && toggle === false) {
+		bgWhite.value = false;
+	}
+};
+
+watch(toggleNavbarBackground, (newVal, oldVal) => {
+	bgWhite.value = toggleNavbarBackground.value;
+});
 
 onMounted(() => {
 	window.addEventListener("scroll", updateScrollPosition);
