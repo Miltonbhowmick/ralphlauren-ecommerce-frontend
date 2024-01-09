@@ -145,13 +145,15 @@ var bgWhite = ref(false);
 
 const showDropdown = (item) => {
 	activeDropdown.value = item;
-	toggleNavbarBackground.value = true;
+	handleNavbarBackground(toggleNavbarBackground.value);
 };
 const hideDropdown = (item) => {
 	activeDropdown.value = null;
+	handleNavbarBackground(toggleNavbarBackground.value);
 };
 
 const updateScrollPosition = () => {
+	console.log("whuyyy");
 	if (window.scrollY > 50) {
 		toggleNavbarBackground.value = true;
 	} else {
