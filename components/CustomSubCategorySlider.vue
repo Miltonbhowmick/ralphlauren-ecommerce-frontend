@@ -1,92 +1,29 @@
 <template>
-	<div class="slider-content">
+	<div v-if="props?.slideList" class="slider-content">
 		<carousel
 			:per-page="props?.perPage"
 			:mouse-drag="true"
 			:paginationEnabled="false"
+			:navigationEnabled="true"
 		>
-			<slide class="cs-slider"
+			<slide
+				v-for="(slideItem, slide_id) in props?.slideList"
+				:key="'slide_' + slide_id"
+				class="cs-slider"
 				><div class="slider-image">
-					<img src="/images/slider/slider2.jpg" />
+					<img :src="slideItem?.imageSrc" :alt="slideItem?.title" />
 				</div>
 				<div class="content">
-					<h2 class="title">Our Favourites</h2>
-					<ul>
-						<li><a>men</a></li>
-						<li><a>women</a></li>
-						<li><a>boys</a></li>
-						<li><a>girls</a></li>
-						<li><a>baby</a></li>
-						<li><a>home</a></li>
-					</ul>
+					<h2 class="title">{{ slideItem?.title }}</h2>
 				</div></slide
 			>
-			<slide class="cs-slider"
-				><div class="slider-image">
-					<img src="/images/slider/slider1.jpg" />
-				</div>
-				<div class="content">
-					<h2 class="title">Polo Bear Shop</h2>
-					<ul>
-						<li><a>men</a></li>
-						<li><a>women</a></li>
-						<li><a>boys</a></li>
-						<li><a>girls</a></li>
-						<li><a>baby</a></li>
-						<li><a>home</a></li>
-					</ul>
-				</div>
-			</slide>
-			<slide class="cs-slider"
-				><div class="slider-image">
-					<img src="/images/slider/slider2.jpg" />
-				</div>
-				<div class="content">
-					<h2 class="title">Our Favourites</h2>
-					<ul>
-						<li><a>men</a></li>
-						<li><a>women</a></li>
-						<li><a>boys</a></li>
-						<li><a>girls</a></li>
-						<li><a>baby</a></li>
-						<li><a>home</a></li>
-					</ul>
-				</div></slide
-			>
-			<slide class="cs-slider"
-				><div class="slider-image">
-					<img src="/images/slider/slider2.jpg" />
-				</div>
-				<div class="content">
-					<h2 class="title">Our Favourites</h2>
-					<ul>
-						<li><a>men</a></li>
-						<li><a>women</a></li>
-						<li><a>boys</a></li>
-						<li><a>girls</a></li>
-						<li><a>baby</a></li>
-						<li><a>home</a></li>
-					</ul>
-				</div></slide
-			>
-			<slide class="cs-slider"
-				><div class="slider-image">
-					<img src="/images/slider/slider3.jpg" />
-				</div>
-				<div class="content">
-					<h2 class="title">For the Host</h2>
-					<ul>
-						<li><a>shop</a></li>
-						<li><a>now</a></li>
-					</ul>
-				</div>
-			</slide>
 		</carousel>
 	</div>
 </template>
 <script setup>
 const props = defineProps({
 	perPage: null,
+	slideList: null,
 });
 </script>
 
@@ -133,19 +70,26 @@ const props = defineProps({
 	}
 	.cs-slider {
 		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+
 		.content {
-			position: absolute;
-			bottom: 50px;
+			// position: absolute;
+			// bottom: 50px;
+			padding: 20px 0;
 			width: 100%;
 			display: flex;
 			flex-direction: column;
 			gap: 10px;
 			.title {
-				font-family: LeJeuneDeck-Regular, "Times New Roman", Times, serif;
-				margin: 0;
-				font-size: 30px;
-				color: #ffffff;
-				text-align: center;
+				font-family: "Founders Grotesk Mono Regular", Arial, Helvetica,
+					sans-serif;
+				font-size: 0.728em;
+				line-height: 0.909em;
+				letter-spacing: 0.091em;
+				text-transform: uppercase;
+				color: #474747;
 			}
 			ul {
 				margin: 0;
@@ -168,5 +112,21 @@ const props = defineProps({
 
 :deep(.VueCarousel-slide) {
 	margin: 10px;
+}
+:deep(.VueCarousel-navigation-next) {
+	padding: 0 !important;
+	margin-right: 4rem;
+	font-family: none;
+}
+:deep(.VueCarousel-navigation-prev) {
+	padding: 0 !important;
+	margin-left: 4rem;
+	font-family: none;
+}
+:deep(.VueCarousel-navigation-button) {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: #ffffff;
 }
 </style>

@@ -104,7 +104,7 @@ const props = defineProps({
 
 <style scoped lang="scss">
 .slider-content {
-	padding: 40px 0px;
+	// padding: 40px 0px;
 	margin-top: -4px;
 	position: relative;
 	display: flex;

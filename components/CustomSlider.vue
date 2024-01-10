@@ -34,52 +34,30 @@
 			<img :src="props.backgroundImage" alt="slider-bg" />
 		</div>
 		<carousel
+			v-if="props?.slideList"
 			:per-page="3"
 			:mouse-drag="true"
 			:navigationEnabled="true"
 			:paginationEnabled="false"
 		>
-			<slide class="cs-slider"
+			<slide
+				v-for="(slideItem, slide_id) in props?.slideList"
+				:key="'slide_' + slide_id"
+				class="cs-slider"
 				><div class="slider-image">
-					<img src="/images/slider/slider1.jpg" />
+					<img :src="slideItem?.imageSrc" />
 				</div>
-				<div class="content">
-					<h2 class="title">Polo Bear Shop</h2>
-					<ul class="link-list">
-						<li><a>men</a></li>
-						<li><a>women</a></li>
-						<li><a>boys</a></li>
-						<li><a>girls</a></li>
-						<li><a>baby</a></li>
-						<li><a>home</a></li>
-					</ul>
-				</div>
-			</slide>
-			<slide class="cs-slider"
-				><div class="slider-image">
-					<img src="/images/slider/slider2.jpg" />
-				</div>
-				<div class="content">
-					<h2 class="title">Our Favourites</h2>
-					<ul class="link-list">
-						<li><a>men</a></li>
-						<li><a>women</a></li>
-						<li><a>boys</a></li>
-						<li><a>girls</a></li>
-						<li><a>baby</a></li>
-						<li><a>home</a></li>
-					</ul>
-				</div></slide
-			>
-			<slide class="cs-slider"
-				><div class="slider-image">
-					<img src="/images/slider/slider3.jpg" />
-				</div>
-				<div class="content">
-					<h2 class="title">For the Host</h2>
-					<ul class="link-list">
-						<li><a>shop</a></li>
-						<li><a>now</a></li>
+				<div v-if="slideItem?.content" class="content">
+					<h2 v-if="slideItem?.content?.title" class="title">
+						{{ slideItem?.content?.title }}
+					</h2>
+					<ul v-if="slideItem?.content?.linkList" class="link-list">
+						<li
+							v-for="(linkItem, linkId) in slideItem?.content?.linkList"
+							:key="'link_' + linkId"
+						>
+							<a :href="linkItem.src">{{ linkItem.name }}</a>
+						</li>
 					</ul>
 				</div>
 			</slide>
@@ -95,6 +73,7 @@ const props = defineProps({
 	title: null,
 	subTitle: null,
 	exploreLink: null,
+	slideList: null,
 });
 </script>
 
@@ -177,6 +156,7 @@ const props = defineProps({
 				font-size: 30px;
 				color: #ffffff;
 				text-align: center;
+				text-transform: capitalize;
 			}
 			ul {
 				margin: 0;
@@ -199,5 +179,21 @@ const props = defineProps({
 
 :deep(.VueCarousel-slide) {
 	margin: 10px;
+}
+:deep(.VueCarousel-navigation-next) {
+	padding: 0 !important;
+	margin-right: 45px;
+	font-family: none;
+}
+:deep(.VueCarousel-navigation-prev) {
+	padding: 0 !important;
+	margin-left: 45px;
+	font-family: none;
+}
+:deep(.VueCarousel-navigation-button) {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: #ffffff;
 }
 </style>
