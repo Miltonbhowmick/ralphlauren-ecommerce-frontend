@@ -13,9 +13,9 @@
 			v-if="props?.itemList"
 			:per-page="props?.perSlider"
 			:mouse-drag="true"
-			:navigationEnabled="false"
+			:navigationEnabled="true"
 			:paginationEnabled="false"
-			:autoplay="false"
+			:autoplay="true"
 			:loop="true"
 		>
 			<slide
@@ -265,6 +265,22 @@ const props = defineProps({
 
 :deep(.VueCarousel-slide) {
 	margin: 10px;
+}
+:deep(.VueCarousel-navigation-next) {
+	padding: 0 !important;
+	margin-right: 45px;
+	font-family: none;
+}
+:deep(.VueCarousel-navigation-prev) {
+	padding: 0 !important;
+	margin-left: 45px;
+	font-family: none;
+}
+:deep(.VueCarousel-navigation-button) {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: #ffffff;
 }
 .m-0 {
 	margin: 0;

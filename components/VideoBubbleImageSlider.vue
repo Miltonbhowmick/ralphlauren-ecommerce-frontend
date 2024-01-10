@@ -65,6 +65,7 @@ const toggleVideoPlay = () => {
 	background-size: cover;
 	background-repeat: no-repeat;
 	width: 100%;
+	display: flex;
 	.content {
 		padding: 100px 100px;
 		display: flex;

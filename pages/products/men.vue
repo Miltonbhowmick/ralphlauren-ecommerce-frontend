@@ -1,5 +1,53 @@
 <template>
 	<div>
+		<RowCustomSlider
+			:perSlider="1"
+			:itemList="[
+				{
+					videoSrc:
+						'/videos/1228 Mens Polo_ Active Club_23_HP HUB_DSK_1440x720.mp4',
+					imageSrc: null,
+					content: {
+						companyLogo: '/images/2018_polo_white_logo.svg',
+						subTitle: 'active club',
+						linkList: [
+							{ name: 'shop now', src: '' },
+							{ name: 'explore now', src: '' },
+						],
+						left: true,
+					},
+					zeroMargin: true,
+				},
+				{
+					videoSrc: null,
+					imageSrc: '/images/1228_hp_c01b_img.jpg',
+					content: {
+						companyLogo: '/images/2018_polo_white_logo.svg',
+						subTitle: 'winter alpine',
+						linkList: [
+							{ name: 'shop now', src: '' },
+							{ name: 'explore now', src: '' },
+						],
+						left: true,
+					},
+					zeroMargin: true,
+				},
+				{
+					videoSrc: null,
+					imageSrc: '/images/1228_hp_c01c_img.jpg',
+					content: {
+						companyLogo: '/images/2018_polo_white_logo.svg',
+						subTitle: 'winter alpine',
+						linkList: [
+							{ name: 'shop now', src: '' },
+							{ name: 'explore now', src: '' },
+						],
+						middle: true,
+					},
+					zeroMargin: true,
+				},
+			]"
+		/>
 		<div class="slider-box">
 			<h2 class="title">Men: Shop by Category</h2>
 			<CustomSubCategorySlider :perPage="4"></CustomSubCategorySlider>

@@ -86,6 +86,7 @@ const toggleVideoPlay = () => {
 <style scoped lang="scss">
 .video-banner-box {
 	position: relative;
+	display: flex;
 	.video {
 		width: 100%;
 	}

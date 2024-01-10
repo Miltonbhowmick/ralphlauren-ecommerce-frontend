@@ -76,10 +76,8 @@
 				{ title: 'boys', src: '/' },
 			]"
 			:bottom="true"
-			class="mt-60"
 		/>
 		<VideoBubbleImageSlider
-			class="mt-60"
 			:sliderList="[
 				{
 					content: {
@@ -123,9 +121,8 @@
 				{ name: 'boys' },
 				{ name: 'girls' },
 			]"
-			class="mt-60"
 		/>
-		<HallFamePack class="mt-60" />
+		<HallFamePack />
 		<VideoBannerPolo
 			:title="'POLO'"
 			:subTitle="'Holiday Dressing'"
@@ -133,9 +130,8 @@
 			:companyLogo="'/images/company-logo.png'"
 			:linkList="[{ name: 'men' }, { name: 'women' }, { name: 'baby' }]"
 			:down="true"
-			class="mt-60"
 		/>
-		<SinglePack class="mt-60" />
+		<SinglePack />
 		<ExplorePack class="mt-60" />
 	</section>
 </template>
