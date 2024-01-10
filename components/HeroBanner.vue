@@ -15,6 +15,10 @@
 				'items-start': props?.itemsStart,
 			}"
 		>
+			<div v-if="props?.companyLogo" class="company-logo">
+				<img :src="props?.companyLogo" alt="company-logo" />
+			</div>
+
 			<h2 class="title" :style="{ color: props?.textColor }">
 				{{ props?.title }}
 			</h2>
@@ -63,6 +67,7 @@ const props = defineProps({
 	itemsStart: false,
 	isBackgroundImage: null,
 	backgroundColor: null,
+	companyLogo: null,
 	textColor: "#fff",
 	backgroundImage: null,
 	title: null,
@@ -131,7 +136,9 @@ const props = defineProps({
 		&.items-start {
 			align-items: flex-start;
 		}
-
+		.company-logo {
+			width: 300px;
+		}
 		.title {
 			margin: 0;
 			font-size: 4em;

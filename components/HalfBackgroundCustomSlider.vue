@@ -15,70 +15,38 @@
 			<img :src="props.backgroundImage" alt="slider-bg" />
 		</div>
 		<carousel
+			v-if="props?.slideList"
 			:per-page="1"
 			:mouse-drag="true"
-			:navigationEnabled="true"
+			:navigationEnabled="false"
 			:paginationEnabled="false"
 		>
-			<slide class="cs-slider"
-				><div class="slider-image">
-					<img src="/images/women-dress-1.jpg" />
+			<slide
+				v-for="(slideItem, slideId) in props?.slideList"
+				:key="'slide_' + slideId"
+				class="cs-slider"
+				><div v-if="slideItem?.imageSrc" class="slider-image">
+					<img :src="slideItem?.imageSrc" :alt="slideItem?.content?.title" />
 				</div>
-				<div class="content">
-					<h2 class="title">Polo Bear Shop</h2>
-					<ul>
-						<li><a>men</a></li>
-						<li><a>women</a></li>
-						<li><a>boys</a></li>
-						<li><a>girls</a></li>
-						<li><a>baby</a></li>
-						<li><a>home</a></li>
-					</ul>
-				</div>
-			</slide>
-			<slide class="cs-slider"
-				><div class="slider-image">
-					<img src="/images/women-dress-2.jpg" />
-				</div>
-				<div class="content">
-					<h2 class="title">Our Favourites</h2>
-					<ul>
-						<li><a>men</a></li>
-						<li><a>women</a></li>
-						<li><a>boys</a></li>
-						<li><a>girls</a></li>
-						<li><a>baby</a></li>
-						<li><a>home</a></li>
-					</ul>
-				</div></slide
-			>
-			<slide class="cs-slider"
-				><div class="slider-image">
-					<img src="/images/women-dress-3.jpg" />
-				</div>
-				<div class="content">
-					<h2 class="title">For the Host</h2>
-					<ul>
-						<li><a>shop</a></li>
-						<li><a>now</a></li>
-					</ul>
-				</div>
-			</slide>
-			<slide class="cs-slider">
-				<div class="slider-video">
-					<video autoplay muted loop id="slider-bg-video">
-						<source src="/videos/Lauren_Holiday.mp4" type="video/mp4" />
+				<div v-else-if="slideItem?.videoSrc" class="slider-video">
+					<video autoplay muted loop id="bg-video">
+						<source :src="slideItem?.videoSrc" type="video/mp4" />
 					</video>
-					<div class="video-pause-box" @click="toggleVideoPlay">
-						<button v-if="videoPlaying" class="playing"></button>
-						<button v-else class="pause"></button>
-					</div>
 				</div>
-				<div class="content">
-					<h2 class="title">For the Host</h2>
+				<div v-if="slideItem?.content" class="content">
+					<h2 v-if="slideItem?.content?.title" class="title">
+						{{ slideItem?.content?.title }}
+					</h2>
+					<h3 v-if="slideItem?.content?.boldMinititle" class="bold-mini-title">
+						{{ slideItem?.content?.boldMinititle }}
+					</h3>
 					<ul>
-						<li><a>shop</a></li>
-						<li><a>now</a></li>
+						<li
+							v-for="(linkObj, linkId) in slideItem?.content?.linkList"
+							:key="'link_' + linkId"
+						>
+							<a :href="linkObj.src">{{ linkObj.name }}</a>
+						</li>
 					</ul>
 				</div>
 			</slide>
@@ -93,6 +61,7 @@ const props = defineProps({
 	title: null,
 	subTitle: null,
 	exploreLink: null,
+	slideList: null,
 });
 
 var videoPlaying = ref(true);
@@ -146,9 +115,14 @@ const toggleVideoPlay = () => {
 		align-items: center;
 		gap: 15px;
 		.slider-image {
-			width: 50%;
+			width: 60%;
 			display: flex;
 			justify-content: center;
+		}
+		.slider-video {
+			width: 60%;
+			video {
+			}
 		}
 		.slider-video {
 			position: relative;
@@ -197,6 +171,17 @@ const toggleVideoPlay = () => {
 				font-size: 30px;
 				color: #041e3a;
 				text-align: center;
+				text-transform: capitalize;
+			}
+			.bold-mini-title {
+				margin: 0;
+				font-family: "SackersGothicW01-Heavy", Arial, Helvetica, sans-serif;
+				letter-spacing: 0.8em;
+				text-transform: uppercase;
+				font-size: 1.3375em;
+				font-weight: 600;
+				color: #041e3a;
+				text-align: center;
 			}
 			ul {
 				margin: 0;
@@ -210,6 +195,14 @@ const toggleVideoPlay = () => {
 						color: #041e3a;
 						text-transform: uppercase;
 						font-size: 9px;
+						text-decoration: underline;
+						text-underline-offset: 15px;
+						text-decoration-color: #041e3a;
+						&:hover {
+							cursor: pointer;
+							text-underline-offset: 9px;
+							transition: text-underline-offset 3ms ease-in-out;
+						}
 					}
 				}
 			}
