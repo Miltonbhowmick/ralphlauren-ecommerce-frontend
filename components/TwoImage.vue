@@ -3,6 +3,11 @@
 		class="two-image-box"
 		:style="{ backgroundImage: `url(${props?.backgroundImage})` }"
 	>
+		<div v-if="props?.header" class="header">
+			<h1 v-if="props?.header?.title" class="title">
+				{{ props?.header?.title }}
+			</h1>
+		</div>
 		<div class="content">
 			<div
 				v-for="(obj, idx) in props?.itemList"
@@ -27,6 +32,7 @@
 
 <script setup>
 const props = defineProps({
+	header: null,
 	backgroundImage: null,
 	itemList: null,
 });
@@ -35,10 +41,26 @@ const props = defineProps({
 <style scoped lang="scss">
 .two-image-box {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	align-items: center;
+	.header {
+		padding: 30px 0;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		h1.title {
+			margin: 0;
+			font-family: "LeJeuneDeck-Regular", Times, serif;
+			font-size: 2.75em;
+			line-height: 1.052em;
+			letter-spacing: 0;
+			color: #fff;
+		}
+	}
 	.content {
 		width: 70%;
-		padding: 50px 10px;
+		padding: 20px 10px 50px 10px;
 		display: flex;
 		justify-content: center;
 		gap: 40px;

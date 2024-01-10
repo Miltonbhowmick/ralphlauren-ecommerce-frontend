@@ -56,6 +56,7 @@ const toggleVideoPlay = () => {
 <style scoped lang="scss">
 .video-banner-box {
 	position: relative;
+	display: flex;
 	.video {
 		width: 100%;
 	}
@@ -108,6 +109,8 @@ const toggleVideoPlay = () => {
 			gap: 20px;
 			li {
 				a {
+					display: block;
+					height: 2rem;
 					color: #ffffff;
 					font-size: 10px;
 					text-transform: uppercase;
@@ -116,7 +119,7 @@ const toggleVideoPlay = () => {
 					text-decoration-color: #ffffff;
 					&:hover {
 						text-underline-offset: 9px;
-						transition: 400ms ease-in-out;
+						transition: 300ms ease-in-out;
 					}
 				}
 			}

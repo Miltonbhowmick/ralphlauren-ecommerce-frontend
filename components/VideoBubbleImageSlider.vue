@@ -2,11 +2,19 @@
 	<div
 		class="gift-pack-box"
 		:style="{
-			backgroundImage: `url(${bgImage})`,
+			backgroundImage: `url(${props?.backgroundImage})`,
 		}"
 	>
 		<div class="content">
-			<div class="video-box">
+			<div v-if="props?.sideImage" class="images-box">
+				<div class="image"><img :src="props?.sideImage?.imageSrc" /></div>
+				<div v-if="props?.sideImage?.content" class="image-content">
+					<h5 v-if="props?.sideImage?.content?.title" class="title">
+						{{ props?.sideImage?.content?.title }}
+					</h5>
+				</div>
+			</div>
+			<div v-else class="video-box">
 				<video autoplay muted loop id="product-video" class="video">
 					<source src="/videos/product-video.mp4" type="video/mp4" />
 				</video>
@@ -44,6 +52,8 @@
 import bgImage from "~/assets/images/bg-1.jpg";
 
 const props = defineProps({
+	sideImage: null,
+	backgroundImage: null,
 	sliderList: null,
 });
 
@@ -67,11 +77,31 @@ const toggleVideoPlay = () => {
 	width: 100%;
 	display: flex;
 	.content {
-		padding: 100px 100px;
+		padding: 6.25rem 9rem;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
+		.images-box {
+			position: relative;
+			.image {
+				width: 70%;
+			}
+			.image-content {
+				position: absolute;
+				bottom: 20px;
+				left: 40px;
+				.title {
+					color: #ffffff;
+					font-family: "Founders Grotesk mono Regular";
+					font-size: 0.963em;
+					color: #ffffff;
+					letter-spacing: 0.4em;
+					line-height: 2.333em;
+					text-transform: uppercase;
+				}
+			}
+		}
 		.video-box {
 			position: relative;
 			.video {

@@ -22,7 +22,9 @@
 		<nav class="cs-navbar">
 			<ul>
 				<li @mouseover="showDropdown('men')" @mouseleave="hideDropdown('men')">
-					<a :class="{ 'text-black': bgWhite }">men</a>
+					<nuxt-link to="/products/men" :class="{ 'text-black': bgWhite }"
+						>men</nuxt-link
+					>
 					<component
 						v-if="activeDropdown === 'men'"
 						:is="men"
@@ -34,7 +36,9 @@
 					@mouseover="showDropdown('women')"
 					@mouseleave="hideDropdown('women')"
 				>
-					<a :class="{ 'text-black': bgWhite }">women</a>
+					<nuxt-link to="/products/women" :class="{ 'text-black': bgWhite }"
+						>women</nuxt-link
+					>
 					<component
 						v-if="activeDropdown === 'women'"
 						:is="women"
@@ -46,7 +50,9 @@
 					@mouseover="showDropdown('kids')"
 					@mouseleave="hideDropdown('kids')"
 				>
-					<a :class="{ 'text-black': bgWhite }">kids</a>
+					<nuxt-link to="/products/kids" :class="{ 'text-black': bgWhite }"
+						>kids</nuxt-link
+					>
 					<component
 						v-if="activeDropdown === 'kids'"
 						:is="women"
@@ -58,7 +64,9 @@
 					@mouseover="showDropdown('home')"
 					@mouseleave="hideDropdown('home')"
 				>
-					<a :class="{ 'text-black': bgWhite }">home</a>
+					<nuxt-link to="/products/home" :class="{ 'text-black': bgWhite }"
+						>home</nuxt-link
+					>
 					<component
 						v-if="activeDropdown === 'home'"
 						:is="home"
@@ -70,7 +78,9 @@
 					@mouseover="showDropdown('gifts')"
 					@mouseleave="hideDropdown('gifts')"
 				>
-					<a :class="{ 'text-black': bgWhite }">gift</a>
+					<nuxt-link to="/products/gifts" :class="{ 'text-black': bgWhite }"
+						>gift</nuxt-link
+					>
 					<component
 						v-if="activeDropdown === 'gifts'"
 						:is="gifts"
@@ -82,7 +92,9 @@
 					@mouseover="showDropdown('discover')"
 					@mouseleave="hideDropdown('discover')"
 				>
-					<a :class="{ 'text-black': bgWhite }">discover</a>
+					<nuxt-link to="/products/discover" :class="{ 'text-black': bgWhite }"
+						>discover</nuxt-link
+					>
 					<component
 						v-if="activeDropdown === 'discover'"
 						:is="discover"

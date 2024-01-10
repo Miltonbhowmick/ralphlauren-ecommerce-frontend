@@ -349,12 +349,14 @@ onBeforeUnmount(() => {
 						margin-bottom: 30px;
 						text-align: center;
 						a {
+							display: block;
+							height: 2rem;
 							cursor: pointer;
 							text-decoration: underline;
 							text-underline-offset: 15px;
 							&:hover {
 								text-underline-offset: 9px;
-								transition: 400ms ease-in-out;
+								transition: 300ms ease-in-out;
 							}
 						}
 					}

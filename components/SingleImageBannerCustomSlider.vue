@@ -27,50 +27,49 @@
 			>
 				{{ props.subTitle }}
 			</p>
-			<a v-if="props.exploreLink" class="explore-link">explore now</a>
+			<p v-if="props?.description" class="description">
+				{{ props?.description }}
+			</p>
+			<ul v-if="props?.exploreLinkList">
+				<li
+					v-for="(linkObj, linkId) in props?.exploreLinkList"
+					:key="'explore_link_' + linkId"
+				>
+					<a :href="linkObj.src">{{ linkObj.name }}</a>
+				</li>
+			</ul>
 		</div>
 		<div v-if="props.isBackgroundImage" class="banner">
 			<img :src="props.backgroundImage" alt="slider-bg" />
 		</div>
 
 		<carousel
+			v-if="props?.slideList"
 			:per-page="3"
 			:mouse-drag="true"
 			:navigationEnabled="true"
 			:paginationEnabled="false"
 			class="slider-box"
 		>
-			<slide class="cs-slider"
+			<slide
+				v-for="(slideItem, slideId) in props?.slideList"
+				:key="'slide_' + slideId"
+				class="cs-slider"
 				><div class="slider-image">
-					<img src="/images/cups.jpg" />
+					<img :src="slideItem?.imageSrc" />
 				</div>
-				<div class="content">
-					<h2 class="title">Shop Dinnerware</h2>
-					<!-- <ul>
-						<li><a>shop now</a></li>
-					</ul> -->
-				</div>
-			</slide>
-			<slide class="cs-slider"
-				><div class="slider-image">
-					<img src="/images/gold-bag.jpg" />
-				</div>
-				<div class="content">
-					<h2 class="title">Shop Handbags</h2>
-					<!-- <ul>
-						<li><a>shop now</a></li>
-					</ul> -->
-				</div></slide
-			>
-			<slide class="cs-slider"
-				><div class="slider-image">
-					<img src="/images/towels.jpg" />
-				</div>
-				<div class="content">
-					<h2 class="title">Shop Jumpers & Cardigans</h2>
-					<!-- <ul>
-						<li><a>shop now</a></li>
-					</ul> -->
+				<div v-if="slideItem?.content" class="content">
+					<h2 v-if="slideItem?.content?.title" class="title">
+						{{ slideItem?.content?.title }}
+					</h2>
+					<ul v-if="slideItem?.content?.linkList">
+						<li
+							v-for="(linkObj, linkId) in slideItem?.content?.linkList"
+							:key="'link_' + linkId"
+						>
+							<a :href="linkObj.src">{{ linkObj.name }}</a>
+						</li>
+					</ul>
 				</div>
 			</slide>
 		</carousel>
@@ -83,7 +82,9 @@ const props = defineProps({
 	backgroundImage: null,
 	title: null,
 	subTitle: null,
-	exploreLink: null,
+	description: null,
+	exploreLinkList: null,
+	slideList: null,
 });
 </script>
 
@@ -109,6 +110,7 @@ const props = defineProps({
 		z-index: 999;
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 		gap: 10px;
 		.title {
 			font-family: "LeJeuneDeck-Regular", Times, serif;
@@ -125,14 +127,34 @@ const props = defineProps({
 			color: #ffffff;
 			text-align: center;
 		}
-		.explore-link {
-			text-transform: uppercase;
-			font-size: 9px;
+		.description {
+			width: 70%;
+			font-family: "LeJeuneDeck-Regular", Times, serif;
+			font-weight: 100;
+			font-size: 1.125em;
+			letter-spacing: 0em;
+			color: #fff;
 			text-align: center;
-			color: #ffffff;
-			text-decoration: underline;
-			text-underline-offset: 9px;
-			text-decoration-color: #ffffff;
+		}
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			display: flex;
+			justify-content: center;
+			gap: 20px;
+			li {
+				a {
+					display: block;
+					height: 2rem;
+					color: #fff;
+					text-transform: uppercase;
+					font-size: 9px;
+					text-decoration: underline;
+					text-underline-offset: 15px;
+					text-decoration-color: #fff;
+				}
+			}
 		}
 		.text-white {
 			color: #ffffff;
@@ -150,7 +172,8 @@ const props = defineProps({
 		width: 100%;
 	}
 	.slider-box {
-		margin-top: 25rem;
+		margin-top: 20rem;
+		padding: 10px 0;
 		.cs-slider {
 			width: 300px;
 			display: flex;
@@ -180,12 +203,14 @@ const props = defineProps({
 					gap: 20px;
 					li {
 						a {
-							color: #041e3a;
+							display: block;
+							height: 2rem;
+							color: #fff;
 							text-transform: uppercase;
 							font-size: 9px;
 							text-decoration: underline;
 							text-underline-offset: 15px;
-							text-decoration-color: #041e3a;
+							text-decoration-color: #fff;
 						}
 					}
 				}

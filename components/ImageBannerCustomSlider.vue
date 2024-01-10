@@ -32,46 +32,35 @@
 		<div v-if="props.isBackgroundImage" class="banner">
 			<img :src="props.backgroundImage" alt="slider-bg" />
 		</div>
-		<div class="mini-hero-banner">
-			<div class="image"><img src="/images/kids-smile.jpg" /></div>
+		<div v-if="props?.heroBannerImage" class="mini-hero-banner">
+			<div class="image"><img :src="props?.heroBannerImage" /></div>
 		</div>
 
 		<carousel
+			v-if="props?.slideList"
 			:per-page="3"
 			:mouse-drag="true"
 			:navigationEnabled="true"
 			:paginationEnabled="false"
 		>
-			<slide class="cs-slider"
-				><div class="slider-image">
-					<img src="/images/person-hat.jpg" />
+			<slide
+				v-for="(slideItem, slideId) in props?.slideList"
+				:key="'slide_' + slideId"
+				class="cs-slider"
+				><div v-if="slideItem?.imageSrc" class="slider-image">
+					<img :src="slideItem?.imageSrc" />
 				</div>
-				<div class="content">
-					<h2 class="title">Polo Bear Wool-Blend Jumper</h2>
+				<div v-if="slideItem?.content" class="content">
+					<h2 v-if="slideItem?.content?.title" class="title">
+						{{ slideItem?.content?.title }}
+					</h2>
 					<ul>
-						<li><a>shop now</a></li>
-					</ul>
-				</div>
-			</slide>
-			<slide class="cs-slider"
-				><div class="slider-image">
-					<img src="/images/kids-hat.jpg" />
-				</div>
-				<div class="content">
-					<h2 class="title">Polo Bear Wool-Blend Jumper</h2>
-					<ul>
-						<li><a>shop now</a></li>
-					</ul>
-				</div></slide
-			>
-			<slide class="cs-slider"
-				><div class="slider-image">
-					<img src="/images/kids-cute.jpg" />
-				</div>
-				<div class="content">
-					<h2 class="title">Polo Bear Wool-Blend Jumper</h2>
-					<ul>
-						<li><a>shop now</a></li>
+						<li
+							v-for="(linkObj, linkId) in slideItem?.content?.linkList"
+							:key="'link_' + linkId"
+						>
+							<a :href="linkObj.src">{{ linkObj.name }}</a>
+						</li>
 					</ul>
 				</div>
 			</slide>
@@ -83,9 +72,11 @@ const props = defineProps({
 	headlineBlack: true,
 	isBackgroundImage: true,
 	backgroundImage: null,
+	heroBannerImage: null,
 	title: null,
 	subTitle: null,
 	exploreLink: null,
+	slideList: null,
 });
 </script>
 
@@ -115,7 +106,7 @@ const props = defineProps({
 		.title {
 			font-family: "LeJeuneDeck-Regular", Times, serif;
 			font-weight: 100;
-			font-size: 2.75em;
+			font-size: 4.75em;
 			line-height: 1.052em;
 			letter-spacing: 0;
 			text-align: center;
@@ -148,7 +139,7 @@ const props = defineProps({
 		top: 0;
 		right: 0;
 		left: 0;
-		height: 45rem;
+		height: 65rem;
 		width: 100%;
 	}
 	.mini-hero-banner {
@@ -174,14 +165,14 @@ const props = defineProps({
 			.title {
 				font-family: "LeJeuneDeck-Regular";
 				margin: 0;
-				font-size: 15px;
+				font-size: 23px;
 				font-weight: 400;
 				color: #041e3a;
 				text-align: center;
 			}
 			ul {
 				margin: 0;
-				padding: 0;
+				padding: 10px 0;
 				list-style: none;
 				display: flex;
 				justify-content: center;
@@ -192,7 +183,7 @@ const props = defineProps({
 						text-transform: uppercase;
 						font-size: 9px;
 						text-decoration: underline;
-						text-underline-offset: 15px;
+						text-underline-offset: 12px;
 						text-decoration-color: #041e3a;
 					}
 				}

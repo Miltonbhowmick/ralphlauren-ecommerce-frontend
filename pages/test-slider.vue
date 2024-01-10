@@ -32,11 +32,64 @@
 	/>
 	<h1>Single Image Banner Custom Slider</h1>
 	<SingleImageBannerCustomSlider
+		class="mt-60"
 		:headlineBlack="false"
 		:backgroundImage="'/images/bg-ring.jpg'"
 		:isBackgroundImage="true"
 		:title="'Seasonal Polo Bears'"
-		class="mt-60"
+		:description="'Gifts of artful craftsmanship and refined glamour'"
+		:exploreLinkList="[
+			{
+				name: 'men',
+				src: '',
+			},
+			{
+				name: 'women',
+				src: '',
+			},
+			{
+				name: 'home',
+				src: '',
+			},
+		]"
+		:slideList="[
+			{
+				imageSrc: '/images/cups.jpg',
+				content: {
+					title: 'Shop Dinnerware',
+					linkList: [
+						{
+							name: 'shop now',
+							src: '',
+						},
+					],
+				},
+			},
+			{
+				imageSrc: '/images/gold-bag.jpg',
+				content: {
+					title: 'Shop Handbags',
+					linkList: [
+						{
+							name: 'shop now',
+							src: '',
+						},
+					],
+				},
+			},
+			{
+				imageSrc: '/images/towels.jpg',
+				content: {
+					title: 'Shop Jumpers & Cardigans',
+					linkList: [
+						{
+							name: 'shop now',
+							src: '',
+						},
+					],
+				},
+			},
+		]"
 	/>
 	<RowImageHolidayPack
 		:mediumTitle="'The Fleece-Lined Denim Western Overshirt'"
@@ -123,8 +176,47 @@
 		:headlineBlack="false"
 		:backgroundImage="'/images/image-slider-bg.jpg'"
 		:isBackgroundImage="true"
+		:heroBannerImage="'/images/1228_kids_hub_c06_img.jpg'"
 		:title="'Seasonal Polo Bears'"
 		class="mt-60"
+		:slideList="[
+			{
+				imageSrc: '/images/1228_kids_hub_c06a_img.jpg',
+				content: {
+					title: 'Striped Cotton Jersey Pocket T-Shirt',
+					linkList: [
+						{
+							name: 'shop now',
+							src: '',
+						},
+					],
+				},
+			},
+			{
+				imageSrc: '/images/1228_kids_hub_c06b_img.jpg',
+				content: {
+					title: 'Aran-Knit Flag Cotton Jumper',
+					linkList: [
+						{
+							name: 'shop now',
+							src: '',
+						},
+					],
+				},
+			},
+			{
+				imageSrc: '/images/1228_kids_hub_c06c_img.jpg',
+				content: {
+					title: 'Striped Cable-Knit Cotton Jumper',
+					linkList: [
+						{
+							name: 'shop now',
+							src: '',
+						},
+					],
+				},
+			},
+		]"
 	/>
 	<HeroBanner
 		:down="true"

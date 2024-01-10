@@ -11,24 +11,20 @@
 			</ul>
 		</div>
 		<div class="products">
-			<div @click="openSidebarModal" class="item item-1">
-				<div class="image">
-					<img src="/images/kid-1.jpg" alt="kid-1" />
+			<div class="item item-1">
+				<div @click="openSidebarModal" class="image">
+					<img src="/images/1228_kids_hub_c04a_img.jpg" alt="kid-1" />
+				</div>
+				<div @click="openSidebarModal" class="image">
+					<img src="/images/1228_kids_hub_c04c_img.jpg" alt="kid-1" />
 				</div>
 			</div>
-			<div @click="openSidebarModal" class="item item-2">
-				<div class="image">
-					<img src="/images/kid-2.jpg" alt="kid-1" />
+			<div class="item item-2">
+				<div @click="openSidebarModal" class="image">
+					<img src="/images/1228_kids_hub_c04b_img.jpg" alt="kid-1" />
 				</div>
-			</div>
-			<div @click="openSidebarModal" class="item item-3">
-				<div class="image">
-					<img src="/images/kid-3.jpg" alt="kid-1" />
-				</div>
-			</div>
-			<div @click="openSidebarModal" class="item item-4">
-				<div class="image">
-					<img src="/images/kid-4.jpg" alt="kid-1" />
+				<div @click="openSidebarModal" class="image">
+					<img src="/images/1228_kids_hub_c04d_img.jpg" alt="kid-1" />
 				</div>
 			</div>
 		</div>
@@ -86,6 +82,8 @@ const openSidebarModal = () => {
 			gap: 20px;
 			li {
 				a {
+					display: block;
+					height: 2rem;
 					color: #ffffff;
 					text-transform: uppercase;
 					font-size: 9px;
@@ -95,50 +93,24 @@ const openSidebarModal = () => {
 					&:hover {
 						cursor: pointer;
 						text-underline-offset: 9px;
-						transition: text-underline-offset 3ms ease-in-out;
+						transition: text-underline-offset 300ms ease-in-out;
 					}
 				}
 			}
 		}
 	}
 	.products {
+		padding: 0 10rem;
 		margin-top: 40px;
-		display: grid;
-		grid-template-columns: repeat(16, 50px);
-		grid-template-rows: repeat(23, 50px);
-		grid-gap: 15px;
+		display: flex;
+		gap: 10px;
 		.item {
-			cursor: pointer;
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
 			.image {
-				// width: 80%;
-				img {
-					object-fit: contain;
-				}
+				cursor: pointer;
 			}
-		}
-		.item-1 {
-			grid-column-start: 1;
-			grid-column-end: 8;
-			grid-row-start: 1;
-			grid-row-end: 10;
-		}
-		.item-2 {
-			grid-column-start: 8;
-			grid-column-end: 17;
-			grid-row-start: 1;
-			grid-row-end: 13;
-		}
-		.item-3 {
-			grid-column-start: 1;
-			grid-column-end: 8;
-			grid-row-start: 10;
-			grid-row-end: 13;
-		}
-		.item-4 {
-			grid-column-start: 8;
-			grid-column-end: 17;
-			grid-row-start: 14;
-			grid-row-end: 24;
 		}
 	}
 }

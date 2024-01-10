@@ -5,7 +5,7 @@
 		</div>
 		<div class="sub-category-list">
 			<div class="item">
-				<img src="/images/bed-sheat.jpg" alt="bed-sheat" />
+				<div><img src="/images/bed-sheat.jpg" alt="bed-sheat" /></div>
 				<h5 class="name">Bedding</h5>
 			</div>
 			<div class="item">
@@ -59,7 +59,7 @@
 
 <style scoped lang="scss">
 .category-box {
-	padding: 10px 40px;
+	padding: 30px 40px;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;

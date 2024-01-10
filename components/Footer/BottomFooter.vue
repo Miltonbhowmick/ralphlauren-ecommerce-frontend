@@ -53,7 +53,7 @@
 				font-family: "LeJeuneDeck-Regular";
 				font-size: 1.2vw;
 				letter-spacing: 0.014em;
-				color: #e3e3e3;
+				color: #fff;
 				&:hover {
 					cursor: pointer;
 					color: #fff;

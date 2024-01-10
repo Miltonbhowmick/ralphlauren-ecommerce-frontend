@@ -160,6 +160,8 @@ const isAuth = ref(true);
 			gap: 20px;
 			li {
 				a {
+					display: block;
+					height: 2rem;
 					text-transform: uppercase;
 					text-decoration: underline;
 					text-underline-offset: 13px;
@@ -169,7 +171,7 @@ const isAuth = ref(true);
 					&:hover {
 						cursor: pointer;
 						text-underline-offset: 7px;
-						transition: 400ms ease-in-out;
+						transition: 300ms ease-in-out;
 					}
 				}
 			}

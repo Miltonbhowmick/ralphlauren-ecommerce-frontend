@@ -194,6 +194,7 @@ const props = defineProps({
 				font-size: 30px;
 				color: #ffffff;
 				text-align: center;
+				text-transform: capitalize;
 			}
 			.title {
 				font-family: LeJeuneDeck-Regular, "Times New Roman", Times, serif;

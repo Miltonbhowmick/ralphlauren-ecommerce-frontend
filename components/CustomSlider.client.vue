@@ -167,9 +167,19 @@ const props = defineProps({
 				gap: 20px;
 				li {
 					a {
+						display: block;
+						height: 2rem;
 						color: #ffffff;
-						text-transform: uppercase;
 						font-size: 9px;
+						text-transform: uppercase;
+						text-decoration: underline;
+						text-underline-offset: 15px;
+						text-decoration-color: #fff;
+						&:hover {
+							cursor: pointer;
+							text-underline-offset: 9px;
+							transition: 300ms ease-in-out;
+						}
 					}
 				}
 			}

@@ -275,6 +275,7 @@ const props = defineProps({
 				width: 50%;
 			}
 			.slide-description {
+				width: 90%;
 				display: none;
 				margin: 0;
 				font-family: LeJeuneDeck-Regular, "Times New Roman", Times, serif;
@@ -320,7 +321,24 @@ const props = defineProps({
 :deep(.VueCarousel-slide) {
 	margin: 8px;
 }
-:deep(.VueCarousel-wrapper) {
-	width: 85%;
+:deep(.VueCarousel) {
+	// width: 85%;
+	padding: 0 25px;
+}
+:deep(.VueCarousel-navigation-next) {
+	padding: 0 !important;
+	margin-right: 45px;
+	font-family: none;
+}
+:deep(.VueCarousel-navigation-prev) {
+	padding: 0 !important;
+	margin-left: 45px;
+	font-family: none;
+}
+:deep(.VueCarousel-navigation-button) {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: #ffffff;
 }
 </style>

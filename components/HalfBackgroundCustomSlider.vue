@@ -192,6 +192,8 @@ const toggleVideoPlay = () => {
 				gap: 20px;
 				li {
 					a {
+						display: block;
+						height: 2rem;
 						color: #041e3a;
 						text-transform: uppercase;
 						font-size: 9px;
@@ -201,7 +203,7 @@ const toggleVideoPlay = () => {
 						&:hover {
 							cursor: pointer;
 							text-underline-offset: 9px;
-							transition: text-underline-offset 3ms ease-in-out;
+							transition: text-underline-offset 300ms ease-in-out;
 						}
 					}
 				}

@@ -7,15 +7,33 @@
 	>
 		<div class="product-list">
 			<div
-				v-for="(data, idx) in props.itemList"
-				:key="'product_' + idx"
+				v-for="(data, productId) in props?.itemList"
+				:key="'product_' + productId"
 				class="item"
 			>
-				<div class="image"><img :src="data.imageSrc" /></div>
-				<h3 class="title">{{ data.title }}</h3>
-				<ul>
-					<li v-for="(link, idx) in data.linkList" :key="idx">
-						<a>{{ link.name }}</a>
+				<div v-if="data?.imageSrc" class="image">
+					<img :src="data?.imageSrc" />
+				</div>
+				<h3
+					v-if="data?.content?.title"
+					class="title"
+					:style="{ color: data?.content?.textColor }"
+				>
+					{{ data?.content?.title }}
+				</h3>
+				<ul v-if="data?.content?.linkList">
+					<li
+						v-for="(link, linkId) in data?.content?.linkList"
+						:key="'link_' + linkId"
+					>
+						<a
+							:href="link.src"
+							:style="{
+								color: data?.content?.textColor,
+								textDecorationColor: data?.content?.textColor,
+							}"
+							>{{ link.name }}</a
+						>
 					</li>
 				</ul>
 			</div>
@@ -67,12 +85,20 @@ const props = defineProps({
 				gap: 20px;
 				li {
 					a {
+						display: block;
+						height: 2rem;
 						color: #ffffff;
 						text-transform: uppercase;
-						font-size: 10px;
+						font-size: 9px;
+						text-transform: uppercase;
 						text-decoration: underline;
 						text-underline-offset: 15px;
-						text-decoration-color: #ffffff;
+						text-decoration-color: #fff;
+						&:hover {
+							cursor: pointer;
+							text-underline-offset: 9px;
+							transition: 300ms ease-in-out;
+						}
 					}
 				}
 			}
