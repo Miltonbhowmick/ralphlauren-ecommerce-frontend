@@ -306,6 +306,10 @@
 <script setup>
 import holidayPackBgImage from "~/assets/images/bg-group1.jpg";
 
+definePageMeta({
+	layout: "transparent-navbar",
+});
+
 const showSidebarDetail = ref(false);
 
 const openSidebarDetail = () => {

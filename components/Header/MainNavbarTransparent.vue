@@ -164,15 +164,55 @@ const home = resolveComponent("CategoryMenuHome");
 var currentMenu = shallowRef(null);
 var activeDropdown = ref(null);
 var openSigninMenu = ref(false);
-var toggleNavbarBackground = ref(true);
-var bgWhite = ref(true);
+var toggleNavbarBackground = ref(false);
+var bgWhite = ref(false);
+
+var route = useRoute();
 
 const showDropdown = (item) => {
 	activeDropdown.value = item;
+	handleNavbarBackground(toggleNavbarBackground.value);
 };
 const hideDropdown = (item) => {
 	activeDropdown.value = null;
+	handleNavbarBackground(toggleNavbarBackground.value);
 };
+
+const updateScrollPosition = () => {
+	if (route.path.includes("/products") === true || route.path === "/") {
+		if (window.scrollY > 50) {
+			toggleNavbarBackground.value = true;
+		} else {
+			toggleNavbarBackground.value = false;
+		}
+	}
+};
+
+const handleNavbarBackground = (toggle) => {
+	if (toggleNavbarBackground.value === false && toggle === false) {
+		bgWhite.value = false;
+	}
+};
+
+watch(toggleNavbarBackground, (newVal, oldVal) => {
+	bgWhite.value = toggleNavbarBackground.value;
+});
+
+watch(
+	() => route.path,
+	(newVal, oldVal) => {
+		newVal.includes("/products") === true
+			? (toggleNavbarBackground.value = false)
+			: (toggleNavbarBackground.value = true);
+	}
+);
+
+onMounted(() => {
+	window.addEventListener("scroll", updateScrollPosition);
+	route.path.includes("/products") === true
+		? (toggleNavbarBackground.value = false)
+		: (toggleNavbarBackground.value = true);
+});
 </script>
 
 <style scoped lang="scss">

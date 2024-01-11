@@ -16,7 +16,11 @@
 	</section>
 </template>
 
-<script setup></script>
+<script setup>
+definePageMeta({
+	layout: "transparent-navbar",
+});
+</script>
 
 <style scoped lang="scss">
 section.home {

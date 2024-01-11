@@ -52,6 +52,10 @@
 
 <script setup>
 import bgGroup40 from "~/assets/images/bg-group-40.jpg";
+
+definePageMeta({
+	layout: "non-sticky-navbar",
+});
 </script>
 
 <style scoped lang="scss">
@@ -112,11 +116,11 @@ section.products-list-view {
 
 	.page-navbar {
 		position: sticky;
-		top: 40px;
+		top: 0;
 		z-index: 99999;
 		display: flex;
 		justify-content: space-between;
-		padding: 30px 20px;
+		padding: 25px 3rem;
 		background: #fff;
 		.path-list {
 			list-style: none;

@@ -177,9 +177,9 @@ const hideDropdown = (item) => {
 
 <style scoped lang="scss">
 .main-navigation {
-	position: sticky;
-	top: 0;
-	z-index: 999999;
+	// position: sticky;
+	// top: 0;
+	// z-index: 999999;
 	padding: 0px 55px;
 	display: flex;
 	flex-direction: row;
