@@ -158,6 +158,7 @@ var toggleAuthType = ref(true);
 
 <style scoped lang="scss">
 .login-content {
+	margin-top: 30px;
 	padding: 0 60px;
 	display: flex;
 	justify-content: center;
@@ -245,7 +246,7 @@ var toggleAuthType = ref(true);
 				a {
 					width: 100%;
 					text-align: center;
-					padding: 25px 15px;
+					padding: 20px 15px;
 					box-shadow: inset -6px -5px 11px -13px rgba(0, 0, 0, 0.75);
 					background-color: #f2f3f5;
 					font-family: RL_DroidKufi, LeJeuneDeck-Regular, Times New Roman, Times,
