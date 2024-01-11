@@ -188,6 +188,10 @@
 
 <script setup>
 import bgGroup from "~/assets/images/bg-group.jpg";
+
+definePageMeta({
+	layout: "transparent-navbar",
+});
 </script>
 
 <style scoped lang="scss">

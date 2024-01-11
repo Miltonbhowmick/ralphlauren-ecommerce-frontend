@@ -159,6 +159,10 @@
 import bgGroupImage from "~/assets/images/bg-group2.jpg";
 import bgGroupImage2 from "~/assets/images/bg-group3.jpg";
 
+definePageMeta({
+	layout: "transparent-navbar",
+});
+
 const showSidebarDetail = ref(false);
 
 const openSidebarDetail = () => {

@@ -51,6 +51,7 @@
 		}
 	}
 	.links {
+		width: 34%;
 		margin-top: 20px;
 		display: flex;
 		justify-content: center;
@@ -60,7 +61,7 @@
 			background-color: #fff;
 			border: 1px solid #041e3a;
 			width: 20vw;
-			padding: 15px 0;
+			padding: 18px 0;
 			text-align: center;
 			text-transform: uppercase;
 			font-size: 0.5875rem;

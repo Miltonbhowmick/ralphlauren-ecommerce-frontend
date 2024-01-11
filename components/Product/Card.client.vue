@@ -4,7 +4,7 @@
 			<carousel
 				:per-page="1"
 				:mouse-drag="true"
-				:navigationEnabled="false"
+				:navigationEnabled="true"
 				:paginationEnabled="false"
 			>
 				<slide class="cs-slider"
@@ -87,8 +87,8 @@ const getColor = (value) => {
 
 <style scoped lang="scss">
 .product-card {
-	width: 415px;
-	height: 680px;
+	// width: 515px;
+	// height: 830px;
 	// padding: 5px;
 	.slider-box {
 		position: relative;
@@ -207,5 +207,21 @@ const getColor = (value) => {
 			}
 		}
 	}
+}
+:deep(.VueCarousel-navigation-next) {
+	padding: 0 !important;
+	margin-right: 4rem;
+	font-family: none;
+}
+:deep(.VueCarousel-navigation-prev) {
+	padding: 0 !important;
+	margin-left: 4rem;
+	font-family: none;
+}
+:deep(.VueCarousel-navigation-button) {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: #ffffff;
 }
 </style>

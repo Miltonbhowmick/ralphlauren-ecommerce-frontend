@@ -46,6 +46,10 @@
 
 <script setup>
 import bgImage11 from "~/assets/images/bg-group11.jpg";
+
+definePageMeta({
+	layout: "transparent-navbar",
+});
 </script>
 
 <style scoped lang="scss">

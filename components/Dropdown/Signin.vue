@@ -26,7 +26,7 @@
 					experience</label
 				>
 			</div>
-			<button class="signin-btn">sign in</button>
+			<nuxt-link to="/signin" class="signin-btn">sign in</nuxt-link>
 		</div>
 	</div>
 </template>
@@ -36,7 +36,7 @@
 <style scoped lang="scss">
 .dropdown-signin {
 	position: absolute;
-	top: 48px;
+	top: 58px;
 	right: 10px;
 	z-index: 99;
 	background-color: #f4f5f6;
@@ -125,10 +125,12 @@
 			}
 		}
 		.signin-btn {
-			padding: 15px 0px;
+			padding: 18px 0;
 			width: 100%;
+			display: block;
 			text-transform: uppercase;
 			font-size: 0.75rem;
+			text-align: center;
 			background-color: #041e3a;
 			border: none;
 			color: #ffffff;

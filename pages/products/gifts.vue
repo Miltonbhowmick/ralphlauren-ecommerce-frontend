@@ -312,6 +312,10 @@ import bgImage6 from "~/assets/images/bg-group6.jpg";
 import bgImage8 from "~/assets/images/bg-group8.jpg";
 import bgImage9 from "~/assets/images/bg-group9.jpg";
 import bgImage10 from "~/assets/images/bg-group10.jpg";
+
+definePageMeta({
+	layout: "transparent-navbar",
+});
 </script>
 
 <style scoped lang="scss">
