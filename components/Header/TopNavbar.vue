@@ -10,8 +10,10 @@
 				<i class="fa fa-globe" aria-hidden="true"></i> <span>RO English</span>
 			</li>
 			<li>
-				<i class="fa fa-map-marker" aria-hidden="true"></i>
-				<span>Find A Store</span>
+				<nuxt-link to="/stores">
+					<i class="fa fa-map-marker" aria-hidden="true"></i>
+					<span>Find A Store</span>
+				</nuxt-link>
 			</li>
 		</ul>
 	</div>
@@ -57,6 +59,9 @@ const articleList = [
 		gap: 20px;
 		li {
 			margin: 0 5px;
+			a {
+				cursor: pointer;
+			}
 			span,
 			i {
 				color: #ffffff;

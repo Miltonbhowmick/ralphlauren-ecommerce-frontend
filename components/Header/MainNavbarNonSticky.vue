@@ -30,6 +30,7 @@
 						:is="men"
 						@mouseover="showDropdown('men')"
 						@mouseleave="hideDropdown('men')"
+						class="dropdown-start-top"
 					/>
 				</li>
 				<li
@@ -44,6 +45,7 @@
 						:is="women"
 						@mouseover="showDropdown('women')"
 						@mouseleave="hideDropdown('women')"
+						class="dropdown-start-top"
 					/>
 				</li>
 				<li
@@ -58,11 +60,13 @@
 						:is="women"
 						@mouseover="showDropdown('kids')"
 						@mouseleave="hideDropdown('kids')"
+						class="dropdown-start-top"
 					/>
 				</li>
 				<li
 					@mouseover="showDropdown('home')"
 					@mouseleave="hideDropdown('home')"
+					class="dropdown-start-top"
 				>
 					<nuxt-link to="/products/home" :class="{ 'text-black': bgWhite }"
 						>home</nuxt-link
@@ -72,11 +76,13 @@
 						:is="home"
 						@mouseover="showDropdown('home')"
 						@mouseleave="hideDropdown('home')"
+						class="dropdown-start-top"
 					/>
 				</li>
 				<li
 					@mouseover="showDropdown('gifts')"
 					@mouseleave="hideDropdown('gifts')"
+					class="dropdown-start-top"
 				>
 					<nuxt-link to="/products/gifts" :class="{ 'text-black': bgWhite }"
 						>gift</nuxt-link
@@ -86,11 +92,13 @@
 						:is="gifts"
 						@mouseover="showDropdown('gifts')"
 						@mouseleave="hideDropdown('gifts')"
+						class="dropdown-start-top"
 					/>
 				</li>
 				<li
 					@mouseover="showDropdown('discover')"
 					@mouseleave="hideDropdown('discover')"
+					class="dropdown-start-top"
 				>
 					<nuxt-link to="/products/discover" :class="{ 'text-black': bgWhite }"
 						>discover</nuxt-link
@@ -100,6 +108,7 @@
 						:is="discover"
 						@mouseover="showDropdown('discover')"
 						@mouseleave="hideDropdown('discover')"
+						class="dropdown-start-top"
 					/>
 				</li>
 			</ul>
@@ -245,5 +254,9 @@ const hideDropdown = (item) => {
 			}
 		}
 	}
+}
+
+.dropdown-start-top {
+	top: 6.5rem;
 }
 </style>
