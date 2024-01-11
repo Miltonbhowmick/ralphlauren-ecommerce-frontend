@@ -6,8 +6,13 @@
 			</article>
 		</div>
 		<ul class="nav-list">
-			<li><i></i><span>RO English</span></li>
-			<li><i></i><span>Find A Store</span></li>
+			<li>
+				<i class="fa fa-globe" aria-hidden="true"></i> <span>RO English</span>
+			</li>
+			<li>
+				<i class="fa fa-map-marker" aria-hidden="true"></i>
+				<span>Find A Store</span>
+			</li>
 		</ul>
 	</div>
 </template>
@@ -27,7 +32,7 @@ const articleList = [
 <style scoped lang="scss">
 .top-banner {
 	background-color: #041e3a;
-	padding: 15px 7px;
+	padding: 16px 7px;
 	position: relative;
 	display: flex;
 	flex-direction: row;
@@ -36,6 +41,8 @@ const articleList = [
 	.swipe-wrapper {
 		.article {
 			color: #ffffff;
+			letter-spacing: 1px;
+			font-size: 10px;
 		}
 	}
 	.nav-list {
@@ -43,14 +50,28 @@ const articleList = [
 		list-style: none;
 		position: absolute;
 		top: 50%;
-		right: 20px;
+		right: 50px;
 		transform: translateY(-50%);
 		display: flex;
 		flex-direction: row;
+		gap: 20px;
 		li {
 			margin: 0 5px;
-			span {
+			span,
+			i {
 				color: #ffffff;
+			}
+			i {
+				margin-right: 6px;
+				font-size: 15px;
+			}
+			span {
+				font-family: RL_DroidKufi, Founders Grotesk text Regular, Helvetica,
+					Arial, sans-serif;
+				font-size: 10px;
+				line-height: 10px;
+				letter-spacing: 1px;
+				text-transform: capitalize;
 			}
 		}
 	}
