@@ -125,7 +125,11 @@
 						aria-hidden="true"
 					></i
 				></a>
-				<DropdownSignin v-if="openSigninMenu" />
+				<DropdownSignin
+					v-if="openSigninMenu === true"
+					@mouseover="openSigninMenu = true"
+					@mouseleave="openSigninMenu = false"
+				/>
 			</li>
 			<li>
 				<a
@@ -163,6 +167,8 @@ var openSigninMenu = ref(false);
 var toggleNavbarBackground = ref(false);
 var bgWhite = ref(false);
 
+var route = useRoute();
+
 const showDropdown = (item) => {
 	activeDropdown.value = item;
 	handleNavbarBackground(toggleNavbarBackground.value);
@@ -173,11 +179,12 @@ const hideDropdown = (item) => {
 };
 
 const updateScrollPosition = () => {
-	console.log("whuyyy");
-	if (window.scrollY > 50) {
-		toggleNavbarBackground.value = true;
-	} else {
-		toggleNavbarBackground.value = false;
+	if (route.path.includes("/products") === true || route.path === "/") {
+		if (window.scrollY > 50) {
+			toggleNavbarBackground.value = true;
+		} else {
+			toggleNavbarBackground.value = false;
+		}
 	}
 };
 
@@ -191,8 +198,20 @@ watch(toggleNavbarBackground, (newVal, oldVal) => {
 	bgWhite.value = toggleNavbarBackground.value;
 });
 
+watch(
+	() => route.path,
+	(newVal, oldVal) => {
+		newVal.includes("/products") === true
+			? (toggleNavbarBackground.value = false)
+			: (toggleNavbarBackground.value = true);
+	}
+);
+
 onMounted(() => {
 	window.addEventListener("scroll", updateScrollPosition);
+	route.path.includes("/products") === true
+		? (toggleNavbarBackground.value = false)
+		: (toggleNavbarBackground.value = true);
 });
 </script>
 
@@ -257,6 +276,7 @@ onMounted(() => {
 		display: flex;
 		gap: 25px;
 		li {
+			padding: 17px 10px;
 			cursor: pointer;
 			a {
 				color: #fff;
