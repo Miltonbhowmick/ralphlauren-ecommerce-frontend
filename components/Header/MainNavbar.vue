@@ -1,10 +1,5 @@
 <template>
-	<div
-		class="main-navigation"
-		@mouseover="bgWhite = true"
-		@mouseleave="handleNavbarBackground(false)"
-		:class="{ 'bg-white': bgWhite }"
-	>
+	<div class="main-navigation" :class="{ 'bg-white': bgWhite }">
 		<div class="primary-logo">
 			<nuxt-link to="/">
 				<div
@@ -55,7 +50,7 @@
 					>
 					<component
 						v-if="activeDropdown === 'kids'"
-						:is="women"
+						:is="kids"
 						@mouseover="showDropdown('kids')"
 						@mouseleave="hideDropdown('kids')"
 					/>
@@ -115,6 +110,7 @@
 				></a>
 			</li>
 			<li
+				v-if="loggedIn === true"
 				@mouseover="openMyAccountMenu = true"
 				@mouseleave="openMyAccountMenu = false"
 			>
@@ -132,6 +128,7 @@
 				/>
 			</li>
 			<li
+				v-else-if="loggedIn === false"
 				@mouseover="openSigninMenu = true"
 				@mouseleave="openSigninMenu = false"
 			>
@@ -158,13 +155,13 @@
 				</a>
 			</li>
 			<li>
-				<a
+				<nuxt-link to="/cart"
 					><i
 						class="fa fa-briefcase"
 						:class="{ 'text-black': bgWhite }"
 						aria-hidden="true"
 					></i
-				></a>
+				></nuxt-link>
 			</li>
 		</ul>
 	</div>
@@ -184,6 +181,8 @@ var openSigninMenu = ref(false);
 var openMyAccountMenu = ref(false);
 var toggleNavbarBackground = ref(true);
 var bgWhite = ref(true);
+
+var loggedIn = ref(false);
 
 const showDropdown = (item) => {
 	activeDropdown.value = item;

@@ -279,6 +279,9 @@ section.account-profile {
 					padding: 0.625rem;
 					text-indent: 0;
 					width: 100%;
+					&::placeholder {
+						text-transform: uppercase;
+					}
 				}
 				select {
 					border: 1px solid #757575;
