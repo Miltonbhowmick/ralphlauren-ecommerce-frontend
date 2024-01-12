@@ -7,12 +7,12 @@
 				:navigationEnabled="false"
 				:paginationEnabled="false"
 			>
-				<slide class="cs-slider"><span class="title">about us</span></slide>
-				<slide class="cs-slider"><span class="title">flagships</span> </slide>
-				<slide class="cs-slider"><span class="title">restaurants</span> </slide>
-				<slide class="cs-slider"><span class="title">careers</span> </slide>
+				<slide class="cs-slider"><div class="title">about us</div></slide>
+				<slide class="cs-slider"><div class="title">flagships</div> </slide>
+				<slide class="cs-slider"><div class="title">restaurants</div> </slide>
+				<slide class="cs-slider"><div class="title">careers</div> </slide>
 				<slide class="cs-slider"
-					><span class="title">investor relations</span>
+					><div class="title">investor relations</div>
 				</slide>
 			</carousel>
 		</nav>
@@ -127,9 +127,10 @@ section.about-us {
 	margin: 0 8rem;
 	.navbar {
 		margin-top: 40px;
-		width: 70%;
+		width: 80%;
 		.cs-slider {
 			.title {
+				width: max-content;
 				color: #041e3a;
 				font-family: "HCo Gotham Book";
 				line-height: 1.2;
@@ -167,7 +168,9 @@ section.about-us {
 			}
 		}
 	}
+
 	.detail-context {
+		margin-top: 40px;
 		width: 80%;
 		h1 {
 			font-size: 3.5em;
@@ -232,5 +235,8 @@ section.about-us {
 			margin: 0 auto 1.4em;
 		}
 	}
+}
+:deep(.VueCarousel) {
+	width: 100%;
 }
 </style>

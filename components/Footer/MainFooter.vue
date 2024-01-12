@@ -4,7 +4,7 @@
 			<div class="item">
 				<h4 class="headline">about</h4>
 				<ul class="list">
-					<li><a>About Us</a></li>
+					<li><nuxt-link to="/about-us">About Us</nuxt-link></li>
 					<li><a>Careers</a></li>
 					<li><a>World of RL</a></li>
 					<li><a>Protecting Our Brands</a></li>
