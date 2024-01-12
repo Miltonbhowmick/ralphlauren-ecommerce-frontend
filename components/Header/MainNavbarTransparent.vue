@@ -179,13 +179,13 @@ const hideDropdown = (item) => {
 };
 
 const updateScrollPosition = () => {
-	if (route.path.includes("/products") === true || route.path === "/") {
-		if (window.scrollY > 50) {
-			toggleNavbarBackground.value = true;
-		} else {
-			toggleNavbarBackground.value = false;
-		}
+	// if (route.path.includes("/products") === true || route.path === "/") {
+	if (window.scrollY > 50) {
+		toggleNavbarBackground.value = true;
+	} else {
+		toggleNavbarBackground.value = false;
 	}
+	// }
 };
 
 const handleNavbarBackground = (toggle) => {
@@ -198,20 +198,20 @@ watch(toggleNavbarBackground, (newVal, oldVal) => {
 	bgWhite.value = toggleNavbarBackground.value;
 });
 
-watch(
-	() => route.path,
-	(newVal, oldVal) => {
-		newVal.includes("/products") === true
-			? (toggleNavbarBackground.value = false)
-			: (toggleNavbarBackground.value = true);
-	}
-);
+// watch(
+// 	() => route.path,
+// 	(newVal, oldVal) => {
+// 		newVal.includes("/products") === true
+// 			? (toggleNavbarBackground.value = false)
+// 			: (toggleNavbarBackground.value = true);
+// 	}
+// );
 
 onMounted(() => {
 	window.addEventListener("scroll", updateScrollPosition);
-	route.path.includes("/products") === true
-		? (toggleNavbarBackground.value = false)
-		: (toggleNavbarBackground.value = true);
+	// route.path.includes("/products") === true
+	// 	? (toggleNavbarBackground.value = false)
+	// 	: (toggleNavbarBackground.value = true);
 });
 </script>
 
@@ -274,7 +274,7 @@ onMounted(() => {
 		margin: 0;
 		list-style: none;
 		display: flex;
-		gap: 25px;
+		gap: 18px;
 		li {
 			padding: 17px 10px;
 			cursor: pointer;

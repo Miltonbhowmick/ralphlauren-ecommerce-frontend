@@ -115,6 +115,23 @@
 				></a>
 			</li>
 			<li
+				@mouseover="openMyAccountMenu = true"
+				@mouseleave="openMyAccountMenu = false"
+			>
+				<a
+					><i
+						class="fa fa-user-o"
+						:class="{ 'text-black': bgWhite }"
+						aria-hidden="true"
+					></i
+				></a>
+				<DropdownMyAccount
+					v-if="openMyAccountMenu === true"
+					@mouseover="openMyAccountMenu = true"
+					@mouseleave="openMyAccountMenu = false"
+				/>
+			</li>
+			<li
 				@mouseover="openSigninMenu = true"
 				@mouseleave="openSigninMenu = false"
 			>
@@ -164,6 +181,7 @@ const home = resolveComponent("CategoryMenuHome");
 var currentMenu = shallowRef(null);
 var activeDropdown = ref(null);
 var openSigninMenu = ref(false);
+var openMyAccountMenu = ref(false);
 var toggleNavbarBackground = ref(true);
 var bgWhite = ref(true);
 
@@ -234,7 +252,7 @@ const hideDropdown = (item) => {
 		margin: 0;
 		list-style: none;
 		display: flex;
-		gap: 25px;
+		gap: 18px;
 		li {
 			padding: 17px 10px;
 			cursor: pointer;

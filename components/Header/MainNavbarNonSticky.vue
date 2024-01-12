@@ -243,7 +243,7 @@ const hideDropdown = (item) => {
 		margin: 0;
 		list-style: none;
 		display: flex;
-		gap: 25px;
+		gap: 18px;
 		li {
 			padding: 17px 10px;
 			cursor: pointer;
