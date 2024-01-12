@@ -362,6 +362,18 @@ section.cart-page {
 					}
 				}
 			}
+			.gift-options {
+				.header {
+					h5 {
+						margin: 0;
+						color: #041e3a;
+						font-family: "LeJeuneDeck-Regular", Times, serif;
+						letter-spacing: 0;
+						text-transform: capitalize;
+						font-size: 1.55rem;
+					}
+				}
+			}
 		}
 		.payment-detail {
 			width: 35%;
