@@ -2,7 +2,6 @@
 	<div
 		class="main-navigation"
 		@mouseover="bgWhite = true"
-		@mouseleave="handleNavbarBackground(false)"
 		:class="{ 'bg-white': bgWhite }"
 	>
 		<div class="primary-logo">
