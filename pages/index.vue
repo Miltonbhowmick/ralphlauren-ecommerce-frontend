@@ -74,6 +74,17 @@
 		/>
 		<VideoBubbleImageSlider
 			:backgroundImage="'/images/0104_gifting_guide_lp_c03_bg.jpg'"
+			:videoSrc="'/videos/product-video.mp4'"
+			:videoFooter="{
+				title: 'Polo ID',
+				linkList: [
+					{
+						name: 'shop now',
+						src: '',
+					},
+				],
+			}"
+			:sliderHeadTitle="'Mens Polo'"
 			:sliderList="[
 				{
 					content: {
