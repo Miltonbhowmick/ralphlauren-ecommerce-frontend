@@ -33,35 +33,37 @@
 		<div v-if="props.isBackgroundImage" class="banner">
 			<img :src="props.backgroundImage" alt="slider-bg" />
 		</div>
-		<carousel
-			v-if="props?.slideList"
-			:per-page="3"
-			:mouse-drag="true"
-			:navigationEnabled="true"
-			:paginationEnabled="false"
-		>
-			<slide
-				v-for="(slideItem, slide_id) in props?.slideList"
-				:key="'slide_' + slide_id"
-				class="cs-slider"
-				><div class="slider-image">
-					<img :src="slideItem?.imageSrc" />
-				</div>
-				<div v-if="slideItem?.content" class="content">
-					<h2 v-if="slideItem?.content?.title" class="title">
-						{{ slideItem?.content?.title }}
-					</h2>
-					<ul v-if="slideItem?.content?.linkList" class="link-list">
-						<li
-							v-for="(linkItem, linkId) in slideItem?.content?.linkList"
-							:key="'link_' + linkId"
-						>
-							<a :href="linkItem.src">{{ linkItem.name }}</a>
-						</li>
-					</ul>
-				</div>
-			</slide>
-		</carousel>
+		<client-only>
+			<carousel
+				v-if="props?.slideList"
+				:per-page="3"
+				:mouse-drag="true"
+				:navigationEnabled="true"
+				:paginationEnabled="false"
+			>
+				<slide
+					v-for="(slideItem, slide_id) in props?.slideList"
+					:key="'slide_' + slide_id"
+					class="cs-slider"
+					><div class="slider-image">
+						<img :src="slideItem?.imageSrc" />
+					</div>
+					<div v-if="slideItem?.content" class="content">
+						<h2 v-if="slideItem?.content?.title" class="title">
+							{{ slideItem?.content?.title }}
+						</h2>
+						<ul v-if="slideItem?.content?.linkList" class="link-list">
+							<li
+								v-for="(linkItem, linkId) in slideItem?.content?.linkList"
+								:key="'link_' + linkId"
+							>
+								<a :href="linkItem.src">{{ linkItem.name }}</a>
+							</li>
+						</ul>
+					</div>
+				</slide>
+			</carousel>
+		</client-only>
 	</div>
 </template>
 <script setup>

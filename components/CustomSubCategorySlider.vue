@@ -1,26 +1,28 @@
 <template>
 	<div v-if="props?.slideList" class="slider-content">
-		<carousel
-			:per-page="props?.perPage"
-			:mouse-drag="true"
-			:paginationEnabled="false"
-			:navigationEnabled="true"
-		>
-			<slide
-				v-for="(slideItem, slide_id) in props?.slideList"
-				:key="'slide_' + slide_id"
-				class="cs-slider"
+		<client-only>
+			<carousel
+				:per-page="props?.perPage"
+				:mouse-drag="true"
+				:paginationEnabled="false"
+				:navigationEnabled="true"
 			>
-				<nuxt-link :to="slideItem.link">
-					<div class="slider-image">
-						<img :src="slideItem?.imageSrc" :alt="slideItem?.title" />
-					</div>
-					<div class="content">
-						<h2 class="title">{{ slideItem?.title }}</h2>
-					</div>
-				</nuxt-link>
-			</slide>
-		</carousel>
+				<slide
+					v-for="(slideItem, slide_id) in props?.slideList"
+					:key="'slide_' + slide_id"
+					class="cs-slider"
+				>
+					<nuxt-link :to="slideItem.link">
+						<div class="slider-image">
+							<img :src="slideItem?.imageSrc" :alt="slideItem?.title" />
+						</div>
+						<div class="content">
+							<h2 class="title">{{ slideItem?.title }}</h2>
+						</div>
+					</nuxt-link>
+				</slide>
+			</carousel>
+		</client-only>
 	</div>
 </template>
 <script setup>
