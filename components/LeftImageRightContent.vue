@@ -52,7 +52,7 @@ section.left-image-right-content {
 					font-family: "LeJeuneDeck-Regular";
 					font-size: 1.625em;
 					line-height: 20px;
-					width: 26em;
+					width: 70%;
 					text-align: center;
 				}
 
@@ -67,7 +67,7 @@ section.left-image-right-content {
 						a {
 							color: #474747;
 							text-transform: uppercase;
-							font-size: 10px;
+							font-size: 9px;
 							text-decoration: underline;
 							text-underline-offset: 9px;
 							text-decoration-color: #474747;
