@@ -52,29 +52,31 @@
 
 			<a v-if="props.exploreLink" class="explore-link">explore now</a>
 		</div>
-		<carousel
-			:per-page="3"
-			:mouse-drag="true"
-			:navigationEnabled="true"
-			:paginationEnabled="false"
-		>
-			<slide class="cs-slider"
-				><div class="slider-image">
-					<img src="/images/women-cool.jpg" />
-				</div>
-				<div class="content">
-					<div class="company-logo">
-						<img
-							src="/images/polo_air_naiomi_glasses_logo_en.svg"
-							alt="company-logo"
-						/>
+		<client-only>
+			<carousel
+				:per-page="3"
+				:mouse-drag="true"
+				:navigationEnabled="true"
+				:paginationEnabled="false"
+			>
+				<slide class="cs-slider"
+					><div class="slider-image">
+						<img src="/images/women-cool.jpg" />
 					</div>
-					<h2 class="title">Polo Bear Shop</h2>
-					<p class="slide-description">
-						The inaugural collaboration of the Ralph Lauren Artist in Residence
-						Program honours Navajo heritage and centuries-old weaving traditions
-					</p>
-					<!-- <ul class="link-list">
+					<div class="content">
+						<div class="company-logo">
+							<img
+								src="/images/polo_air_naiomi_glasses_logo_en.svg"
+								alt="company-logo"
+							/>
+						</div>
+						<h2 class="title">Polo Bear Shop</h2>
+						<p class="slide-description">
+							The inaugural collaboration of the Ralph Lauren Artist in
+							Residence Program honours Navajo heritage and centuries-old
+							weaving traditions
+						</p>
+						<!-- <ul class="link-list">
 						<li><a>men</a></li>
 						<li><a>women</a></li>
 						<li><a>boys</a></li>
@@ -82,26 +84,27 @@
 						<li><a>baby</a></li>
 						<li><a>home</a></li>
 					</ul> -->
-					<div class="blur-background"></div>
-				</div>
-			</slide>
-			<slide class="cs-slider"
-				><div class="slider-image">
-					<img src="/images/couple-suit.jpg" />
-				</div>
-				<div class="content">
-					<div class="company-logo">
-						<img
-							src="/images/polo_air_naiomi_glasses_logo_en.svg"
-							alt="company-logo"
-						/>
+						<div class="blur-background"></div>
 					</div>
-					<h2 class="title">Polo Bear Shop</h2>
-					<p class="slide-description">
-						The inaugural collaboration of the Ralph Lauren Artist in Residence
-						Program honours Navajo heritage and centuries-old weaving traditions
-					</p>
-					<!-- <ul class="link-list">
+				</slide>
+				<slide class="cs-slider"
+					><div class="slider-image">
+						<img src="/images/couple-suit.jpg" />
+					</div>
+					<div class="content">
+						<div class="company-logo">
+							<img
+								src="/images/polo_air_naiomi_glasses_logo_en.svg"
+								alt="company-logo"
+							/>
+						</div>
+						<h2 class="title">Polo Bear Shop</h2>
+						<p class="slide-description">
+							The inaugural collaboration of the Ralph Lauren Artist in
+							Residence Program honours Navajo heritage and centuries-old
+							weaving traditions
+						</p>
+						<!-- <ul class="link-list">
 						<li><a>men</a></li>
 						<li><a>women</a></li>
 						<li><a>boys</a></li>
@@ -109,26 +112,27 @@
 						<li><a>baby</a></li>
 						<li><a>home</a></li>
 					</ul> -->
-					<div class="blur-background"></div>
-				</div>
-			</slide>
-			<slide class="cs-slider"
-				><div class="slider-image">
-					<img src="/images/warm-sweater.jpg" />
-				</div>
-				<div class="content">
-					<div class="company-logo">
-						<img
-							src="/images/polo_air_naiomi_glasses_logo_en.svg"
-							alt="company-logo"
-						/>
+						<div class="blur-background"></div>
 					</div>
-					<h2 class="title">Polo Bear Shop</h2>
-					<p class="slide-description">
-						The inaugural collaboration of the Ralph Lauren Artist in Residence
-						Program honours Navajo heritage and centuries-old weaving traditions
-					</p>
-					<!-- <ul class="link-list">
+				</slide>
+				<slide class="cs-slider"
+					><div class="slider-image">
+						<img src="/images/warm-sweater.jpg" />
+					</div>
+					<div class="content">
+						<div class="company-logo">
+							<img
+								src="/images/polo_air_naiomi_glasses_logo_en.svg"
+								alt="company-logo"
+							/>
+						</div>
+						<h2 class="title">Polo Bear Shop</h2>
+						<p class="slide-description">
+							The inaugural collaboration of the Ralph Lauren Artist in
+							Residence Program honours Navajo heritage and centuries-old
+							weaving traditions
+						</p>
+						<!-- <ul class="link-list">
 						<li><a>men</a></li>
 						<li><a>women</a></li>
 						<li><a>boys</a></li>
@@ -136,10 +140,11 @@
 						<li><a>baby</a></li>
 						<li><a>home</a></li>
 					</ul> -->
-					<div class="blur-background"></div>
-				</div>
-			</slide>
-		</carousel>
+						<div class="blur-background"></div>
+					</div>
+				</slide>
+			</carousel>
+		</client-only>
 	</div>
 </template>
 <script setup>

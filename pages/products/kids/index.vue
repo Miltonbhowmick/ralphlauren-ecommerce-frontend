@@ -135,26 +135,32 @@
 					:perPage="4"
 					:slideList="[
 						{
+							link: '/products/men/boys-jumper-cardigans',
 							title: 'boys jumper & cardigans',
 							imageSrc: '/images/1228_kids_hub_m_c03a_img.jpg',
 						},
 						{
+							link: '/products/men/girls-jumpers-cardigans',
 							title: 'girls jumpers & cardigans',
 							imageSrc: '/images/1228_kids_hub_m_c03b_img.jpg',
 						},
 						{
+							link: '/products/men/boys-shirts',
 							title: 'boys shirts',
 							imageSrc: '/images/1228_kids_hub_m_c03c_img.jpg',
 						},
 						{
+							link: '/products/men/girls-dresses',
 							title: 'girls dresses',
 							imageSrc: '/images/1228_kids_hub_m_c03d_img.jpg',
 						},
 						{
+							link: '/products/men/boys-accessories',
 							title: 'boys accessories',
 							imageSrc: '/images/1228_kids_hub_m_c03e_img.jpg',
 						},
 						{
+							link: '/products/men/boys-shoes',
 							title: 'boys shoes',
 							imageSrc: '/images/1228_kids_hub_m_c03f_img.jpg',
 						},

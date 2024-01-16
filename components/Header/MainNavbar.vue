@@ -232,15 +232,17 @@ const hideDropdown = (item) => {
 					font-family: RL_DroidKufi, Founders Grotesk Mono Regular, Arial,
 						Helvetica, sans-serif;
 					text-transform: uppercase;
-					font-size: 10px;
+					font-size: 9px;
 					letter-spacing: 0.095rem;
 					color: #fff;
-
 					.text-black {
 						color: #041e3a;
 					}
 					&:hover {
 						cursor: pointer;
+						text-decoration: underline;
+						text-underline-offset: 5px;
+						font-weight: 600;
 					}
 				}
 			}

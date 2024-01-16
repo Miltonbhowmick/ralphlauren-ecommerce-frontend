@@ -54,26 +54,32 @@
 				:perPage="4"
 				:slideList="[
 					{
+						link: '/products/men/jackets-coats',
 						title: 'jackets & coats',
 						imageSrc: '/images/1228_mlp_m_c02a_img.jpg',
 					},
 					{
+						link: '/products/men/hoodies-sweatshirts',
 						title: 'hoodies & sweatshirts',
 						imageSrc: '/images/1228_mlp_m_c02b_img.jpg',
 					},
 					{
+						link: '/products/men/shoes',
 						title: 'shoes',
 						imageSrc: '/images/1228_mlp_m_c02c_img.jpg',
 					},
 					{
+						link: '/products/men/polo-shirts',
 						title: 'polo shirts',
 						imageSrc: '/images/1228_mlp_m_c02d_img.jpg',
 					},
 					{
+						link: '/products/men/trousers',
 						title: 'trousers',
 						imageSrc: '/images/1228_mlp_m_c02e_img.jpg',
 					},
 					{
+						link: '/products/men/scarves-hats-gloves',
 						title: 'scarves, hats & gloves',
 						imageSrc: '/images/1228_mlp_m_c02f_img.jpg',
 					},
