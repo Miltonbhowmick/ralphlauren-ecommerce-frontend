@@ -209,7 +209,7 @@ const hideDropdown = (item) => {
 	}
 	.primary-logo {
 		// padding: 10px 0px;
-		width: 25rem;
+		width: 23rem;
 		flex-grow: 0;
 		.logo {
 			height: 25px;

@@ -194,6 +194,7 @@ const showDropdown = (item) => {
 	activeDropdown.value = item;
 	handleNavbarBackground(toggleNavbarBackground.value);
 };
+
 const hideDropdown = (item) => {
 	activeDropdown.value = null;
 	handleNavbarBackground(toggleNavbarBackground.value);
@@ -204,7 +205,7 @@ const updateScrollPosition = () => {
 	if (window.scrollY > 50) {
 		toggleNavbarBackground.value = true;
 	} else {
-		toggleNavbarBackground.value = false;
+		if (activeDropdown.value === null) toggleNavbarBackground.value = false;
 	}
 	// }
 };
