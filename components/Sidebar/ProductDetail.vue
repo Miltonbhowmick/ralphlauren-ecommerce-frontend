@@ -1,7 +1,7 @@
 <template>
 	<div class="modal-overlay">
 		<div class="product-detail-sidebar">
-			<a class="close" @click="close">x</a>
+			<a class="close" @click="close"></a>
 			<div class="content">
 				<div class="image-list">
 					<div class="image">

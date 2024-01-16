@@ -331,7 +331,8 @@ section.kids-page {
 	margin-top: -58px;
 	.kids-navbar {
 		position: sticky;
-		top: 0;
+		z-index: 9999;
+		top: 50px;
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
@@ -341,16 +342,17 @@ section.kids-page {
 			margin: 0;
 			list-style: none;
 			display: flex;
-			gap: 30px;
+			gap: 6.5rem;
 			padding: 5px 0;
 			li {
-				padding: 15px 0;
+				padding: 10px 0;
 				&.active {
 					border-bottom: 0.3125em solid white;
 				}
 				a {
 					font-family: "LeJeuneDeck-Regular", serif;
 					color: white;
+					font-size: 1.4em;
 				}
 			}
 		}
