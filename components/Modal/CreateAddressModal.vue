@@ -7,35 +7,75 @@
 					<a @click="close">X</a>
 				</div>
 				<div class="header">
-					<h2 class="title">add credit card</h2>
+					<h2 class="title">add address</h2>
 					<a class="link">*Required</a>
 				</div>
 				<div>
 					<form class="card-form">
 						<div class="input-wrapper">
-							<label class="label">card number</label>
 							<div class="field-wrapper">
-								<input type="text" />
+								<input type="text" placeholder="address nickname" />
 							</div>
 						</div>
 						<div class="input-wrapper-inline">
 							<div class="input-wrapper">
-								<label class="label">expiry date</label>
 								<div class="field-wrapper">
-									<input type="text" />
+									<input type="text" placeholder="name *" />
 								</div>
 							</div>
 							<div class="input-wrapper">
-								<label class="label">cvc / cvv</label>
 								<div class="field-wrapper">
-									<input type="text" />
+									<input type="text" placeholder="surname*" />
+								</div>
+							</div>
+						</div>
+						<div class="input-wrapper-inline">
+							<div class="input-wrapper">
+								<div class="field-wrapper">
+									<input type="text" placeholder="address line 1 *" />
+								</div>
+								<div class="caption">Street Address, P.O. Box</div>
+							</div>
+							<div class="input-wrapper">
+								<div class="field-wrapper">
+									<input type="text" placeholder="address line 2 *" />
+								</div>
+								<div class="caption">Apartment, Suite, Unit, Floor</div>
+							</div>
+						</div>
+						<div class="input-wrapper-inline">
+							<div class="input-wrapper">
+								<div class="field-wrapper">
+									<input type="text" placeholder="city" />
+								</div>
+							</div>
+							<div class="input-wrapper">
+								<div class="field-wrapper">
+									<input type="text" placeholder="country/state/region" />
+								</div>
+							</div>
+						</div>
+						<div class="input-wrapper-inline">
+							<div class="input-wrapper">
+								<div class="field-wrapper">
+									<input type="text" placeholder="postcode *" />
+								</div>
+							</div>
+							<div class="input-wrapper">
+								<div class="field-wrapper">
+									<select>
+										<option label="Country/Region" value="">
+											Gender (optional)
+										</option>
+										<option label="Bangladesh" value="BD">Bangladesh</option>
+										<option label="India" value="IN">India</option>
+									</select>
 								</div>
 							</div>
 						</div>
 						<div class="input-wrapper">
-							<label class="label">name on card</label>
 							<div class="field-wrapper">
-								<input type="email" />
+								<input type="email" placeholder="mobile number *" />
 							</div>
 						</div>
 						<button class="action-btn apply">apply</button>
@@ -108,13 +148,13 @@ const close = () => {
 			}
 			.link {
 				color: #767676;
-				text-decoration: underline;
-				font-size: 0.875rem;
+				font-size: 0.675rem;
 				font-family: RL_DroidKufi, Founders Grotesk text Regular, Helvetica,
 					Arial, sans-serif;
 				font-style: Normal;
 				font-weight: 400;
-				text-transform: uppercase;
+				text-transform: capitalize;
+				letter-spacing: 1.85px;
 			}
 		}
 		.card-form {
@@ -140,7 +180,6 @@ const close = () => {
 					gap: 10px;
 					input {
 						border: 1px solid #757575;
-						border-radius: 4px;
 						box-sizing: border-box;
 						height: 2.5rem;
 						padding: 0.625rem;
@@ -149,6 +188,10 @@ const close = () => {
 						&:focus {
 							outline: none;
 						}
+						&::placeholder {
+							text-transform: uppercase;
+							font-size: 12px;
+						}
 					}
 					select {
 						border: 1px solid #757575;
@@ -156,6 +199,14 @@ const close = () => {
 						height: 2.5rem;
 						padding: 0.625rem;
 						width: 100%;
+						text-transform: uppercase;
+						color: #757575;
+						&:focus {
+							outline: none;
+						}
+						option {
+							text-transform: uppercase;
+						}
 					}
 				}
 				.caption {
@@ -181,8 +232,8 @@ const close = () => {
 					color: #fff;
 				}
 				&.cancel {
-					background-color: #fff;
-					color: #041e3a;
+					background-color: #041e3a;
+					color: #fff;
 				}
 			}
 		}

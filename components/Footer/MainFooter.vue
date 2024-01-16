@@ -4,7 +4,7 @@
 			<div class="item">
 				<h4 class="headline">about</h4>
 				<ul class="list">
-					<li><a>About Us</a></li>
+					<li><nuxt-link to="/about-us">About Us</nuxt-link></li>
 					<li><a>Careers</a></li>
 					<li><a>World of RL</a></li>
 					<li><a>Protecting Our Brands</a></li>
@@ -14,8 +14,8 @@
 			<div class="item">
 				<h4 class="headline">account</h4>
 				<ul class="list">
-					<li><a>My Account</a></li>
-					<li><a>Check Order</a></li>
+					<li><nuxt-link to="/signin">My Account</nuxt-link></li>
+					<li><nuxt-link to="/orderstatus">Check Order</nuxt-link></li>
 					<li><a>Personalise Your Experience</a></li>
 				</ul>
 			</div>

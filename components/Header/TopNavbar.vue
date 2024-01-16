@@ -34,7 +34,7 @@ const articleList = [
 <style scoped lang="scss">
 .top-banner {
 	background-color: #041e3a;
-	padding: 16px 7px;
+	padding: 14px 7px;
 	position: relative;
 	display: flex;
 	flex-direction: row;

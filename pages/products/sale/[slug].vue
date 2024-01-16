@@ -33,7 +33,7 @@
 				</li>
 				<li><a>clothing</a></li>
 			</ul>
-			<button @click="showFilterSidebar = !showFilterSidebar">
+			<button>
 				<i class="fa fa-filter" aria-hidden="true"></i> Filter & Sort
 			</button>
 		</div>
@@ -47,10 +47,6 @@
 			<div class="boxer"><ProductCard /></div>
 			<div class="boxer"><ProductCard /></div>
 		</div>
-		<SidebarFilterOptions
-			v-if="showFilterSidebar"
-			@hideModal="hideFilterSidebar"
-		/>
 	</section>
 </template>
 
@@ -60,12 +56,6 @@ import bgGroup40 from "~/assets/images/bg-group-40.jpg";
 definePageMeta({
 	layout: "non-sticky-navbar",
 });
-
-var showFilterSidebar = ref(false);
-
-const hideFilterSidebar = () => {
-	showFilterSidebar.value = false;
-};
 </script>
 
 <style scoped lang="scss">

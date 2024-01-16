@@ -124,7 +124,7 @@ onBeforeUnmount(() => {
 	.product-detail-sidebar {
 		position: relative;
 		height: 100vh;
-		overflow-y: scroll;
+		overflow-y: auto;
 		background: #ffffff;
 		width: 60%;
 		float: right;

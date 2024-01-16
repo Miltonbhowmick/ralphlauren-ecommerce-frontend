@@ -6,7 +6,9 @@
 	<section class="addressbook">
 		<div class="header">
 			<h2 class="title">addresses</h2>
-			<a class="link">create new address</a>
+			<a @click="showCreateAddressModal = true" class="link"
+				>create new address</a
+			>
 		</div>
 		<div class="user-info">
 			<h6>DEFAULT ADDRESS</h6>
@@ -25,10 +27,20 @@
 				<div class="edit-links"><a>Edit</a><span>|</span><a>Delete</a></div>
 			</div>
 		</div>
+		<ModalCreateAddressModal
+			:modalOpen="showCreateAddressModal"
+			@hideModal="hidePaymentModal"
+		/>
 	</section>
 </template>
 
-<script setup></script>
+<script setup>
+var showCreateAddressModal = ref(false);
+
+const hidePaymentModal = () => {
+	showCreateAddressModal.value = false;
+};
+</script>
 
 <style scoped lang="scss">
 section.addressbook {
@@ -48,6 +60,7 @@ section.addressbook {
 			text-transform: uppercase;
 		}
 		.link {
+			cursor: pointer;
 			color: #767676;
 			text-decoration: underline;
 			font-size: 0.875rem;

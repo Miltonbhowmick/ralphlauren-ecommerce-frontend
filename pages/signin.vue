@@ -125,22 +125,24 @@
 			</div>
 			<div v-else-if="toggleAuthType == false" class="benefits">
 				<div class="content-assets">
-					<h3>Benefits of Creating an Account</h3>
-					<h4>News and Exclusive Offers!</h4>
-					<p>
-						Sign up to receive email updates on special promotions, new product
-						announcements, gift ideas and more.
-					</p>
-					<h4>Order History</h4>
-					<p>
-						Receive important information about your order. You can even track
-						it up to the minute it arrives.
-					</p>
-					<h4>Faster Checkout</h4>
-					<p>
-						Save your billing and shipping information to make it easier to buy
-						your favorite gear.
-					</p>
+					<h3 class="headline">Benefits of Creating an Account</h3>
+					<div class="detail">
+						<h4 class="title">News and Exclusive Offers!</h4>
+						<p class="description">
+							Sign up to receive email updates on special promotions, new
+							product announcements, gift ideas and more.
+						</p>
+						<h4 class="title">Order History</h4>
+						<p class="description">
+							Receive important information about your order. You can even track
+							it up to the minute it arrives.
+						</p>
+						<h4 class="title">Faster Checkout</h4>
+						<p class="description">
+							Save your billing and shipping information to make it easier to
+							buy your favorite gear.
+						</p>
+					</div>
 					<a class="read-more">Read more about security </a>
 				</div>
 			</div>
@@ -156,9 +158,11 @@ var toggleAuthType = ref(true);
 
 <style scoped lang="scss">
 .login-content {
+	margin-top: 30px;
 	padding: 0 60px;
 	display: flex;
 	justify-content: center;
+	gap: 25px;
 	.help-box {
 		width: 20%;
 		padding: 15px;
@@ -218,6 +222,7 @@ var toggleAuthType = ref(true);
 					display: flex;
 					justify-content: center;
 					align-items: center;
+					gap: 8px;
 					padding: 15px 15px;
 					border: 1px solid #000;
 					.logo {
@@ -241,7 +246,7 @@ var toggleAuthType = ref(true);
 				a {
 					width: 100%;
 					text-align: center;
-					padding: 25px 15px;
+					padding: 20px 15px;
 					box-shadow: inset -6px -5px 11px -13px rgba(0, 0, 0, 0.75);
 					background-color: #f2f3f5;
 					font-family: RL_DroidKufi, LeJeuneDeck-Regular, Times New Roman, Times,
@@ -413,11 +418,25 @@ var toggleAuthType = ref(true);
 					text-align: center;
 					text-transform: uppercase;
 					letter-spacing: 0.1rem;
-					font-size: 0.875rem;
+					font-size: 0.675rem;
 					font-family: RL_DroidKufi, Founders Grotesk Text Medium, Helvetica,
 						Arial, sans-serif;
 					font-style: Normal;
 					font-weight: 500;
+				}
+				.detail {
+					margin-top: 1.2rem;
+					.title {
+						font-size: 1.15em;
+						font-weight: 600;
+						color: #041e3a;
+						font-family: RL_DroidKufi, Founders Grotesk text Regular, Helvetica,
+							Arial, sans-serif;
+					}
+				}
+				.read-more {
+					color: #041e3a;
+					cursor: pointer;
 				}
 			}
 		}

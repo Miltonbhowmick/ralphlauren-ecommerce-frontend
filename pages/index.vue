@@ -61,62 +61,7 @@
 				},
 			]"
 		/>
-		<CustomSlider
-			:headlineBlack="true"
-			:backgroundImage="'/images/slider-bg.jpg'"
-			:title="'asdasd'"
-			:exploreLink="true"
-			:slideList="[
-				{
-					imageSrc: '/images/1228_mlp_c06a_img.jpg',
-					content: {
-						title: 'polo bear shop',
-						linkList: [
-							{
-								name: 'men',
-								src: '/',
-							},
-						],
-					},
-				},
-				{
-					imageSrc: '/images/1017_mlp_c08c_img.jpg',
-					content: {
-						title: 'new arrivals',
-						linkList: [
-							{
-								name: 'men',
-								src: '/',
-							},
-						],
-					},
-				},
-				{
-					imageSrc: '/images/0808_mlp_c07f_img.jpg',
-					content: {
-						title: 'big & tall',
-						linkList: [
-							{
-								name: 'men',
-								src: '/',
-							},
-						],
-					},
-				},
-				{
-					imageSrc: '/images/1102_mlp_c12_img.jpg',
-					content: {
-						title: 'golf',
-						linkList: [
-							{
-								name: 'men',
-								src: '/',
-							},
-						],
-					},
-				},
-			]"
-		/>
+
 		<VideoBanner
 			:videoSrc="'/videos/video_banner.mp4'"
 			:title="'Personalised Gifts'"
@@ -128,6 +73,7 @@
 			:bottom="true"
 		/>
 		<VideoBubbleImageSlider
+			:backgroundImage="'/images/0104_gifting_guide_lp_c03_bg.jpg'"
 			:sliderList="[
 				{
 					content: {
@@ -159,6 +105,9 @@
 				},
 			]"
 		/>
+		<div>
+			<LeftImageRightContent />
+		</div>
 		<HolidayPack
 			:backgroundImage="bgGroup"
 			:left="true"

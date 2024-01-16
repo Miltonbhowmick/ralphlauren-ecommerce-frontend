@@ -2,7 +2,6 @@
 	<div
 		class="main-navigation"
 		@mouseover="bgWhite = true"
-		@mouseleave="handleNavbarBackground(false)"
 		:class="{ 'bg-white': bgWhite }"
 	>
 		<div class="primary-logo">
@@ -124,6 +123,25 @@
 				></a>
 			</li>
 			<li
+				v-if="loggedIn === true"
+				@mouseover="openMyAccountMenu = true"
+				@mouseleave="openMyAccountMenu = false"
+			>
+				<a
+					><i
+						class="fa fa-user-o"
+						:class="{ 'text-black': bgWhite }"
+						aria-hidden="true"
+					></i
+				></a>
+				<DropdownMyAccount
+					v-if="openMyAccountMenu === true"
+					@mouseover="openMyAccountMenu = true"
+					@mouseleave="openMyAccountMenu = false"
+				/>
+			</li>
+			<li
+				v-else-if="loggedIn === false"
 				@mouseover="openSigninMenu = true"
 				@mouseleave="openSigninMenu = false"
 			>
@@ -150,13 +168,13 @@
 				</a>
 			</li>
 			<li>
-				<a
+				<nuxt-link to="/cart"
 					><i
 						class="fa fa-briefcase"
 						:class="{ 'text-black': bgWhite }"
 						aria-hidden="true"
 					></i
-				></a>
+				></nuxt-link>
 			</li>
 		</ul>
 	</div>
@@ -175,6 +193,8 @@ var activeDropdown = ref(null);
 var openSigninMenu = ref(false);
 var toggleNavbarBackground = ref(true);
 var bgWhite = ref(true);
+
+var loggedIn = ref(false);
 
 const showDropdown = (item) => {
 	activeDropdown.value = item;
@@ -243,7 +263,7 @@ const hideDropdown = (item) => {
 		margin: 0;
 		list-style: none;
 		display: flex;
-		gap: 25px;
+		gap: 18px;
 		li {
 			padding: 17px 10px;
 			cursor: pointer;

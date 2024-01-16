@@ -1,17 +1,55 @@
 <template>
 	<div class="page-navbar">
 		<ul>
-			<li><a class="active">overview</a></li>
-			<li><a>wishlist</a></li>
-			<li><a>Orders/Returns</a></li>
+			<li>
+				<nuxt-link
+					to="/account"
+					:class="{ active: route.path.includes('/account') }"
+					>overview</nuxt-link
+				>
+			</li>
+			<li>
+				<nuxt-link
+					to="/wishlist"
+					:class="{ active: route.path.includes('/wishlist') }"
+					>wishlist</nuxt-link
+				>
+			</li>
+			<li>
+				<nuxt-link
+					to="/orders"
+					:class="{ active: route.path.includes('/orders') }"
+					>Orders/Returns</nuxt-link
+				>
+			</li>
 			<li><a>RL Wardrobe</a></li>
-			<li><a>Profile</a></li>
-			<li><a>Addresses</a></li>
-			<li><a>Payments</a></li>
+			<li>
+				<nuxt-link
+					to="/profile"
+					:class="{ active: route.path.includes('/profile') }"
+					>Profile</nuxt-link
+				>
+			</li>
+			<li>
+				<nuxt-link
+					to="/addressbook"
+					:class="{ active: route.path.includes('/addressbook') }"
+					>Addresses</nuxt-link
+				>
+			</li>
+			<li>
+				<nuxt-link
+					to="/wallet"
+					:class="{ active: route.path.includes('/wallet') }"
+					>Payments</nuxt-link
+				>
+			</li>
 		</ul>
 	</div>
 </template>
-<script setup></script>
+<script setup>
+const route = useRoute();
+</script>
 
 <style scoped lang="scss">
 .page-navbar {
