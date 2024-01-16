@@ -10,13 +10,16 @@
 				v-for="(slideItem, slide_id) in props?.slideList"
 				:key="'slide_' + slide_id"
 				class="cs-slider"
-				><div class="slider-image">
-					<img :src="slideItem?.imageSrc" :alt="slideItem?.title" />
-				</div>
-				<div class="content">
-					<h2 class="title">{{ slideItem?.title }}</h2>
-				</div></slide
 			>
+				<nuxt-link :to="slideItem.link">
+					<div class="slider-image">
+						<img :src="slideItem?.imageSrc" :alt="slideItem?.title" />
+					</div>
+					<div class="content">
+						<h2 class="title">{{ slideItem?.title }}</h2>
+					</div>
+				</nuxt-link>
+			</slide>
 		</carousel>
 	</div>
 </template>

@@ -39,22 +39,27 @@
 				:perPage="4"
 				:slideList="[
 					{
+						link: '/products/men/jackets-coats',
 						title: 'jackets & coats',
 						imageSrc: '/images/1228_wlp_m_c02a_img.jpg',
 					},
 					{
+						link: '/products/men/dresses',
 						title: 'dresses',
 						imageSrc: '/images/1228_wlp_m_c02b_img.jpg',
 					},
 					{
+						link: '/products/men/jumpers-cardigans',
 						title: 'jumpers & cardigans',
 						imageSrc: '/images/1228_wlp_m_c02c_img.jpg',
 					},
 					{
+						link: '/products/men/trousers',
 						title: 'trousers',
 						imageSrc: '/images/1228_wlp_m_c02d_img.jpg',
 					},
 					{
+						link: '/products/men/handbags',
 						title: 'handbags',
 						imageSrc: '/images/1228_wlp_m_c02e_img.jpg',
 					},

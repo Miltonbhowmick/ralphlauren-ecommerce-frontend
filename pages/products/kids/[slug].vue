@@ -47,7 +47,10 @@
 			<div class="boxer"><ProductCard /></div>
 			<div class="boxer"><ProductCard /></div>
 		</div>
-		<FilterOptions v-if="showFilterSidebar" @hideModal="hideFilterSidebar" />
+		<SidebarFilterOptions
+			v-if="showFilterSidebar"
+			@hideModal="hideFilterSidebar"
+		/>
 	</section>
 </template>
 
