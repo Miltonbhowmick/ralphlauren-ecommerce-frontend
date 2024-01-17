@@ -15,55 +15,67 @@
 		/>
 		<div class="gift-navbar">
 			<ul>
-				<li class="active"><a>Our Favourites </a></li>
-				<li><a>Polo Bear Shop </a></li>
+				<li
+					@click="activePageNavbar = 'our-favourite'"
+					:class="{ active: activePageNavbar === 'our-favourite' }"
+				>
+					<a href="#outFavourite">Our Favourites </a>
+				</li>
+				<li
+					@click="activePageNavbar = 'polo-bear-shop'"
+					:class="{ active: activePageNavbar === 'polo-bear-shop' }"
+				>
+					<a href="#poloBearShop">Polo Bear Shop </a>
+				</li>
 			</ul>
 		</div>
-		<CustomSlider
-			:headlineBlack="true"
-			:backgroundImage="'/images/0104_gifting_guide_lp_c02_bg.jpg'"
-			:isBackgroundImage="true"
-			:title="'Our Favourites'"
-			:subTitle="'Signature Ralph Lauren gifts for everyone on your list'"
-			:slideList="[
-				{
-					imageSrc: '/images/0104_gifting_guide_lp_m_c02a_img.jpg',
-					content: {
-						title: 'for him',
+		<section id="outFavourite">
+			<CustomSlider
+				:headlineBlack="true"
+				:backgroundImage="'/images/0104_gifting_guide_lp_c02_bg.jpg'"
+				:isBackgroundImage="true"
+				:title="'Our Favourites'"
+				:subTitle="'Signature Ralph Lauren gifts for everyone on your list'"
+				:slideList="[
+					{
+						imageSrc: '/images/0104_gifting_guide_lp_m_c02a_img.jpg',
+						content: {
+							title: 'for him',
+						},
 					},
-				},
-				{
-					imageSrc: '/images/0104_gifting_guide_lp_m_c02b_img.jpg',
-					content: {
-						title: 'for her',
+					{
+						imageSrc: '/images/0104_gifting_guide_lp_m_c02b_img.jpg',
+						content: {
+							title: 'for her',
+						},
 					},
-				},
-				{
-					imageSrc: '/images/0104_gifting_guide_lp_m_c02c_img.jpg',
-					content: {
-						title: 'for boys',
+					{
+						imageSrc: '/images/0104_gifting_guide_lp_m_c02c_img.jpg',
+						content: {
+							title: 'for boys',
+						},
 					},
-				},
-				{
-					imageSrc: '/images/0104_gifting_guide_lp_m_c02d_img.jpg',
-					content: {
-						title: 'for girls',
+					{
+						imageSrc: '/images/0104_gifting_guide_lp_m_c02d_img.jpg',
+						content: {
+							title: 'for girls',
+						},
 					},
-				},
-				{
-					imageSrc: '/images/0104_gifting_guide_lp_m_c02e_img.jpg',
-					content: {
-						title: 'for baby',
+					{
+						imageSrc: '/images/0104_gifting_guide_lp_m_c02e_img.jpg',
+						content: {
+							title: 'for baby',
+						},
 					},
-				},
-				{
-					imageSrc: '/images/0104_gifting_guide_lp_m_c02f_img.jpg',
-					content: {
-						title: 'for the home',
+					{
+						imageSrc: '/images/0104_gifting_guide_lp_m_c02f_img.jpg',
+						content: {
+							title: 'for the home',
+						},
 					},
-				},
-			]"
-		/>
+				]"
+			/>
+		</section>
 		<RowMegaProduct
 			:backgroundImage="'/images/0104_gifting_guide_lp_c03_bg.jpg'"
 			:itemList="[
@@ -111,18 +123,20 @@
 				},
 			]"
 		/>
-		<HolidayPack
-			:backgroundImage="'/images/sweater-bg.jpg'"
-			:right="true"
-			:subTitle="'Polo Bear Shop'"
-			:description="'Gifts featuring Ralph Lauren’s favourite style icon'"
-			:linkList="[
-				{ name: 'men' },
-				{ name: 'women' },
-				{ name: 'boys' },
-				{ name: 'girls' },
-			]"
-		/>
+		<section id="poloBearShop">
+			<HolidayPack
+				:backgroundImage="'/images/sweater-bg.jpg'"
+				:right="true"
+				:subTitle="'Polo Bear Shop'"
+				:description="'Gifts featuring Ralph Lauren’s favourite style icon'"
+				:linkList="[
+					{ name: 'men' },
+					{ name: 'women' },
+					{ name: 'boys' },
+					{ name: 'girls' },
+				]"
+			/>
+		</section>
 		<RowCustomSlider
 			:style="{ backgroundColor: '#000' }"
 			:perSlider="4"
@@ -316,12 +330,17 @@ import bgImage10 from "~/assets/images/bg-group10.jpg";
 definePageMeta({
 	layout: "transparent-navbar",
 });
+
+var activePageNavbar = ref("our-favourite");
 </script>
 
 <style scoped lang="scss">
 section.gifts-page {
 	margin-top: -58px;
 	.gift-navbar {
+		position: sticky;
+		top: 50px;
+		z-index: 9999;
 		display: flex;
 		flex-direction: row;
 		justify-content: center;

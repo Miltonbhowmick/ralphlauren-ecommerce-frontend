@@ -15,15 +15,31 @@
 				</div>
 			</div>
 			<div v-else class="video-box">
-				<video autoplay muted loop id="product-video" class="video">
-					<source src="/videos/product-video.mp4" type="video/mp4" />
-				</video>
-				<div class="video-pause-box" @click="toggleVideoPlay">
-					<button v-if="videoPlaying" class="playing"></button>
-					<button v-else class="pause"></button>
+				<div v-if="props?.videoSrc" class="video-content">
+					<video autoplay muted loop id="product-video" class="video">
+						<source :src="props?.videoSrc" type="video/mp4" />
+					</video>
+					<div class="video-pause-box" @click="toggleVideoPlay">
+						<button v-if="videoPlaying" class="playing"></button>
+						<button v-else class="pause"></button>
+					</div>
+				</div>
+				<div v-if="props?.videoFooter" class="footer">
+					<h4 class="title">{{ props?.videoFooter?.title }}</h4>
+					<ul v-if="props?.videoFooter?.linkList" class="link-list">
+						<li
+							v-for="(linkObj, linkId) in props?.videoFooter?.linkList"
+							:key="'link_' + linkId"
+						>
+							<a :href="linkObj?.src">{{ linkObj?.name }}</a>
+						</li>
+					</ul>
 				</div>
 			</div>
 			<div v-if="props?.sliderList" class="slider-box">
+				<h3 v-if="props?.sliderHeadTitle" class="slider-group-title">
+					{{ props?.sliderHeadTitle }}
+				</h3>
 				<carousel :per-page="1" :mouse-drag="true" :paginationEnabled="false">
 					<slide
 						v-for="(slideItem, slide_id) in props?.sliderList"
@@ -54,7 +70,10 @@ import bgImage from "~/assets/images/bg-1.jpg";
 const props = defineProps({
 	sideImage: null,
 	backgroundImage: null,
+	videoSrc: null,
+	videoFooter: null,
 	sliderList: null,
+	sliderHeadTitle: null,
 });
 
 var videoPlaying = ref(true);
@@ -104,46 +123,87 @@ const toggleVideoPlay = () => {
 		}
 		.video-box {
 			position: relative;
-			.video {
-				// width: 80%;
-			}
-			.video-pause-box {
-				position: absolute;
-				left: 30px;
-				bottom: 20px;
-				width: 30px;
-				height: 30px;
-				border-radius: 100%;
-				border: 2px solid #ffffff;
-				.playing {
-					padding: 0;
+			height: 100%;
+			.video-content {
+				width: 100%;
+				height: 100%;
+				.video {
 					position: absolute;
-					top: 10px;
-					left: 10px;
-					width: 10px;
-					height: 10px;
-					background: none;
-					border-right: 2px solid #ffffff;
-					border-left: 2px solid #ffffff;
-					border-top: 0;
-					border-bottom: 0;
+					top: 0;
+					left: 0;
+					height: 100%;
 				}
-				.pause {
-					padding: 0;
+				.video-pause-box {
 					position: absolute;
-					top: 10px;
-					left: 12px;
-					background: none;
-					width: 0;
-					height: 0;
-					border-top: 6px solid transparent;
-					border-bottom: 6px solid transparent;
-					border-left: 11px solid #ffffff;
+					left: 30px;
+					bottom: 20px;
+					width: 30px;
+					height: 30px;
+					border-radius: 100%;
+					border: 2px solid #ffffff;
+					.playing {
+						padding: 0;
+						position: absolute;
+						top: 10px;
+						left: 10px;
+						width: 10px;
+						height: 10px;
+						background: none;
+						border-right: 2px solid #ffffff;
+						border-left: 2px solid #ffffff;
+						border-top: 0;
+						border-bottom: 0;
+					}
+					.pause {
+						padding: 0;
+						position: absolute;
+						top: 10px;
+						left: 12px;
+						background: none;
+						width: 0;
+						height: 0;
+						border-top: 6px solid transparent;
+						border-bottom: 6px solid transparent;
+						border-left: 11px solid #ffffff;
+					}
+				}
+			}
+			.footer {
+				.title {
+					margin: 5px 0 0 0;
+					font-family: LeJeuneDeck-Regular, "Times New Roman", Times, serif;
+					font-size: 1.75em;
+					line-height: 1.429em;
+					letter-spacing: 0;
+					text-align: left;
+				}
+				.link-list {
+					list-style: none;
+					margin: 5px 0 0 0;
+					padding: 0;
+					li {
+						a {
+							display: block;
+							height: 2rem;
+							color: #041e3a;
+							font-size: 9px;
+							text-transform: uppercase;
+							text-decoration: underline;
+							text-underline-offset: 9px;
+							text-decoration-color: #041e3a;
+						}
+					}
 				}
 			}
 		}
 		.slider-box {
 			width: 45%;
+			.slider-group-title {
+				text-align: center;
+				font-size: 2.3em;
+				font-family: "LeJeuneDeck-Regular", Times, serif;
+				color: #041e3a;
+			}
 			.slide {
 				width: 80%;
 			}

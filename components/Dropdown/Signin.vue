@@ -28,6 +28,23 @@
 			</div>
 			<nuxt-link to="/signin" class="signin-btn">sign in</nuxt-link>
 		</div>
+		<div class="or-bar">
+			<div class="left"></div>
+			<div class="middle">or</div>
+			<div class="right"></div>
+		</div>
+		<div class="social-links">
+			<a class="link"
+				><div class="images"><img src="/images/google.svg" alt="google" /></div>
+				<span class="name">google</span></a
+			>
+			<a class="link"
+				><div class="images">
+					<img src="/images/facebook.svg" alt="facebook" />
+				</div>
+				<span class="name">facebook</span></a
+			>
+		</div>
 	</div>
 </template>
 
@@ -115,25 +132,81 @@
 		}
 		.remember-box {
 			margin-bottom: 20px;
+			display: flex;
+			align-items: flex-start;
+			gap: 2px;
 			label {
 				font-size: 9px;
 				font-weight: 400;
 				color: #707070;
 				background-color: transparent;
 				letter-spacing: 0.0625rem;
-				text-transform: uppercase;
+				text-transform: capitalize;
 			}
 		}
 		.signin-btn {
-			padding: 18px 0;
+			padding: 16px 0;
 			width: 100%;
 			display: block;
 			text-transform: uppercase;
-			font-size: 0.75rem;
+			font-size: 0.65rem;
 			text-align: center;
 			background-color: #041e3a;
 			border: none;
 			color: #ffffff;
+		}
+	}
+
+	.or-bar {
+		margin: 20px 0;
+		box-sizing: border-box;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		.left,
+		.right {
+			width: 47%;
+			border-top: 1px solid #ccc;
+			padding: 0;
+		}
+		.left {
+			float: left;
+		}
+		.right {
+			float: right;
+		}
+		.middle {
+			padding: 0;
+			margin: 0 15px;
+			color: #ccc;
+		}
+	}
+	.social-links {
+		margin-top: 10px;
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+		.link {
+			position: relative;
+			padding: 15px;
+			background: #ffffff;
+			border-radius: 50%;
+			width: 3.75rem;
+			height: 3.75rem;
+			.name {
+				position: absolute;
+				bottom: -20px;
+				left: 50%;
+				transform: translateX(-50%);
+				text-transform: uppercase;
+				color: #041e3a;
+				font-family: RL_DroidKufi, Founders Grotesk Mono Regular, Arial,
+					Helvetica, sans-serif;
+				font-style: Normal;
+				font-weight: 500;
+				font-size: 8px;
+				letter-spacing: 1.25px;
+			}
 		}
 	}
 }

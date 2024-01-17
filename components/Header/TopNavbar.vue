@@ -2,7 +2,9 @@
 	<div class="top-banner">
 		<div class="swipe-wrapper">
 			<article v-for="(item, idx) in articleList" :key="idx" class="article">
-				<span>{{ item.title }}</span>
+				<span
+					>{{ item.title }} | <a class="link">{{ item.link }}</a></span
+				>
 			</article>
 		</div>
 		<ul class="nav-list">
@@ -21,8 +23,8 @@
 <script setup>
 const articleList = [
 	{
-		title: "Last Chance Gifting | Order by 20th December",
-		link: null,
+		title: "winter sale",
+		link: "shop now",
 	},
 	// {
 	// 	title: "Free Standard Delivery & Extended Returns",
@@ -34,7 +36,7 @@ const articleList = [
 <style scoped lang="scss">
 .top-banner {
 	background-color: #041e3a;
-	padding: 14px 7px;
+	padding: 13.2px 7px;
 	position: relative;
 	display: flex;
 	flex-direction: row;
@@ -44,7 +46,12 @@ const articleList = [
 		.article {
 			color: #ffffff;
 			letter-spacing: 1px;
-			font-size: 10px;
+			font-size: 9px;
+			text-transform: capitalize;
+			.link {
+				text-decoration: underline;
+				color: #ffffff;
+			}
 		}
 	}
 	.nav-list {
@@ -58,7 +65,7 @@ const articleList = [
 		flex-direction: row;
 		gap: 20px;
 		li {
-			margin: 0 5px;
+			// margin: 0 5px;
 			a {
 				cursor: pointer;
 			}
@@ -67,15 +74,17 @@ const articleList = [
 				color: #ffffff;
 			}
 			i {
-				margin-right: 6px;
-				font-size: 15px;
+				margin-right: 4px;
+				font-size: 13px;
 			}
 			span {
 				font-family: RL_DroidKufi, Founders Grotesk text Regular, Helvetica,
 					Arial, sans-serif;
-				font-size: 10px;
+				font-size: 9px;
+				font-style: normal;
+				font-weight: 300;
 				line-height: 10px;
-				letter-spacing: 1px;
+				letter-spacing: 1.75px;
 				text-transform: capitalize;
 			}
 		}

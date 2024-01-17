@@ -1,7 +1,7 @@
 <template>
 	<div class="modal-overlay">
 		<div class="product-detail-sidebar">
-			<a class="close" @click="close">x</a>
+			<a class="close" @click="close"></a>
 			<div class="content">
 				<div class="image-list">
 					<div class="image">
@@ -57,10 +57,19 @@
 										</ul>
 									</div>
 								</li>
+								<li class="attribute-years">
+									<ul>
+										<li><a class="unavailable">1.5 yrs</a></li>
+										<li><a class="unavailable">2 yrs</a></li>
+										<li><a class="unavailable">3 yrs</a></li>
+										<li><a>4 yrs</a></li>
+										<li><a>5 yrs</a></li>
+									</ul>
+								</li>
 								<li class="attribute-sizes">
 									<ul>
-										<li><a>S</a></li>
-										<li><a>M</a></li>
+										<li><a class="unavailable">S</a></li>
+										<li><a class="unavailable">M</a></li>
 										<li><a>L</a></li>
 										<li><a>XL</a></li>
 									</ul>
@@ -129,9 +138,9 @@ onBeforeUnmount(() => {
 		width: 60%;
 		float: right;
 		.close {
-			position: absolute;
-			top: 12px;
-			right: 25px;
+			position: fixed;
+			top: 5px;
+			right: 35px;
 			width: 10px;
 			height: 10px;
 			z-index: 99;
@@ -279,9 +288,9 @@ onBeforeUnmount(() => {
 									}
 								}
 							}
-							.attribute-sizes {
+							.attribute-years {
 								ul {
-									border-top: 1px solid #6d6f73;
+									border-top: 1px solid #d1d1d1;
 									display: flex;
 									justify-content: center;
 									gap: 20px;
@@ -293,7 +302,34 @@ onBeforeUnmount(() => {
 											font-style: Normal;
 											font-weight: 600;
 											position: relative;
-											font-size: 0.7125rem;
+											font-size: 0.6125rem;
+											text-transform: uppercase;
+											&.unavailable {
+												color: #6d6f73;
+												font-weight: 300;
+											}
+										}
+									}
+								}
+							}
+							.attribute-sizes {
+								ul {
+									border-top: 1px solid #d1d1d1;
+									display: flex;
+									justify-content: center;
+									gap: 20px;
+									li {
+										padding: 20px 10px;
+										a {
+											font-family: RL_DroidKufi, Founders Grotesk Text Medium,
+												Helvetica, Arial, sans-serif;
+											font-style: Normal;
+											font-weight: 600;
+											position: relative;
+											font-size: 0.6125rem;
+											&.unavailable {
+												color: #6d6f73;
+											}
 										}
 									}
 								}

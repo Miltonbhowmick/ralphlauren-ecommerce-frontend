@@ -134,6 +134,7 @@ const props = defineProps({
 		.slider-video {
 			video {
 				width: 100%;
+				display: flex;
 			}
 		}
 		.content {
