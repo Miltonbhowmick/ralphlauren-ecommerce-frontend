@@ -110,6 +110,20 @@
 						class="dropdown-start-top"
 					/>
 				</li>
+				<li
+					@mouseover="showDropdown('sale')"
+					@mouseleave="hideDropdown('sale')"
+				>
+					<nuxt-link to="/products/sale" :class="{ 'text-black': bgWhite }"
+						>sale</nuxt-link
+					>
+					<component
+						v-if="activeDropdown === 'sale'"
+						:is="discover"
+						@mouseover="showDropdown('sale')"
+						@mouseleave="hideDropdown('sale')"
+					/>
+				</li>
 			</ul>
 		</nav>
 		<ul class="user-links">
@@ -187,6 +201,7 @@ const kids = resolveComponent("CategoryMenuKids");
 const gifts = resolveComponent("CategoryMenuGifts");
 const discover = resolveComponent("CategoryMenuDiscover");
 const home = resolveComponent("CategoryMenuHome");
+const sale = resolveComponent("CategoryMenuSale");
 
 var currentMenu = shallowRef(null);
 var activeDropdown = ref(null);
@@ -272,7 +287,7 @@ const hideDropdown = (item) => {
 			cursor: pointer;
 			a {
 				color: #fff;
-				font-size: 16px;
+				font-size: 0.9375rem;
 				font-weight: 500;
 			}
 		}
