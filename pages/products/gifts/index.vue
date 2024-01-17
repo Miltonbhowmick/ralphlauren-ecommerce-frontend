@@ -322,6 +322,9 @@ definePageMeta({
 section.gifts-page {
 	margin-top: -58px;
 	.gift-navbar {
+		position: sticky;
+		top: 50px;
+		z-index: 9999;
 		display: flex;
 		flex-direction: row;
 		justify-content: center;

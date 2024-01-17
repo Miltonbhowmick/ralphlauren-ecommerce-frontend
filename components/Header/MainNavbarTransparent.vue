@@ -251,6 +251,7 @@ onMounted(() => {
 	background: none;
 	&.bg-white {
 		background-color: #ffffff;
+		transition: 300ms ease-in-out;
 	}
 	.primary-logo {
 		// padding: 10px 0px;
