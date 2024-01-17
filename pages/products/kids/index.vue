@@ -48,8 +48,18 @@
 		/>
 		<div class="kids-navbar">
 			<ul>
-				<li class="active"><a>Shop Kids</a></li>
-				<li><a>Shop Baby</a></li>
+				<li
+					@click="activePageNavbar = 'shop-kids'"
+					:class="{ active: activePageNavbar === 'shop-kids' }"
+				>
+					<a href="#shopKids">Shop Kids</a>
+				</li>
+				<li
+					@click="activePageNavbar = 'shop-baby'"
+					:class="{ active: activePageNavbar === 'shop-baby' }"
+				>
+					<a href="#shopBaby">Shop Baby</a>
+				</li>
 			</ul>
 		</div>
 		<CustomSlider
@@ -172,9 +182,11 @@
 			<LeftImageRightContent />
 		</div>
 
-		<div class="mt-60">
-			<ProductGellary @openProductSidebar="openSidebarDetail" />
-		</div>
+		<section id="shopKids">
+			<div class="mt-60">
+				<ProductGellary @openProductSidebar="openSidebarDetail" />
+			</div>
+		</section>
 		<VideoBubbleImageSlider
 			class="mt-60"
 			:backgroundImage="'/images/1228_kids_hub_c05_bg.jpg'"
@@ -227,52 +239,54 @@
 			:left="true"
 		/>
 
-		<ImageBannerCustomSlider
-			:headlineBlack="false"
-			:backgroundImage="'/images/1228_kids_hub_c06_bg.jpg'"
-			:isBackgroundImage="true"
-			:heroBannerImage="'/images/1228_kids_hub_c06_img.jpg'"
-			:title="'Seasonal Polo Bears'"
-			:slideList="[
-				{
-					imageSrc: '/images/1228_kids_hub_c06a_img.jpg',
-					content: {
-						title: 'Striped Cotton Jersey Pocket T-Shirt',
-						linkList: [
-							{
-								name: 'shop now',
-								src: '',
-							},
-						],
+		<section id="shopBaby">
+			<ImageBannerCustomSlider
+				:headlineBlack="false"
+				:backgroundImage="'/images/1228_kids_hub_c06_bg.jpg'"
+				:isBackgroundImage="true"
+				:heroBannerImage="'/images/1228_kids_hub_c06_img.jpg'"
+				:title="'Seasonal Polo Bears'"
+				:slideList="[
+					{
+						imageSrc: '/images/1228_kids_hub_c06a_img.jpg',
+						content: {
+							title: 'Striped Cotton Jersey Pocket T-Shirt',
+							linkList: [
+								{
+									name: 'shop now',
+									src: '',
+								},
+							],
+						},
 					},
-				},
-				{
-					imageSrc: '/images/1228_kids_hub_c06b_img.jpg',
-					content: {
-						title: 'Aran-Knit Flag Cotton Jumper',
-						linkList: [
-							{
-								name: 'shop now',
-								src: '',
-							},
-						],
+					{
+						imageSrc: '/images/1228_kids_hub_c06b_img.jpg',
+						content: {
+							title: 'Aran-Knit Flag Cotton Jumper',
+							linkList: [
+								{
+									name: 'shop now',
+									src: '',
+								},
+							],
+						},
 					},
-				},
-				{
-					imageSrc: '/images/1228_kids_hub_c06c_img.jpg',
-					content: {
-						title: 'Striped Cable-Knit Cotton Jumper',
-						linkList: [
-							{
-								name: 'shop now',
-								src: '',
-							},
-						],
+					{
+						imageSrc: '/images/1228_kids_hub_c06c_img.jpg',
+						content: {
+							title: 'Striped Cable-Knit Cotton Jumper',
+							linkList: [
+								{
+									name: 'shop now',
+									src: '',
+								},
+							],
+						},
 					},
-				},
-			]"
-			class="mt-60"
-		/>
+				]"
+				class="mt-60"
+			/>
+		</section>
 		<TwoImage
 			:header="{
 				title: 'Matching Sets',
@@ -315,6 +329,7 @@ import holidayPackBgImage from "~/assets/images/bg-group1.jpg";
 definePageMeta({
 	layout: "transparent-navbar",
 });
+var activePageNavbar = ref("shop-kids");
 
 const showSidebarDetail = ref(false);
 
