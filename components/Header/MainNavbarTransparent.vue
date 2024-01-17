@@ -242,7 +242,7 @@ onMounted(() => {
 	position: sticky;
 	top: 0;
 	z-index: 999999;
-	padding: 0px 55px;
+	padding: 0px 50px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -254,7 +254,7 @@ onMounted(() => {
 	}
 	.primary-logo {
 		// padding: 10px 0px;
-		width: 25rem;
+		width: 22rem;
 		flex-grow: 0;
 		.logo {
 			height: 25px;
@@ -299,9 +299,9 @@ onMounted(() => {
 		margin: 0;
 		list-style: none;
 		display: flex;
-		gap: 18px;
+		gap: 20px;
 		li {
-			padding: 17px 10px;
+			padding: 17px 0px;
 			cursor: pointer;
 			a {
 				color: #fff;
