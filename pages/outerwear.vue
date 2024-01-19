@@ -13,7 +13,9 @@
 				<li><a>leather & suede</a></li>
 				<li><a>accessories</a></li>
 			</ul>
-			<a class="collection-link">shop the collection</a>
+			<nuxt-link to="/products/men/sweater" class="collection-link"
+				>shop the collection</nuxt-link
+			>
 		</div>
 		<HeroBanner
 			:middle="true"
