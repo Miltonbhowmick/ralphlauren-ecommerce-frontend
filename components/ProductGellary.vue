@@ -37,7 +37,6 @@ import bgImage from "~/assets/images/leaf-clothe.jpg";
 const emit = defineEmits();
 
 const openSidebarModal = () => {
-	console.log("=====");
 	emit("openProductSidebar");
 };
 </script>

@@ -5,7 +5,7 @@
 				<i class="fa fa-user-o" aria-hidden="true"></i> <span>Sign In</span>
 			</li>
 			<li class="signup">
-				<a>create account</a>
+				<nuxt-link to="/signin">create account</nuxt-link>
 			</li>
 		</ul>
 		<div class="form">
@@ -16,7 +16,9 @@
 				<input type="password" placeholder="PASSWORD *" name="password" />
 			</div>
 			<ul class="forget-group">
-				<li class="forget-password"><a>Forgot Password?</a></li>
+				<li class="forget-password">
+					<a @click="openForgetModal">Forgot Password?</a>
+				</li>
 				<li class="required"><a>* Required</a></li>
 			</ul>
 			<div class="remember-box">
@@ -48,7 +50,16 @@
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+const emit = defineEmits();
+
+const openForgetModal = () => {
+	emit("openForgetPassword");
+};
+const hideForgetModal = () => {
+	emit("hideForgetPassword");
+};
+</script>
 
 <style scoped lang="scss">
 .dropdown-signin {
@@ -58,7 +69,7 @@
 	z-index: 99;
 	background-color: #f4f5f6;
 	padding: 35px 25px;
-	width: 300px;
+	width: 350px;
 	min-height: 200px;
 	.header {
 		padding: 0;
@@ -127,7 +138,7 @@
 			input {
 				box-sizing: border-box;
 				width: 100%;
-				padding: 0.78125rem 1.25rem;
+				padding: 0.51125rem 1.25rem;
 			}
 		}
 		.remember-box {
