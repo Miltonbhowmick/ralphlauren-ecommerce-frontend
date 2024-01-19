@@ -148,8 +148,8 @@
 			</li>
 			<li
 				v-else-if="loggedIn === false"
-				@mouseover="openSigninMenu = true"
-				@mouseleave="openSigninMenu = false"
+				@mouseover="handleSigninMenu(true)"
+				@mouseleave="handleSigninMenu(false)"
 			>
 				<a
 					><i
@@ -160,8 +160,8 @@
 				></a>
 				<DropdownSignin
 					v-if="openSigninMenu === true"
-					@mouseover="openSigninMenu = true"
-					@mouseleave="openSigninMenu = false"
+					@mouseover="handleSigninMenu(true)"
+					@mouseleave="handleSigninMenu(false)"
 					@openForgetPassword="openForgetPasswordModal"
 					@hideForgetPassword="hideForgetPasswordModal"
 				/>
@@ -230,6 +230,15 @@ const hideDropdown = (item) => {
 	handleNavbarBackground(toggleNavbarBackground.value);
 };
 
+const handleSigninMenu = (action) => {
+	if (action === false) {
+		setTimeout(() => {
+			openSigninMenu.value = false;
+		}, 800);
+	} else if (action === true) {
+		openSigninMenu.value = true;
+	}
+};
 const updateScrollPosition = () => {
 	// if (route.path.includes("/products") === true || route.path === "/") {
 	if (window.scrollY > 50) {
@@ -242,7 +251,9 @@ const updateScrollPosition = () => {
 
 const handleNavbarBackground = (toggle) => {
 	if (toggleNavbarBackground.value === false && toggle === false) {
-		bgWhite.value = false;
+		setTimeout(() => {
+			bgWhite.value = false;
+		}, 800);
 	}
 };
 
