@@ -14,7 +14,11 @@
 				>
 					<nuxt-link :to="slideItem.link">
 						<div class="slider-image">
-							<img :src="slideItem?.imageSrc" :alt="slideItem?.title" />
+							<img
+								:src="slideItem?.imageSrc"
+								:alt="slideItem?.title"
+								loading="lazy"
+							/>
 						</div>
 						<div class="content">
 							<h2 class="title">{{ slideItem?.title }}</h2>
