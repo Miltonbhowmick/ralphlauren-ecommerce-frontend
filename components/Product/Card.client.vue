@@ -123,13 +123,15 @@ const getColor = (value) => {
 			}
 			.quick-btn {
 				border-radius: 25px;
-				padding: 8px 15px;
+				padding: 6px 20px;
+				color: #041e3a;
 				border: 1px solid #041e3a;
 				background: none;
 				text-transform: uppercase;
 				font-family: RL_DroidKufi, Founders Grotesk Mono Light, Lucida Console,
 					Arial, Helvetica, sans-serif;
 				font-style: Normal;
+				font-size: 10px;
 				&:hover {
 					cursor: pointer;
 					color: #ffffff;

@@ -306,6 +306,6 @@ const hideDropdown = (item) => {
 }
 
 .dropdown-start-top {
-	top: 6.5rem;
+	top: 6rem;
 }
 </style>
