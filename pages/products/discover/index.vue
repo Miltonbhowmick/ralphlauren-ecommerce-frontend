@@ -54,6 +54,6 @@ definePageMeta({
 
 <style scoped lang="scss">
 section.discover-page {
-	margin-top: -58px;
+	margin-top: -62px;
 }
 </style>

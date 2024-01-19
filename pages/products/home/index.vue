@@ -175,7 +175,7 @@ const hideSidebarDetail = () => {
 
 <style scoped lang="scss">
 section.home-page {
-	margin-top: -58px;
+	margin-top: -62px;
 	.kids-navbar {
 		display: flex;
 		flex-direction: row;

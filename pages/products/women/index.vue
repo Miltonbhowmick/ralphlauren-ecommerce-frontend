@@ -222,7 +222,7 @@ definePageMeta({
 
 <style scoped lang="scss">
 section.women-page {
-	margin-top: -58px;
+	margin-top: -62px;
 	.slider-box {
 		padding: 40px 30px;
 		.title {

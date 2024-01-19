@@ -136,8 +136,8 @@ const toggleVideoPlay = () => {
 		.playing {
 			padding: 0;
 			position: absolute;
-			top: 10px;
-			left: 10px;
+			top: 9px;
+			left: 9px;
 			width: 10px;
 			height: 10px;
 			background: none;
@@ -149,14 +149,15 @@ const toggleVideoPlay = () => {
 		.pause {
 			padding: 0;
 			position: absolute;
-			top: 10px;
-			left: 12px;
+			top: 8px;
+			left: 9px;
 			background: none;
 			width: 0;
 			height: 0;
 			border-top: 6px solid transparent;
 			border-bottom: 6px solid transparent;
 			border-left: 11px solid #ffffff;
+			border-right: 0;
 		}
 	}
 }

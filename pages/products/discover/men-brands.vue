@@ -54,6 +54,50 @@
 			:title="'the shops'"
 			:subTitle="'Destinations for Polo style, from timeless classics to new collections'"
 			:backgroundColor="'#1d2333'"
+			:slideList="[
+				{
+					imageSrc: '/images/player.jpg',
+					content: {
+						title: 'active club',
+					},
+				},
+				{
+					imageSrc: '/images/0104_home_hub_m_c10b_img.jpg',
+					content: {
+						title: 'Sophisticated Sportswear',
+					},
+				},
+				{
+					imageSrc: '/images/0117_sophisticated_sportswear_hub_c02b_img.jpg',
+					content: {
+						title: 'beach shop',
+					},
+				},
+				{
+					imageSrc: '/images/1205_m_polo_hub_c02b_img.jpg',
+					content: {
+						title: 'polo bear shop',
+					},
+				},
+				{
+					imageSrc: '/images/1228_m_polo_hub_c02c_img.jpg',
+					content: {
+						title: 'outerwear shop',
+					},
+				},
+				{
+					imageSrc: '/images/1010_m_polo_hub_c02b_img.jpg',
+					content: {
+						title: 'Autumn retreat',
+					},
+				},
+				{
+					imageSrc: '/images/1005_m_polo_hub_c02h_img.jpg',
+					content: {
+						title: 'heritage icon shop',
+					},
+				},
+			]"
 		/>
 		<div
 			:style="{ backgroundImage: `url(${bgGroup33})` }"

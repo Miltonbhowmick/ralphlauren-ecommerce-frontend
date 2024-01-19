@@ -13,7 +13,9 @@
 				<li><a>leather & suede</a></li>
 				<li><a>accessories</a></li>
 			</ul>
-			<a class="collection-link">shop the collection</a>
+			<nuxt-link to="/products/men/sweater" class="collection-link"
+				>shop the collection</nuxt-link
+			>
 		</div>
 		<HeroBanner
 			:middle="true"
@@ -429,7 +431,10 @@
 <style scoped lang="scss">
 section.outwear-box {
 	.page-navbar {
-		padding: 10px 20px;
+		position: sticky;
+		z-index: 9999;
+		top: 60px;
+		padding: 10px 50px;
 		background: #091d33;
 		display: flex;
 		justify-content: space-between;
@@ -443,7 +448,7 @@ section.outwear-box {
 			li {
 				a {
 					font-family: "LeJeuneDeck-Regular";
-					font-size: 0.763em;
+					font-size: 0.963em;
 					letter-spacing: 0.222em;
 					text-transform: uppercase;
 					color: #fff;

@@ -15,6 +15,7 @@
 					'text-basic': props.headlineBlack,
 					'text-white': !props.headlineBlack,
 				}"
+				:style="[]"
 			>
 				{{ props.title }}
 			</h1>
@@ -69,6 +70,7 @@
 <script setup>
 const props = defineProps({
 	headlineBlack: true,
+	textColor: null,
 	isBackgroundImage: true,
 	backgroundColor: null,
 	backgroundImage: null,

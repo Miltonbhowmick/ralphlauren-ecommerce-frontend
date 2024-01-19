@@ -343,7 +343,7 @@ const hideSidebarDetail = () => {
 
 <style scoped lang="scss">
 section.kids-page {
-	margin-top: -58px;
+	margin-top: -62px;
 	.kids-navbar {
 		position: sticky;
 		z-index: 9999;
