@@ -174,6 +174,8 @@
 					v-if="openSigninMenu === true"
 					@mouseover="openSigninMenu = true"
 					@mouseleave="openSigninMenu = false"
+					@openForgetPassword="openForgetPasswordModal"
+					@hideForgetPassword="hideForgetPasswordModal"
 				/>
 			</li>
 			<li>
@@ -195,6 +197,11 @@
 				></nuxt-link>
 			</li>
 		</ul>
+		<ModalForgetPasswordModal
+			v-if="showForgetPasswordModal"
+			:modalOpen="showForgetPasswordModal"
+			@hideModal="hideForgetPasswordModal"
+		/>
 	</div>
 </template>
 
@@ -214,6 +221,18 @@ var toggleNavbarBackground = ref(true);
 var bgWhite = ref(true);
 
 var loggedIn = ref(false);
+
+var showForgetPasswordModal = ref(false);
+
+const openForgetPasswordModal = () => {
+	console.log("======");
+
+	showForgetPasswordModal.value = true;
+};
+
+const hideForgetPasswordModal = () => {
+	showForgetPasswordModal.value = false;
+};
 
 const showDropdown = (item) => {
 	activeDropdown.value = item;
