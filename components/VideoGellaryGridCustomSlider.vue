@@ -60,6 +60,7 @@ section.video-grid-slider {
 			display: flex;
 			justify-content: space-between;
 			.image {
+				display: flex;
 				width: 100%;
 			}
 			.video {
