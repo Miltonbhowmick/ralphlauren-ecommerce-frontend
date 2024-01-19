@@ -336,7 +336,7 @@ var activePageNavbar = ref("our-favourite");
 
 <style scoped lang="scss">
 section.gifts-page {
-	margin-top: -58px;
+	margin-top: -62px;
 	.gift-navbar {
 		position: sticky;
 		top: 50px;

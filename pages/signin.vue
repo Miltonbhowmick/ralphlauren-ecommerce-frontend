@@ -159,47 +159,53 @@ var toggleAuthType = ref(true);
 <style scoped lang="scss">
 .login-content {
 	margin-top: 30px;
-	padding: 0 60px;
+	padding: 0 68px;
 	display: flex;
 	justify-content: center;
-	gap: 25px;
+	gap: 35px;
 	.help-box {
 		width: 20%;
 		padding: 15px;
 		.info {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
 			h5 {
+				margin: 0;
 				color: #474747;
 				text-transform: uppercase;
 				letter-spacing: 0.1rem;
-				font-size: 0.875rem;
+				font-size: 0.775rem;
 				font-family: RL_DroidKufi, Founders Grotesk Text Medium, Helvetica,
 					Arial, sans-serif;
 				font-style: Normal;
 				font-weight: 600;
 			}
 			.question-contact {
-				line-height: 1.6em;
+				margin: 0 0 20px 0;
+				line-height: 1.8em;
 				color: #041e3a;
-				font-size: 12px;
+				font-size: 11px;
 				font-weight: 500;
 			}
 			.help-item {
+				margin-bottom: 6px;
 				color: #041e3a;
 				.icon {
 					display: inline-block;
-					width: 10%;
+					width: 8%;
 					margin-right: 15px;
 				}
 				span,
 				p {
 					margin: 0;
-					font-size: 13px;
+					font-size: 11px;
 					font-weight: 500;
 					letter-spacing: 1px;
 				}
 				a {
 					text-decoration: underline;
-					font-size: 13px;
+					font-size: 11px;
 					font-weight: 500;
 					letter-spacing: 1px;
 				}
@@ -246,13 +252,13 @@ var toggleAuthType = ref(true);
 				a {
 					width: 100%;
 					text-align: center;
-					padding: 20px 15px;
+					padding: 16px 15px;
 					box-shadow: inset -6px -5px 11px -13px rgba(0, 0, 0, 0.75);
 					background-color: #f2f3f5;
 					font-family: RL_DroidKufi, LeJeuneDeck-Regular, Times New Roman, Times,
 						serif;
 					color: #041e3a;
-					font-size: 1.4rem;
+					font-size: 1.3rem;
 					cursor: pointer;
 					&.active {
 						background-color: #fff;

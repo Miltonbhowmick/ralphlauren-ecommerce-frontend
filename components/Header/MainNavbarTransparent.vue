@@ -3,7 +3,11 @@
 		class="main-navigation"
 		@mouseover="bgWhite = true"
 		@mouseleave="handleNavbarBackground(false)"
-		:class="{ 'bg-white': bgWhite }"
+		:class="{
+			'bg-white': bgWhite,
+			'bottom-border': openSigninMenu === true,
+			'no-border': openSigninMenu === false,
+		}"
 	>
 		<div class="primary-logo">
 			<nuxt-link to="/">
@@ -294,9 +298,15 @@ onMounted(() => {
 		background-color: #ffffff;
 		transition: 300ms ease-in-out;
 	}
+	&.bottom-border {
+		border-bottom: 1px solid #e4dddd;
+	}
+	&.no-border {
+		border: none;
+	}
 	.primary-logo {
 		// padding: 10px 0px;
-		width: 22rem;
+		width: 21.5rem;
 		flex-grow: 0;
 		.logo {
 			height: 25px;
@@ -310,9 +320,10 @@ onMounted(() => {
 		width: 100%;
 		ul {
 			list-style: none;
+			padding-left: 32px;
 			margin: 0;
 			display: flex;
-			gap: 10px;
+			gap: 1px;
 			li {
 				padding: 20px 10px;
 				a {
@@ -341,9 +352,9 @@ onMounted(() => {
 		margin: 0;
 		list-style: none;
 		display: flex;
-		gap: 20px;
+		// gap: 20px;
 		li {
-			padding: 17px 0px;
+			padding: 19px 15px;
 			cursor: pointer;
 			a {
 				color: #fff;

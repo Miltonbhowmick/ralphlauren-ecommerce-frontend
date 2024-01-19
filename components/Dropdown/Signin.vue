@@ -64,7 +64,7 @@ const hideForgetModal = () => {
 <style scoped lang="scss">
 .dropdown-signin {
 	position: absolute;
-	top: 57px;
+	top: 60px;
 	right: 10px;
 	z-index: 99;
 	background-color: #f4f5f6;
