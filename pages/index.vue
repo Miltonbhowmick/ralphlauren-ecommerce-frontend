@@ -160,6 +160,6 @@ definePageMeta({
 // }
 
 section.home {
-	margin-top: -58px;
+	margin-top: -62px;
 }
 </style>
