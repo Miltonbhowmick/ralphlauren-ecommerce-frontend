@@ -29,7 +29,12 @@
 			>
 				{{ props.subTitle }}
 			</p>
-			<a v-if="props.exploreLink" class="explore-link">explore now</a>
+			<a
+				v-if="props.exploreLink"
+				:src="props?.exploreLink?.src"
+				class="explore-link"
+				>{{ props?.exploreLink?.name }}</a
+			>
 		</div>
 		<div v-if="props.isBackgroundImage" class="banner">
 			<img :src="props.backgroundImage" alt="slider-bg" />

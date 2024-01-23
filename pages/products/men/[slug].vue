@@ -162,7 +162,7 @@ section.products-list-view {
 			font-style: Normal;
 			font-weight: 500;
 			cursor: pointer;
-			font-size: 0.8875rem;
+			font-size: 0.7875rem;
 			letter-spacing: 0.0625rem;
 			text-transform: uppercase;
 			border: none;

@@ -54,8 +54,12 @@
 					>- € {{ itemData.productPrice.high }}</span
 				>
 			</div>
-			<div class="colors-available">
-				<span class="value">{{ itemData.totalVariant }}</span> colors available
+			<div v-if="itemData?.totalVariant" class="colors-available">
+				<div class="title">Matching Set</div>
+				<div class="value-box">
+					<span class="value">{{ itemData.totalVariant }}</span
+					><span> colors available</span>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -176,7 +180,7 @@ const getColor = (value) => {
 				}
 			}
 			i {
-				font-size: 1.125rem;
+				font-size: 1rem;
 			}
 		}
 		.brand-name {
@@ -196,6 +200,9 @@ const getColor = (value) => {
 		}
 		.colors-available {
 			margin-top: 8px;
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
 			font-family: RL_DroidKufi, Founders Grotesk text Regular, Helvetica, Arial,
 				sans-serif;
 			font-style: Normal;
@@ -203,9 +210,14 @@ const getColor = (value) => {
 			font-size: 0.6875rem;
 			line-height: 0.75rem;
 			letter-spacing: 0.25px;
-			&:hover {
-				cursor: pointer;
-				text-decoration: underline;
+			.title {
+				color: #6d6f73;
+			}
+			.value {
+				&:hover {
+					cursor: pointer;
+					text-decoration: underline;
+				}
 			}
 		}
 	}
